@@ -1,23 +1,59 @@
 import React, { Component } from 'react';
-import logo from './assets/logo.svg';
+import Routes from "./Routes";
+import { authUser } from "./libes/auth";
+import { withRouter } from "react-router-dom";
+import { connect } from "react-redux";
 import './styles/App.css';
-import NavBar from './containers/navbar/index';
 
 class App extends Component {
+
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            isAuthenticated: false,
+            pageNotFound: false
+        };
+    }
+
+    async componentDidMount() {
+        try {
+
+            if (await authUser()) {
+                this.userHasAuthenticated(true);
+            } else {
+                this.userHasAuthenticated(false);
+            }
+
+        } catch (e) {
+            alert(e);
+        }
+    }
+
+    userHasAuthenticated = authenticated => {
+        this.setState({ isAuthenticated: authenticated });
+    };
+
+
   render() {
+      const childProps = {
+          isAuthenticated: this.state.isAuthenticated,
+          userHasAuthenticated: this.userHasAuthenticated,
+          pageNotFound: this.pageNotFound
+      };
+
     return (
       <div className="App">
-      <NavBar/>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Routes childProps={childProps}/>
       </div>
     );
   }
 }
 
-export default App;
+const connectedContainer = connect(state => {
+    return {
+    };
+
+})(App);
+
+export default withRouter(connectedContainer);

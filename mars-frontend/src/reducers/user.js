@@ -1,4 +1,4 @@
-import userTypes from './types/user';
+import userTypes from '../types/user';
 
 export const initialState = {
     fetching: false,
