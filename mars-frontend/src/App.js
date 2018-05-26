@@ -4,6 +4,7 @@ import { authUser } from "./libes/auth";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import './styles/App.css';
+import fire from './config/firebase';
 
 class App extends Component {
 
@@ -36,6 +37,7 @@ class App extends Component {
 
 
   render() {
+      console.log(fire);
       const childProps = {
           isAuthenticated: this.state.isAuthenticated,
           userHasAuthenticated: this.userHasAuthenticated,
