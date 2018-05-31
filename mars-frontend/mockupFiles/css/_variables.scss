@@ -1,0 +1,14 @@
+$text-color : #E8674D;
+$sec-text-color: #fff;
+$prime-color: #E24A4A;
+$second-color: #EE8550;
+$ash-color:#8D8D8D;
+$font:'roboto';
+
+@mixin bg-gradiant($prime-color,$second-color){	
+	background: $prime-color; /* For browsers that do not support gradients */    
+    background: -webkit-linear-gradient(left top, $prime-color, $second-color); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, $prime-color, $second-color); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, $prime-color, $second-color); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right, $prime-color, $second-color); /* Standard syntax (must be last) */
+}

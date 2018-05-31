@@ -1,0 +1,105 @@
+@import "variables";
+
+/**
+ * additional background margin padding
+ */
+.background{
+	padding:0;
+	marging:0;
+}
+
+/**
+ * adding the fill image to the wave path
+ */
+.wave{
+   	fill: url("#img1");
+   	z-index:-2;
+   	position:fixed;
+   	top:0;
+   	left:0;
+}
+
+.scg-container{
+	position:relative;
+}
+
+.center{
+    position: absolute;
+    left: 0;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+}
+
+.flex-box-col{
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	aling-items:center;
+	flex-direction:column;
+}
+
+.content{
+	diplay:inherit;
+	width:100%;
+}
+
+.game-name{
+	color:$sec-text-color;
+	font-size:50pt;
+	font-weight:300;
+}
+.slogan{
+	@extend .game-name;
+	font-size:14pt;
+	margin-top:-10px;
+}
+
+.primary-button{
+	border: solid 3px white;
+    border-radius: 100px;
+    color: #fff;
+    padding: 8px 60px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14pt;
+    margin-top: 5%;
+    cursor: pointer;
+    font-weight:300;
+    background:transparent;
+    box-shadow: 0 2px 8px #3a3939;
+    /*@include bg-gradiant($second-color,$prime-color);*/
+}
+
+.primary-button:hover{
+	@include bg-gradiant($second-color,$prime-color);		
+}
+
+.position-under{
+	z-index:-2;
+	position:absolute;
+	margin-top:-22%;
+	margin-left:10%;
+}
+
+.flex-box-row{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+}
+
+.img-container{
+	display:inherit;
+	width:10%;
+	padding:10px;
+	background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 500px;
+}
+
+.art{
+	
+}
