@@ -1,16 +1,12 @@
 @import "variables";
 
-/**
- * additional background margin padding
- */
+ /*********[additional background margin padding]**********/
 .background{
 	padding:0;
 	marging:0;
 }
 
-/**
- * adding the fill image to the wave path
- */
+/*********[adding the fill image to the wave path]**********/
 .wave{
    	fill: url("#img1");
    	z-index:-2;
@@ -18,11 +14,11 @@
    	top:0;
    	left:0;
 }
-
-.scg-container{
+.svg-container{
 	position:relative;
 }
 
+/****[make a div absolute in center to put the elements in front of svg]*****/
 .center{
     position: absolute;
     left: 0;
@@ -30,76 +26,92 @@
     width: 100%;
     text-align: center;
     font-size: 18px;
+    z-index:3;
 }
 
-.flex-box-col{
-	display:flex;
-	flex-wrap:wrap;
-	justify-content:center;
-	aling-items:center;
-	flex-direction:column;
+/*********[create flex containers]**********/
+.container-home-vertical{
+	@include flex-box(center,center,column,100%);
+}
+.container-home-horizontal{
+	@include flex-box(center,center,row,100%);
+}
+.content-half-width{
+	@include flex-box(center,center,row,50%);
+}
+.justify-left{
+	justify-content:flex-end;
+}
+.margin-reduced{
+	margin-top:-10%;
 }
 
-.content{
-	diplay:inherit;
-	width:100%;
-}
-
-.game-name{
+/*********[game title & slogan styles]**********/
+.main-title{
 	color:$sec-text-color;
 	font-size:50pt;
 	font-weight:300;
+	letter-spacing:2px;
 }
 .slogan{
-	@extend .game-name;
+	@extend .main-title;
 	font-size:14pt;
-	margin-top:-10px;
+	margin-top:-1%;
+	letter-spacing:1px;
 }
 
+/*********[primary button style]**********/
 .primary-button{
 	border: solid 3px white;
     border-radius: 100px;
     color: #fff;
-    padding: 8px 60px;
+    padding: 8px 80px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 14pt;
-    margin-top: 5%;
+    margin-top: 20%;
     cursor: pointer;
     font-weight:300;
     background:transparent;
     box-shadow: 0 2px 8px #3a3939;
     /*@include bg-gradiant($second-color,$prime-color);*/
 }
-
+.about-button{
+	@extend .primary-button;
+	@include bg-gradiant($second-color,$prime-color);
+	padding: 8px 40px;
+	border:none;
+	box-shadow:none;
+	margin-right:20px;
+}
+.help-button{
+	@extend .primary-button;
+	padding: 6px 38px;
+	border: solid 2px $ash-color;
+	color:$ash-color;
+	box-shadow:none;
+	margin-right:30px;
+}
+/********[buttons :hover]********/
 .primary-button:hover{
 	@include bg-gradiant($second-color,$prime-color);		
 }
-
-.position-under{
-	z-index:-2;
-	position:absolute;
-	margin-top:-22%;
-	margin-left:10%;
+.about-button:hover{
+	border: solid 2px $ash-color;
+	color:$ash-color;
+	padding: 6px 38px;
+	background:transparent;
+}
+.help-button:hover{
+	border: solid 2px transparent;
+	color:white;
 }
 
-.flex-box-row{
-	display:flex;
-	flex-direction:row;
-	flex-wrap:wrap;
-}
-
-.img-container{
-	display:inherit;
-	width:10%;
-	padding:10px;
-	background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 500px;
-}
-
+/********[background image]********/
 .art{
-	
+	width:300px;
+	height:auto;
+	margin: -20% 15% 0;
+	z-index:-2;
 }

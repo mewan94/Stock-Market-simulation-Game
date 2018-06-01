@@ -12,3 +12,12 @@ $font:'roboto';
     background: -moz-linear-gradient(bottom right, $prime-color, $second-color); /* For Firefox 3.6 to 15 */
     background: linear-gradient(to bottom right, $prime-color, $second-color); /* Standard syntax (must be last) */
 }
+
+@mixin flex-box($justify-content,$align-items,$flex-derection,$width){
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:$justify-content;
+	align-items:$align-items;
+	flex-direction:$flex-derection;
+	width:$width;
+}
