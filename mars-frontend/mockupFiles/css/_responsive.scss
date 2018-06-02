@@ -1,0 +1,12 @@
+$sm:576px;
+
+
+@mixin device($size){
+	@media (max-width: $size) {
+  		.hidden-item{
+  			display:none;
+  		}
+	}	
+} 
+
+@include device($sm);
