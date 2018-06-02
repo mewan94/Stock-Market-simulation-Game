@@ -16,7 +16,7 @@ export class Player {
         if (requestedAmount < this.balance) {
             this.balance - requestedAmount;
         } else {
-            return error = "This requested amount is not available";
+            return error = "This requested amount is not No Need";
         }
     }
 
