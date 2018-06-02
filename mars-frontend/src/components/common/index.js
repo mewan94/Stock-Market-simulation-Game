@@ -1,1 +1,1 @@
-export * from './fancyInput';
+export * from './button';
