@@ -1,5 +1,5 @@
 {
-  "name": "mars-backend",
+  "name": "sm-bank",
   "version": "0.0.1",
   "description": "Stock market simulator backend",
   "main": "dist",
