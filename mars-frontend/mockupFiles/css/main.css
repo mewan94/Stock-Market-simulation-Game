@@ -1,0 +1,109 @@
+/************************/
+/*[main tag restyle]*/
+* {
+  padding: 0;
+  marging: 0;
+  font-family: "roboto"; }
+
+body, html {
+  height: 100%; }
+
+/************************/
+/*[homepage]*/
+/**
+ * additional background margin padding
+ */
+.background {
+  padding: 0;
+  marging: 0; }
+
+/**
+ * adding the fill image to the wave path
+ */
+.wave {
+  fill: url("#img1");
+  z-index: -2;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.scg-container {
+  position: relative; }
+
+.center {
+  position: absolute;
+  left: 0;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px; }
+
+.flex-box-col {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  aling-items: center;
+  flex-direction: column; }
+
+.content {
+  diplay: inherit;
+  width: 100%; }
+
+.game-name, .slogan {
+  color: #fff;
+  font-size: 50pt;
+  font-weight: 300; }
+
+.slogan {
+  font-size: 14pt;
+  margin-top: -10px; }
+
+.primary-button {
+  border: solid 3px white;
+  border-radius: 100px;
+  color: #fff;
+  padding: 8px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14pt;
+  margin-top: 5%;
+  cursor: pointer;
+  font-weight: 300;
+  background: transparent;
+  box-shadow: 0 2px 8px #3a3939;
+  /*@include bg-gradiant($second-color,$prime-color);*/ }
+
+.primary-button:hover {
+  background: #EE8550;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #EE8550, #E24A4A);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #EE8550, #E24A4A);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #EE8550, #E24A4A);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #EE8550, #E24A4A);
+  /* Standard syntax (must be last) */ }
+
+.position-under {
+  z-index: -2;
+  position: absolute;
+  margin-top: -22%;
+  margin-left: 10%; }
+
+.flex-box-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+
+.img-container {
+  display: inherit;
+  width: 10%;
+  padding: 10px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px; }
+
+/*# sourceMappingURL=main.css.map */
