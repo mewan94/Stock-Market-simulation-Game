@@ -119,7 +119,7 @@ body, html {
   box-shadow: none;
   margin-right: 30px; }
 
-/********[buttons :hover]********/
+/********[buttons :pseudo]********/
 .primary-button:hover, .about-button:hover, .help-button:hover {
   background: #EE8550;
   /* For browsers that do not support gradients */
@@ -141,6 +141,9 @@ body, html {
 .help-button:hover {
   border: solid 2px transparent;
   color: white; }
+
+button:focus {
+  outline: none; }
 
 /********[background image]********/
 .art {
