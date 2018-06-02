@@ -20,7 +20,7 @@ class Button extends Component{
         }
 
         return(
-            <button className={classname}>{this.props.text}</button>
+            <button id="but" className={classname}>{this.props.text}</button>
         )
     }
 }
