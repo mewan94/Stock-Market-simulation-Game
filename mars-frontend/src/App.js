@@ -3,7 +3,7 @@ import Routes from "./Routes";
 import { authUser } from "./libes/auth";
 import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import './styles/App.css';
+import './assets/styles/App.css';
 import fire from './config/firebase';
 
 class App extends Component {
