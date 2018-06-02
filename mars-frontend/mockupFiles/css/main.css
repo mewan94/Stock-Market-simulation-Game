@@ -8,8 +8,11 @@
 body, html {
   height: 100%; }
 
+button:focus {
+  outline: none; }
+
 /************************/
-/*[homepage]*/
+/*[common restyle]*/
 /*********[additional background margin padding]**********/
 .background {
   padding: 0;
@@ -67,18 +70,6 @@ body, html {
 .margin-reduced {
   margin-top: -10%; }
 
-/*********[game title & slogan styles]**********/
-.main-title, .slogan {
-  color: #fff;
-  font-size: 50pt;
-  font-weight: 300;
-  letter-spacing: 2px; }
-
-.slogan {
-  font-size: 14pt;
-  margin-top: -1%;
-  letter-spacing: 1px; }
-
 /*********[primary button style]**********/
 .primary-button, .about-button, .help-button {
   border: solid 3px white;
@@ -95,6 +86,20 @@ body, html {
   background: transparent;
   box-shadow: 0 2px 8px #3a3939;
   /*@include bg-gradiant($second-color,$prime-color);*/ }
+
+/************************/
+/*[homepage]*/
+/*********[game title & slogan styles]**********/
+.main-title, .slogan {
+  color: #fff;
+  font-size: 50pt;
+  font-weight: 300;
+  letter-spacing: 2px; }
+
+.slogan {
+  font-size: 14pt;
+  margin-top: -1%;
+  letter-spacing: 1px; }
 
 .about-button {
   background: #EE8550;
@@ -151,5 +156,8 @@ button:focus {
   height: auto;
   margin: -20% 15% 0;
   z-index: -2; }
+
+/************************/
+/*[homepage]*/
 
 /*# sourceMappingURL=main.css.map */

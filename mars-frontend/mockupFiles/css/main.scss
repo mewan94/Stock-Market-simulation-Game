@@ -5,6 +5,14 @@
 @import "restyle";
 
 /************************/
+/*[common restyle]*/
+@import "common";
+
+/************************/
 /*[homepage]*/
-@import "home"
+@import "home";
+
+/************************/
+/*[homepage]*/
+@import "popup";
 

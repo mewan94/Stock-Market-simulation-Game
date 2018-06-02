@@ -1,51 +1,5 @@
 @import "variables";
 
- /*********[additional background margin padding]**********/
-.background{
-	padding:0;
-	marging:0;
-}
-
-/*********[adding the fill image to the wave path]**********/
-.wave{
-   	fill: url("#img1");
-   	z-index:-2;
-   	position:fixed;
-   	top:0;
-   	left:0;
-}
-.svg-container{
-	position:relative;
-}
-
-/****[make a div absolute in center to put the elements in front of svg]*****/
-.center{
-    position: absolute;
-    left: 0;
-    top: 15%;
-    width: 100%;
-    text-align: center;
-    font-size: 18px;
-    z-index:3;
-}
-
-/*********[create flex containers]**********/
-.container-home-vertical{
-	@include flex-box(center,center,column,100%);
-}
-.container-home-horizontal{
-	@include flex-box(center,center,row,100%);
-}
-.content-half-width{
-	@include flex-box(center,center,row,50%);
-}
-.justify-left{
-	justify-content:flex-end;
-}
-.margin-reduced{
-	margin-top:-10%;
-}
-
 /*********[game title & slogan styles]**********/
 .main-title{
 	color:$sec-text-color;
@@ -58,24 +12,6 @@
 	font-size:14pt;
 	margin-top:-1%;
 	letter-spacing:1px;
-}
-
-/*********[primary button style]**********/
-.primary-button{
-	border: solid 3px white;
-    border-radius: 100px;
-    color: #fff;
-    padding: 8px 80px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14pt;
-    margin-top: 20%;
-    cursor: pointer;
-    font-weight:300;
-    background:transparent;
-    box-shadow: 0 2px 8px #3a3939;
-    /*@include bg-gradiant($second-color,$prime-color);*/
 }
 .about-button{
 	@extend .primary-button;
@@ -110,7 +46,6 @@
 button:focus{
 	outline:none;
 }
-
 
 /********[background image]********/
 .art{
