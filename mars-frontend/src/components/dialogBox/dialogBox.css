@@ -1,0 +1,205 @@
+.container-center-align {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  background-color: orangered;
+  height: 100vh;
+  position: relative; }
+
+/*********[dialog-box content sceloton]**********/
+.dialog-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 700px;
+  background-color: #fff;
+  max-height: 80vh;
+  height: 450px;
+  border-radius: 32px;
+  margin: 0;
+  padding: 0;
+  position: absolute; }
+
+.bg-wave {
+  background-image: url("../../assets/imgs/smallwave.png");
+  background-repeat: no-repeat;
+  background-size: 101%;
+  width: 100%;
+  height: 55%;
+  max-height: 55%;
+  margin-top: 29%;
+  box-sizing: border-box;
+  z-index: 2;
+  border-radius: 0 0 30px 30px;
+  position: absolute; }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: nowrap;
+  z-index: 3;
+  margin: 0; }
+
+.adjest-height {
+  height: 60%; }
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+.small-wave::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 50%;
+  padding: 2% 0 2% 3%; }
+
+.content-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 50%;
+  /****[button-1]****/
+  /****[button-2]****/
+  /****[Home button]****/ }
+  .content-center img {
+    width: 90%;
+    object-fit: cover;
+    padding: 5% 17% 0 0; }
+  .content-center a[type="b1"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 70%;
+    box-sizing: border-box;
+    border: solid 2px white;
+    border-radius: 100px;
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14pt;
+    text-align: center;
+    text-decoration: none;
+    background: transparent; }
+  .content-center a[type="b1"]:hover {
+    background-color: #fff;
+    color: #E24A4A;
+    font-weight: 300; }
+  .content-center a[type="b2"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 70%;
+    box-sizing: border-box;
+    border: solid 2px white;
+    border-radius: 100px;
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14pt;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
+    background-color: #fff;
+    color: #E24A4A; }
+  .content-center a[type="b2"]:hover {
+    background: transparent;
+    color: #fff;
+    font-weight: 300; }
+  .content-center a[type="b3"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 60%;
+    box-sizing: border-box;
+    border: solid 2px white;
+    border-radius: 100px;
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14pt;
+    text-align: center;
+    text-decoration: none;
+    background: transparent; }
+  .content-center a[type="b3"]:hover {
+    background-color: #fff;
+    color: #E24A4A;
+    font-weight: 300; }
+
+.bottom-align {
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 110px 30px 0 0; }
+
+.title, .main-title, .secondary-title {
+  color: #E24A4A;
+  font-weight: 400;
+  margin: 0; }
+
+.main-title {
+  font-size: 32pt; }
+
+.secondary-title {
+  font-size: 12pt;
+  letter-spacing: 0.3px; }
+
+/*********[dialog-box content sceloton]**********/
+.dialog-button {
+  border: solid 2px white;
+  border-radius: 100px;
+  color: #fff;
+  padding: 8px 20%;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14pt;
+  cursor: pointer;
+  font-weight: 100;
+  background: transparent; }
+
+.hidden {
+  display: none; }
+
+input {
+  border: none;
+  border-bottom: 2px solid #8D8D8D; }
+
+input:focus {
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #E24A4A; }
+
+input::placeholder {
+  color: #E24A4A; }
+
+input:focus::placeholder {
+  font-size: 6pt;
+  padding: 0 0 20px 0; }
