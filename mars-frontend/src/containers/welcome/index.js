@@ -30,7 +30,7 @@ class Welcome extends Component {
                             <h6 className="slogan">Be the stock market hero!</h6>
                         </div>
                         <div className="container-home">
-                            <button className="primary-button">Start Game</button>
+                            <Button text="Start Game"/>
                         </div>
 
                     </div>

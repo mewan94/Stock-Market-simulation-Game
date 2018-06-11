@@ -1,9 +1,9 @@
 import React , {Component} from 'react';
-
+import DialogBox from '../../components/dialogBox';
 class Game extends Component{
     render(){
         return(
-            <h3>Game</h3>
+            <DialogBox/>
         )
     }
 }

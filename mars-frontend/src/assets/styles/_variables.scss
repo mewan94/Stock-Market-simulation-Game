@@ -21,3 +21,18 @@ $font:'roboto';
 	flex-direction:$flex-derection;
 	width:$width;
 }
+
+@mixin button($width){
+	@include flex-box(center,center,row,$width);
+	box-sizing:border-box;
+	border: solid 2px white;
+	border-radius: 100px;
+	padding: 8px;
+	cursor: pointer;
+	color: #fff;
+	font-weight:300;
+	font-size: 14pt;
+	text-align: center;
+	text-decoration: none;
+	background:transparent;
+}
