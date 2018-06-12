@@ -3,7 +3,7 @@ import './button.css';
 
 class AButton extends Component{
     render(){
-        let type = this.props.type;
+        let { type } = this.props;
 
         if(this.props.type){
             switch (this.props.type){
@@ -21,8 +21,7 @@ class AButton extends Component{
         }
 
         return(
-            // <button id="but" className={classname}>{this.props.text}</button>
-            <a href="#" type={type}>{this.props.text}</a>
+            <a type={type}>{this.props.text}</a>
         )
     }
 }

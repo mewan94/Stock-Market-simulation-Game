@@ -3,10 +3,10 @@ import './button.css';
 
 class Button extends Component{
     render(){
+        let { type, isLink } = this.props;
         let classname = 'primary-button';
-
-        if(this.props.type){
-            switch (this.props.type){
+        if(type){
+            switch (type){
                 case 1:
                     classname = "about-button";
                     break;
@@ -20,9 +20,15 @@ class Button extends Component{
             }
         }
 
-        return(
-            <button id="but" className={classname}>{this.props.text}</button>
-        )
+        if(isLink){
+            return(
+                <a type={type} onClick={this.props.onclick}>{this.props.text}</a>
+            )
+        }else{
+            return(
+                <button className={classname} onClick={this.props.onclick}>{this.props.text}</button>
+            )
+        }
     }
 }
 

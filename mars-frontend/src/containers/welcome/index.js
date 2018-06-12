@@ -2,13 +2,36 @@ import React, { Component } from 'react';
 import { Button } from '../../components/common';
 import image1 from '../../assets/imgs/backgroundimg.png';
 import image2 from '../../assets/imgs/bgart.png';
-import { GAME_TYPES, MULTIPLAYER_JOIN_TYPES} from "../../types/common";
+import DialogBox from "../../components/dialogBox/index";
+import Step1 from "./step1";
 
 class Welcome extends Component {
+
+    constructor(props){
+        super(props);
+        this.state={
+            isPopupOpen:false
+        }
+    }
+
+    _openPopup = () => {
+        this.setState({
+            isPopupOpen:true
+        })
+    };
+
+    _closePopUp = () => {
+        this.setState({
+            isPopupOpen:false
+        })
+    };
 
     render() {
         return (
             <div className="background">
+                {this.state.isPopupOpen && <DialogBox>
+                    <Step1 close={this._closePopUp.bind(this)}/>
+                </DialogBox>}
                 <div className="svg-container">
                     {/*// svg path with image (which creates the wave effect in background) xmlns="http://www.w3.org/2000/svg"*/}
                     <svg viewBox="0 0 1920 786.027">
@@ -30,14 +53,14 @@ class Welcome extends Component {
                             <h6 className="slogan">Be the stock market hero!</h6>
                         </div>
                         <div className="container-home">
-                            <Button text="Start Game"/>
+                            <Button text="Start Game" onclick={this._openPopup.bind(this)}/>
                         </div>
 
                     </div>
                 </div>
                 <div className="container-home-horizontal margin-reduced">
                     <div className="content-half-width">
-                        <img src={image2} className="art"/>
+                        <img src={image2} className="art" alt=""/>
                     </div>
                     <div className="content-half-width justify-left">
                         <Button text="About Game" type={1}/>
