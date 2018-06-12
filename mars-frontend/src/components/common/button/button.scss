@@ -1,0 +1,52 @@
+@import '../../../assets/styles/_variables';
+
+/*********[primary button style]**********/
+.primary-button{
+	border: solid 2px white;
+    border-radius: 100px;
+    color: #fff;
+    padding: 8px 80px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14pt;
+    margin-top: 20%;
+    cursor: pointer;
+    font-weight:300;
+    background:transparent;
+    box-shadow: 0 2px 8px #3a3939;
+    /*@include bg-gradiant($second-color,$prime-color);*/
+}
+.about-button{
+	@extend .primary-button;
+	@include bg-gradiant($second-color,$prime-color);
+	padding: 8px 40px;
+	border:none;
+	box-shadow:none;
+	margin-right:20px;
+}
+.help-button{
+	@extend .primary-button;
+	padding: 6px 38px;
+	border: solid 2px $ash-color;
+	color:$ash-color;
+	box-shadow:none;
+	margin-right:30px;
+}
+/********[buttons :hover]********/
+.primary-button:hover{
+	@include bg-gradiant($second-color,$prime-color);		
+}
+.about-button:hover{
+	border: solid 2px $ash-color;
+	color:$ash-color;
+	padding: 6px 38px;
+	background:transparent;
+}
+.help-button:hover{
+	border: solid 2px transparent;
+	color:white;
+}
+button{
+	outline:none;
+}
