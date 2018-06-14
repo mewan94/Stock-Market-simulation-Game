@@ -22,7 +22,7 @@ class Button extends Component{
 
         if(isLink){
             return(
-                <a type={type} onClick={this.props.onclick}>{this.props.text}</a>
+                <a type={type} onClick={this.props.onclick} href={this.props.href}>{this.props.text}</a>
             )
         }else{
             return(
