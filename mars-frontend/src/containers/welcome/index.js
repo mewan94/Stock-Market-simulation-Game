@@ -4,7 +4,6 @@ import image1 from '../../assets/imgs/backgroundimg.png';
 import image2 from '../../assets/imgs/bgart.png';
 import DialogBox from "../../components/dialogBox/index";
 import Step1 from "./step1";
-import { Dialog } from '@material-ui/core';
 
 class Welcome extends Component {
 
@@ -30,9 +29,6 @@ class Welcome extends Component {
     render() {
         return (
             <div className="background">
-                {/* {this.state.isPopupOpen && <DialogBox>
-                    <Step1 close={this._closePopUp.bind(this)}/>
-                </DialogBox>} */}
                 <div className="svg-container">
                     {/*// svg path with image (which creates the wave effect in background)*/}
                     <svg viewBox="0 0 1920 786.027">
@@ -56,7 +52,7 @@ class Welcome extends Component {
                         <div className="button-container">
                             {/* <Button text="Start Game" onclick={this._openPopup.bind(this)}/> */}
                             {/* changed by Sanira to make dialog box pop-up */}
-                            <Button text={"Start Game"} type={"b1"} isLink={"true"} href={"#dialog"}/>
+                            <Button text={"Start Game"} type={"b1"} isLink={"true"} onclick={this._openPopup.bind(this)}/>
                         </div>
 
                     </div>
@@ -73,9 +69,9 @@ class Welcome extends Component {
 
                 {/* make pop up dialog */}
                 <div>
-                    <DialogBox id={"dialog"}>
+                    {this.state.isPopupOpen && <DialogBox id={"dialog"}>
                         <Step1 close={this._closePopUp.bind(this)}/>
-                    </DialogBox>
+                    </DialogBox>}
                 </div>
             </div>
         )

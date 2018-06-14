@@ -32,9 +32,7 @@ class Step1 extends Component{
                         <Button text="Join To Existing" type={"b2"} isLink="true" href={"#"}/>
                     </div>
                     <div className="content-center bottom-align">
-                        {/* <Button text="Home" type={"b3"} isLink="true" onclick={close} /> */}
-                        {/* changed by Sanira */}
-                        <Button text="Home" type={"b3"} isLink="true" href={"#"}/>
+                        <Button text="Home" type={"b3"} isLink="true" onclick={close}/>
                     </div>
                 </div>
             </React.Fragment>
