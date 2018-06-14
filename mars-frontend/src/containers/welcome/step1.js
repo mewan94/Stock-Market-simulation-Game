@@ -18,7 +18,7 @@ class Step1 extends Component{
                             <h2 className="dialog-secondary-title">{description}</h2>
                         </div>
                         <div className="content-container">
-                            <Input type="password" text="Enter Your Nick Name"/>
+                            <Input type="text" text="Enter Your Nick Name"/>
                         </div>
                     </div>
                     <div className="content-center">
