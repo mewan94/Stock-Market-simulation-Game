@@ -68,3 +68,21 @@
 	height:auto;
 	margin: -20% 15% 0;
 }
+
+/********[background image]********/
+.button-container{
+	@include flex-box(center,center,column,18%);
+	padding-top:30px;
+
+	a[type="b1"]{
+		@include button(100%);
+		// background-color: #fff;
+		// color:$second-color;
+		// font-weight:400;
+	}
+	a[type="b1"]:hover{
+		background-color: #fff;
+		color:$second-color;
+		font-weight:400;
+	}
+}

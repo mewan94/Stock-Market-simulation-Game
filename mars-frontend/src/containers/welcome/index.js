@@ -4,6 +4,7 @@ import image1 from '../../assets/imgs/backgroundimg.png';
 import image2 from '../../assets/imgs/bgart.png';
 import DialogBox from "../../components/dialogBox/index";
 import Step1 from "./step1";
+import { Dialog } from '@material-ui/core';
 
 class Welcome extends Component {
 
@@ -29,11 +30,11 @@ class Welcome extends Component {
     render() {
         return (
             <div className="background">
-                {this.state.isPopupOpen && <DialogBox>
+                {/* {this.state.isPopupOpen && <DialogBox>
                     <Step1 close={this._closePopUp.bind(this)}/>
-                </DialogBox>}
+                </DialogBox>} */}
                 <div className="svg-container">
-                    {/*// svg path with image (which creates the wave effect in background) xmlns="http://www.w3.org/2000/svg"*/}
+                    {/*// svg path with image (which creates the wave effect in background)*/}
                     <svg viewBox="0 0 1920 786.027">
                         <defs>
                             {/*// image included inside the wave path*/}
@@ -52,8 +53,10 @@ class Welcome extends Component {
                             <h1 className="game-name">Stock Mania</h1>
                             <h6 className="slogan">Be the stock market hero!</h6>
                         </div>
-                        <div className="container-home">
-                            <Button text="Start Game" onclick={this._openPopup.bind(this)}/>
+                        <div className="button-container">
+                            {/* <Button text="Start Game" onclick={this._openPopup.bind(this)}/> */}
+                            {/* changed by Sanira to make dialog box pop-up */}
+                            <Button text={"Start Game"} type={"b1"} isLink={"true"} href={"#dialog"}/>
                         </div>
 
                     </div>
@@ -66,6 +69,13 @@ class Welcome extends Component {
                         <Button text="About Game" type={1}/>
                         <Button text="How to play" type={2}/>
                     </div>
+                </div>
+
+                {/* make pop up dialog */}
+                <div>
+                    <DialogBox id={"dialog"}>
+                        <Step1 close={this._closePopUp.bind(this)}/>
+                    </DialogBox>
                 </div>
             </div>
         )

@@ -27,12 +27,14 @@ class Step1 extends Component{
                 </div>
                 <div className="row">
                     <div className="content-center">
-                        <Button text="Create New Game" type={"b1"} isLink="true"/>
+                        <Button text="Create New Game" type={"b1"} isLink="true" href={"#"}/>
                         <br/>
-                        <Button text="Join To Existing" type={"b2"} isLink="true"/>
+                        <Button text="Join To Existing" type={"b2"} isLink="true" href={"#"}/>
                     </div>
                     <div className="content-center bottom-align">
-                        <Button text="Home" type={"b3"} isLink="true" onclick={close}/>
+                        {/* <Button text="Home" type={"b3"} isLink="true" onclick={close} /> */}
+                        {/* changed by Sanira */}
+                        <Button text="Home" type={"b3"} isLink="true" href={"#"}/>
                     </div>
                 </div>
             </React.Fragment>
