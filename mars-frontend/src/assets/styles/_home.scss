@@ -3,7 +3,7 @@
  /*********[additional background margin padding]**********/
 .background{
 	padding:0;
-	marging:0;
+	margin:0;
 	background-color: white;
 	width:100%;
 	height:100vh;
@@ -50,14 +50,14 @@
 }
 
 /*********[game title & slogan styles]**********/
-.main-title{
+.game-name{
 	color:$sec-text-color;
 	font-size:50pt;
-	font-weight:300;
+	font-weight:100;
 	letter-spacing:2px;
 }
 .slogan{
-	@extend .main-title;
+	@extend .game-name;
 	font-size:14pt;
 	margin-top:-1%;
 	letter-spacing:1px;

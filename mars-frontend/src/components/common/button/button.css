@@ -11,9 +11,7 @@
   margin-top: 20%;
   cursor: pointer;
   font-weight: 300;
-  background: transparent;
-  box-shadow: 0 2px 8px #3a3939;
-  /*@include bg-gradiant($second-color,$prime-color);*/ }
+  background: transparent; }
 
 .about-button {
   background: #EE8550;
@@ -63,3 +61,81 @@
 
 button {
   outline: none; }
+
+/********[anchor tag button]********/
+/****[button-1]****/
+a[type="b1"] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 70%;
+  box-sizing: border-box;
+  border: solid 2px white;
+  border-radius: 100px;
+  padding: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14pt;
+  text-align: center;
+  text-decoration: none;
+  background: transparent; }
+
+a[type="b1"]:hover {
+  background-color: #fff;
+  color: #E24A4A;
+  font-weight: 300; }
+
+/****[button-2]****/
+a[type="b2"] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 70%;
+  box-sizing: border-box;
+  border: solid 2px white;
+  border-radius: 100px;
+  padding: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14pt;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  background-color: #fff;
+  color: #E24A4A; }
+
+a[type="b2"]:hover {
+  background: transparent;
+  color: #fff;
+  font-weight: 300; }
+
+/****[Home button]****/
+a[type="b3"] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 60%;
+  box-sizing: border-box;
+  border: solid 2px white;
+  border-radius: 100px;
+  padding: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14pt;
+  text-align: center;
+  text-decoration: none;
+  background: transparent; }
+
+a[type="b3"]:hover {
+  background-color: #fff;
+  color: #E24A4A;
+  font-weight: 300; }

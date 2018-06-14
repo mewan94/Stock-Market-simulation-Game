@@ -49,7 +49,7 @@ class Welcome extends Component {
                     {/*// center button and name*/}
                     <div className="center container-home-vertical">
                         <div className="container-home">
-                            <h1 className="main-title">Stock Mania</h1>
+                            <h1 className="game-name">Stock Mania</h1>
                             <h6 className="slogan">Be the stock market hero!</h6>
                         </div>
                         <div className="container-home">

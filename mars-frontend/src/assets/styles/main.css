@@ -13,7 +13,7 @@ body, html {
 /*********[additional background margin padding]**********/
 .background {
   padding: 0;
-  marging: 0;
+  margin: 0;
   background-color: white;
   width: 100%;
   height: 100vh; }
@@ -71,10 +71,10 @@ body, html {
   margin-top: -10%; }
 
 /*********[game title & slogan styles]**********/
-.main-title, .slogan {
+.game-name, .slogan {
   color: #fff;
   font-size: 50pt;
-  font-weight: 300;
+  font-weight: 100;
   letter-spacing: 2px; }
 
 .slogan {
