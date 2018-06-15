@@ -4,13 +4,18 @@ import image1 from '../../assets/imgs/backgroundimg.png';
 import image2 from '../../assets/imgs/bgart.png';
 import DialogBox from "../../components/dialogBox/index";
 import Step1 from "./step1";
+import { GAME_JOIN_MODE } from  "../../types/common";
+import Step2 from "./step2";
 
 class Welcome extends Component {
 
     constructor(props){
         super(props);
         this.state={
-            isPopupOpen:false
+            isPopupOpen:true,
+            userName: 'sds',
+            gameStartMode:1,
+            step:null
         }
     }
 
@@ -23,6 +28,26 @@ class Welcome extends Component {
     _closePopUp = () => {
         this.setState({
             isPopupOpen:false
+        })
+    };
+
+    _getName = (name) => {
+        this.setState({
+            userName:name
+        })
+    };
+
+    _getStartMode = (GameMode) => {
+        if(this.state.userName !== ''){
+            this.setState({
+                gameStartMode:GameMode
+            })
+        }
+    };
+
+    _getStep = (step) => {
+        this.setState({
+            step: step
         })
     };
 
@@ -69,8 +94,9 @@ class Welcome extends Component {
 
                 {/* make pop up dialog */}
                 <div>
-                    {this.state.isPopupOpen && <DialogBox id={"dialog"}>
-                        <Step1 close={this._closePopUp.bind(this)}/>
+                    {this.state.isPopupOpen && <DialogBox>
+                        {this.state.gameStartMode === null && <Step1 close={this._closePopUp.bind(this)} submit={this._getName.bind(this)} getMode={this._getStartMode.bind(this)}/>}
+                        {this.state.gameStartMode === GAME_JOIN_MODE.CREATE && this.state.userName !== null && <Step2 close={this._closePopUp.bind(this)}/>}
                     </DialogBox>}
                 </div>
             </div>
