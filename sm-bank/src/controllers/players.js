@@ -12,7 +12,13 @@ export class PlayerController {
   }
 
   getPlayer(name) {
-    return this.playerList.find(p => p.name==name)
+    const Player = this.playerList.find(p => p.name==name)
+    if(Player){
+      return player;
+    }
+    else{
+      return error="No such player";
+    }
   }
 
 }
