@@ -1,0 +1,121 @@
+/************************/
+/*[main tag restyle]*/
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "roboto"; }
+
+body, html {
+  height: 100%; }
+
+/************************/
+/*[homepage]*/
+/*********[additional background margin padding]**********/
+.background {
+  padding: 0;
+  margin: 0;
+  background-color: white;
+  width: 100%;
+  height: 100vh; }
+
+/*********[adding the fill image to the wave path]**********/
+.wave {
+  fill: url("#img1");
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+.svg-container {
+  position: relative; }
+
+/****[make a div absolute in center to put the elements in front of svg]*****/
+.center {
+  position: absolute;
+  left: 0;
+  top: 15%;
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  z-index: 3; }
+
+/*********[create flex containers]**********/
+.container-home-vertical {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%; }
+
+.container-home-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%; }
+
+.content-half-width {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 50%; }
+
+.justify-left {
+  justify-content: flex-end; }
+
+.margin-reduced {
+  margin-top: -10%; }
+
+/*********[game title & slogan styles]**********/
+.game-name, .slogan {
+  color: #fff;
+  font-size: 50pt;
+  font-weight: 100;
+  letter-spacing: 2px; }
+
+.slogan {
+  font-size: 14pt;
+  margin-top: -1%;
+  letter-spacing: 1px; }
+
+/********[background image]********/
+.art {
+  width: 300px;
+  height: auto;
+  margin: -20% 15% 0; }
+
+/********[background image]********/
+.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 18%;
+  padding-top: 30px; }
+  .button-container a[type="b1"] {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 2px white;
+    border-radius: 100px;
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14pt;
+    text-align: center;
+    text-decoration: none;
+    background: transparent; }
+  .button-container a[type="b1"]:hover {
+    background-color: #fff;
+    color: #EE8550;
+    font-weight: 400; }

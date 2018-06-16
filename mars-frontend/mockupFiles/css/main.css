@@ -2,7 +2,7 @@
 /*[main tag restyle]*/
 * {
   padding: 0;
-  marging: 0;
+  margin: 0;
   font-family: "roboto"; }
 
 body, html {
@@ -10,16 +10,12 @@ body, html {
 
 /************************/
 /*[homepage]*/
-/**
- * additional background margin padding
- */
+/*********[additional background margin padding]**********/
 .background {
   padding: 0;
   marging: 0; }
 
-/**
- * adding the fill image to the wave path
- */
+/*********[adding the fill image to the wave path]**********/
 .wave {
   fill: url("#img1");
   z-index: -2;
@@ -27,54 +23,104 @@ body, html {
   top: 0;
   left: 0; }
 
-.scg-container {
+.svg-container {
   position: relative; }
 
+/****[make a div absolute in center to put the elements in front of svg]*****/
 .center {
   position: absolute;
   left: 0;
   top: 15%;
   width: 100%;
   text-align: center;
-  font-size: 18px; }
+  font-size: 18px;
+  z-index: 3; }
 
-.flex-box-col {
+/*********[create flex containers]**********/
+.container-home-vertical {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  aling-items: center;
-  flex-direction: column; }
-
-.content {
-  diplay: inherit;
+  align-items: center;
+  flex-direction: column;
   width: 100%; }
 
-.game-name, .slogan {
+.container-home-horizontal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 100%; }
+
+.content-half-width {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 50%; }
+
+.justify-left {
+  justify-content: flex-end; }
+
+.margin-reduced {
+  margin-top: -10%; }
+
+/*********[game title & slogan styles]**********/
+.main-title, .slogan {
   color: #fff;
   font-size: 50pt;
-  font-weight: 300; }
+  font-weight: 300;
+  letter-spacing: 2px; }
 
 .slogan {
   font-size: 14pt;
-  margin-top: -10px; }
+  margin-top: -1%;
+  letter-spacing: 1px; }
 
-.primary-button {
+/*********[primary button style]**********/
+.primary-button, .about-button, .help-button {
   border: solid 3px white;
   border-radius: 100px;
   color: #fff;
-  padding: 8px 60px;
+  padding: 8px 80px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 14pt;
-  margin-top: 5%;
+  margin-top: 20%;
   cursor: pointer;
   font-weight: 300;
   background: transparent;
   box-shadow: 0 2px 8px #3a3939;
   /*@include bg-gradiant($second-color,$prime-color);*/ }
 
-.primary-button:hover {
+.about-button {
+  background: #EE8550;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #EE8550, #E24A4A);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #EE8550, #E24A4A);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #EE8550, #E24A4A);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #EE8550, #E24A4A);
+  /* Standard syntax (must be last) */
+  padding: 8px 40px;
+  border: none;
+  box-shadow: none;
+  margin-right: 20px; }
+
+.help-button {
+  padding: 6px 38px;
+  border: solid 2px #8D8D8D;
+  color: #8D8D8D;
+  box-shadow: none;
+  margin-right: 30px; }
+
+/********[buttons :hover]********/
+.primary-button:hover, .about-button:hover, .help-button:hover {
   background: #EE8550;
   /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left top, #EE8550, #E24A4A);
@@ -86,24 +132,21 @@ body, html {
   background: linear-gradient(to bottom right, #EE8550, #E24A4A);
   /* Standard syntax (must be last) */ }
 
-.position-under {
-  z-index: -2;
-  position: absolute;
-  margin-top: -22%;
-  margin-left: 10%; }
+.about-button:hover {
+  border: solid 2px #8D8D8D;
+  color: #8D8D8D;
+  padding: 6px 38px;
+  background: transparent; }
 
-.flex-box-row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
+.help-button:hover {
+  border: solid 2px transparent;
+  color: white; }
 
-.img-container {
-  display: inherit;
-  width: 10%;
-  padding: 10px;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-height: 500px; }
+/********[background image]********/
+.art {
+  width: 300px;
+  height: auto;
+  margin: -20% 15% 0;
+  z-index: -2; }
 
 /*# sourceMappingURL=main.css.map */
