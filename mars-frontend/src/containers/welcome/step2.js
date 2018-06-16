@@ -5,6 +5,20 @@ import './step2.css';
 import SinglePlayer from "../../components/welcome/singlePlayer";
 
 class Step2 extends Component{
+
+    constructor(props){
+        super(props);
+        this.state={
+            isDialogOpen:false
+        }
+    }
+
+    _getStep = () => {
+        if(this.props.getStep){
+            this.props.getStep(1);
+        }
+    };
+
     render(){
         let title = "initiating...";
         let description = "Waiting for the host to start the game. \n Minimum 3 players are required to play";
@@ -44,7 +58,7 @@ class Step2 extends Component{
                 </div>
                 <div className="row">
                     <div className="content-center">
-                        <Button text="Start" type={"b1"} isLink="true" />
+                        <Button text="Start" type={"b1"} isLink="true" onclick={this._getStep.bind(this)}/>
                         <br/>
                         <Button text="Add AI Player" type={"b2"} isLink="true" />
                     </div>

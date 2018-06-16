@@ -1,20 +1,22 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import { Button } from '../../components/common';
 import image1 from '../../assets/imgs/backgroundimg.png';
 import image2 from '../../assets/imgs/bgart.png';
 import DialogBox from "../../components/dialogBox/index";
 import Step1 from "./step1";
-import { GAME_JOIN_MODE } from  "../../types/common";
+import { GAME_JOIN_MODE } from "../../types/common";
 import Step2 from "./step2";
+import { userRegistration } from '../../actions/user';
 
 class Welcome extends Component {
 
     constructor(props){
         super(props);
         this.state={
-            isPopupOpen:true,
-            userName: 'sds',
-            gameStartMode:1,
+            isPopupOpen:false,
+            userName: '',
+            gameStartMode:null,
             step:null
         }
     }
@@ -46,6 +48,9 @@ class Welcome extends Component {
     };
 
     _getStep = (step) => {
+        if(this.state.userName !== '' && this.state.gameStartMode === GAME_JOIN_MODE.CREATE && step !== 1){
+
+        }
         this.setState({
             step: step
         })
@@ -96,7 +101,7 @@ class Welcome extends Component {
                 <div>
                     {this.state.isPopupOpen && <DialogBox>
                         {this.state.gameStartMode === null && <Step1 close={this._closePopUp.bind(this)} submit={this._getName.bind(this)} getMode={this._getStartMode.bind(this)}/>}
-                        {this.state.gameStartMode === GAME_JOIN_MODE.CREATE && this.state.userName !== null && <Step2 close={this._closePopUp.bind(this)}/>}
+                        {this.state.gameStartMode === GAME_JOIN_MODE.CREATE && this.state.userName !== null && <Step2 close={this._closePopUp.bind(this)} getStep={this._getStep.bind(this)}/>}
                     </DialogBox>}
                 </div>
             </div>
@@ -104,4 +109,11 @@ class Welcome extends Component {
     }
 }
 
-export default Welcome;
+export default connect(
+    state => {
+        return {
+            user: state.user
+        }
+    }
+
+)(Welcome);
