@@ -27,10 +27,15 @@ export class PlayerController {
     const token = jwt.sign(player, config.jwtSecret);
     return token;
   }
-  executeTransaction(token,type){
-   token=jwt.decode(token);
-   return token.name
+  executeTransaction(token,type,amount){
+   let p=jwt.decode(token);
+   
+  let player = this.getPlayer(player.name);
+   if(type="withdraw"){
+      player.withdraw(amount);
+   }
+   else{
+     player.deposit(amount);
+   }
   }
-  
-
 }

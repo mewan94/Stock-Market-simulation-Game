@@ -4,9 +4,7 @@ import { PlayerController } from "../controllers/players";
 const router = express.Router();
 const playerController = new PlayerController();
 
-router.get('/', (req, res) => {
-  res.send('hello');
-});
+
 
 router.post('/', (req, res) => {
   const p = playerController.createPlayer(req.body.name); 
@@ -14,9 +12,13 @@ router.post('/', (req, res) => {
   res.json(token); 
 })
 
-router.post('/', (req, res) => {
-  const transaction = playerController.executeTransaction(req.body.token,req.body.type); 
+router.post('/transaction', (req, res) => {
+  const transaction = playerController.executeTransaction(req.body.token,req.body.type,req,req.body.amount); 
   res.json(transaction); 
 })
+
+router.get('/:name', (req, res) => {
+ const player=playerController.getPlayer(req.param.name);
+});
 
 export default router;
