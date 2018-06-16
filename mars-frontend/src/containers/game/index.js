@@ -5,9 +5,9 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Header from "./header";
 import Sectors from "./sectors";
+import LeaderBoard from "./leaderBoard";
 import TablePaginationActions from "./companies"
 import Lister from '../../components/gameBoard/listItem/listItem';
-import LeaderBoard from './leaderBoard';
 
 const styles = theme => ({
     root: {
@@ -36,7 +36,7 @@ function FullWidthGrid(props) {
                     <TablePaginationActions/>
                 </Grid>
                 <Grid item xs={12} sm={3}>
-                   <LeaderBoard/>
+                    <LeaderBoard/>
                 </Grid>
                 <Grid item xs={6} sm={9}>
                     <Paper className={classes.paper}>xs=6 sm=3</Paper>
