@@ -9,14 +9,14 @@ export class Player {
     }
 
     setBalance(netBalance) {
-        netBalance = this.balance;
+        this.balance = netBalance;
     }
 
     withdraw(requestedAmount) {
         if (requestedAmount < this.balance) {
             this.balance - requestedAmount;
         } else {
-            return error = "This requested amount is not No Need";
+            return error = "This requested amount is cannot proceed";
         }
     }
 
