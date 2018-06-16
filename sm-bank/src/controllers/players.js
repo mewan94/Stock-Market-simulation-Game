@@ -17,8 +17,7 @@ export class PlayerController {
       return player;
     }
     else{
-      return error="No such player";
+      return new Error("No Such Player");
     }
   }
-
 }
