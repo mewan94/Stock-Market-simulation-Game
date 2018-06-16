@@ -3,6 +3,7 @@ import config from '../config.json';
 export class PlayerController {
 
   playerList = [];
+  
 
   createPlayer(name) {
     const player = {
@@ -27,5 +28,6 @@ export class PlayerController {
     const token = jwt.sign(player, config.jwtSecret);
     return token;
   }
+  
 
 }
