@@ -10,7 +10,8 @@ router.get('/', (req, res) => {
 
 router.post('/', (req, res) => {
   const p = playerController.createPlayer(req.body.name); 
-  res.json(p); 
+  const token  = playerController.getPlayerToken(p)
+  res.json(token); 
 })
 
 export default router;

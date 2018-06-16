@@ -1,3 +1,5 @@
+import * as jwt from 'jsonwebtoken';
+import config from '../config.json';
 export class PlayerController {
 
   playerList = [];
@@ -20,4 +22,10 @@ export class PlayerController {
       return new Error("No Such Player");
     }
   }
+
+  getPlayerToken(player) {
+    const token = jwt.sign(player, config.jwtSecret);
+    return token;
+  }
+
 }
