@@ -4,7 +4,6 @@ export class PlayerController {
 
   playerList = [];
   
-
   createPlayer(name) {
     const player = {
       name: name,
@@ -27,6 +26,10 @@ export class PlayerController {
   getPlayerToken(player) {
     const token = jwt.sign(player, config.jwtSecret);
     return token;
+  }
+  executeTransaction(token,type){
+   token=jwt.decode(token);
+   return token.name
   }
   
 
