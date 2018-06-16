@@ -17,7 +17,7 @@ export const user = (state = initialState, action) => {
         case userTypes.USER_REGISTER_SUCCESS:
             return {
                 ...state,
-                user:jwt.verify(action.payload, 'abcd'),
+                //user:jwt.verify(action.payload, 'abcd'),
                 fetching: false
             };
         case userTypes.USER_REGISTER_FAIL:

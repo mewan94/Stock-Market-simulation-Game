@@ -4,6 +4,7 @@ import { Button } from '../../components/common';
 import { Input } from '../../components/common';
 import { GAME_JOIN_MODE } from '../../types/common';
 
+
 class Step1 extends Component{
     render(){
         let title = "Start Game";
@@ -12,6 +13,7 @@ class Step1 extends Component{
 
         return(
             <React.Fragment>
+            
                 <div className="row adjest-height">
                     <div className="content">
                         <div className="content-container">

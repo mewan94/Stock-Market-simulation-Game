@@ -100,6 +100,7 @@ class Welcome extends Component {
                 {/* make pop up dialog */}
                 <div>
                     {this.state.isPopupOpen && <DialogBox>
+                        
                         {this.state.gameStartMode === null && <Step1 close={this._closePopUp.bind(this)} submit={this._getName.bind(this)} getMode={this._getStartMode.bind(this)}/>}
                         {this.state.gameStartMode === GAME_JOIN_MODE.CREATE && this.state.userName !== null && <Step2 close={this._closePopUp.bind(this)} getStep={this._getStep.bind(this)}/>}
                     </DialogBox>}
