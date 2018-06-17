@@ -11,5 +11,8 @@ export class Game{
         Game(playerName);
     }
 
-
+    //getGameid
+    //addplayer
+    //getCurrentTurn
+    //get stock
 }
