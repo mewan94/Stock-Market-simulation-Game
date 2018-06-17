@@ -13,12 +13,13 @@ router.post('/', (req, res) => {
 })
 
 router.post('/transaction', (req, res) => {
-  const transaction = playerController.executeTransaction(req.body.token,req.body.type,req,req.body.amount); 
+  const transaction = playerController.executeTransaction(req.body.token, req.body.type, req.body.amount); 
   res.json(transaction); 
 })
 
-router.get('/:name', (req, res) => {
- const player=playerController.getPlayer(req.param.name);
+router.get('/:id', (req, res) => {
+ const player=playerController.getPlayer(req.params.id);
+ res.json(player);
 });
 
 export default router;
