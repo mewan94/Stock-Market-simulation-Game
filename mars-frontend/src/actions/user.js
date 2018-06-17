@@ -7,7 +7,7 @@ export function userRegistration(name){
         dispatch({type: userTypes.USER_REGISTER});
         axios.post(ROUTES.PLAYER,{"name":name})
             .then(response => {
-                //dispatch({type: userTypes.USER_REGISTER_SUCCESS, payload: response.data})
+                dispatch({type: userTypes.USER_REGISTER_SUCCESS, payload: response.data})
             })
             .catch((err) => {
             console.log(err.message);

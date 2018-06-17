@@ -12,18 +12,21 @@ export const user = (state = initialState, action) => {
         case userTypes.USER_REGISTER:
             return {
                 ...state,
-                fetching: true
+                fetching: true,
+                action: userTypes.USER_REGISTER
             };
         case userTypes.USER_REGISTER_SUCCESS:
             return {
                 ...state,
-                //user:jwt.verify(action.payload, 'abcd'),
-                fetching: false
+                user:jwt.verify(action.payload, 'abcd'),
+                fetching: false,
+                action: userTypes.USER_REGISTER_SUCCESS
             };
         case userTypes.USER_REGISTER_FAIL:
             return {
                 ...state,
-                fetching: false
+                fetching: false,
+                action: userTypes.USER_REGISTER_FAIL
             };
         default:
             return state
