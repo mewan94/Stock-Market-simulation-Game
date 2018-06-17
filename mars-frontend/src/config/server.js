@@ -1,9 +1,11 @@
-//const API= 'http://192.168.8.100:8080/api/';
-const API= 'https://sm-bank.herokuapp.com/api/';
+const APIGame= 'http://192.168.8.100:8080/api/';
+const APIBank= 'https://sm-bank.herokuapp.com/api/';
 module.exports = {
 
     ROUTES: {
-        PLAYER: API + 'player/',
-        GAME: API + 'game/',
+        SOCKET: 'http://192.168.8.100:8080/',
+        PLAYER: APIBank + 'player/',
+        GAME: APIGame + 'game/',
     }
+
 };

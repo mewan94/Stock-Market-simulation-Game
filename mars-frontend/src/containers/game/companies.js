@@ -15,6 +15,7 @@ import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
 import Button from '@material-ui/core/Button';
 import SimpleModalWrapped from '../../components/gameBoard/models/model';
+import {selectOutofArray} from '../../libes/auth';
 
 const actionsStyles = theme => ({
     root: {
@@ -104,7 +105,6 @@ function createData(name, companyid) {
 const styles = theme => ({
     root: {
         width: '100%',
-        marginTop: theme.spacing.unit * 3,
     },
     table: {
         minWidth: 500,
@@ -130,26 +130,23 @@ class CustomPaginationActionsTable extends React.Component {
                 createData('dfbbfgn', 8),
                 createData('hjhghfght', 9),
                 createData('fgdf fgdfg', 10),
-                createData('fggdfgh dghbdtg', 11),
-            ].sort((a, b) => (a.calories < b.calories ? -1 : 1)),
+            ],
             page: 0,
             rowsPerPage: 10,
-            open:false
+            open:false,
+            company:{
+                name:''
+            },
+            popupType:null
         };
     }
-    handleChangePage = (event, page) => {
-        this.setState({ page });
-    };
-    handleChangeRowsPerPage = event => {
-        this.setState({ rowsPerPage: event.target.value });
-    };
-    openModel = () => {
+    openModel = (n, type) => {
         this.setState({
-            open: true
+            open: true,
+            company:n,
+            popupType: type
         })
     };
-
-
 
     render() {
         const { classes } = this.props;
@@ -158,21 +155,21 @@ class CustomPaginationActionsTable extends React.Component {
 
         return (
             <Paper className={classes.root}>
-                <SimpleModalWrapped open={this.state.open}/>
+                <SimpleModalWrapped open={this.state.open} company={this.state.company} type={this.state.popupType}/>
                 <div className={classes.tableWrapper}>
                     <Table className={classes.table}>
                         <TableBody>
-                            {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(n => {
+                            {data.map(n => {
                                 return (
                                     <TableRow key={n.id}>
                                         <TableCell component="th" scope="row">
                                             {n.name}
                                         </TableCell>
                                         <TableCell numeric>
-                                            <Button variant="contained" size="small" color="primary" className={classes.button} onClick={this.openModel.bind(this)}>Buy Stocks</Button>
+                                            <Button variant="contained" size="small" color="primary" className={classes.button} onClick={this.openModel.bind(this,n,'buy')}>Buy Stocks</Button>
                                         </TableCell>
                                         <TableCell numeric>
-                                            <Button variant="contained" size="small" color="secondary" className={classes.button}>Sell Stocks</Button>
+                                            <Button variant="contained" size="small" color="secondary" className={classes.button} onClick={this.openModel.bind(this,n,'sell')}>Sell Stocks</Button>
                                         </TableCell>
                                         <TableCell>
                                             {n.id}
@@ -180,25 +177,8 @@ class CustomPaginationActionsTable extends React.Component {
                                     </TableRow>
                                 );
                             })}
-                            {emptyRows > 0 && (
-                                <TableRow style={{ height: 48 * emptyRows }}>
-                                    <TableCell colSpan={6} />
-                                </TableRow>
-                            )}
                         </TableBody>
-                        <TableFooter>
-                            <TableRow>
-                                <TablePagination
-                                    colSpan={3}
-                                    count={data.length}
-                                    rowsPerPage={rowsPerPage}
-                                    page={page}
-                                    onChangePage={this.handleChangePage}
-                                    onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                                    ActionsComponent={TablePaginationActionsWrapped}
-                                />
-                            </TableRow>
-                        </TableFooter>
+                        <TableFooter/>
                     </Table>
                 </div>
             </Paper>

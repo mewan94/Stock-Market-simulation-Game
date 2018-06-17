@@ -24,7 +24,7 @@ export function userRegistration(name){
 export function startGame() {
     return function (dispatch) {
         dispatch({type: userTypes.CREATE_GAME});
-        axios.post(ROUTES.GAME,localStorage.getItem('userToken'))
+        axios.post(ROUTES.GAME,{"token":localStorage.getItem('userToken')})
             .then(response => {
                 if(response.status === 200){
                     dispatch({type: userTypes.CREATE_GAME_SUCCESS,gameID:response.data})

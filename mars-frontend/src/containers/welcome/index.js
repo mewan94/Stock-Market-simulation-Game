@@ -9,6 +9,7 @@ import { GAME_JOIN_MODE } from "../../types/common";
 import Step2 from "./step2";
 import { userRegistration, startGame } from '../../actions/user';
 import * as AuthActions from '../../types/user';
+import { subscribeToTimer } from '../../api';
 
 class Welcome extends Component {
 
@@ -19,8 +20,12 @@ class Welcome extends Component {
             userName: '',
             gameStartMode:null,
             step:null,
-            gameID:null
-        }
+            gameID:null,
+            timestamp: 'no timestamp yet'
+        };
+        subscribeToTimer((err, timestamp) => this.setState({
+            timestamp
+        }));
     }
 
     _openPopup = () => {
@@ -68,6 +73,7 @@ class Welcome extends Component {
     }
 
     render() {
+        console.log(this.state.timestamp);
         return (
             <div className="background">
                 <div className="svg-container">
