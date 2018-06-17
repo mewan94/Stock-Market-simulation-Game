@@ -3,56 +3,56 @@ import config from '../config.json';
 export class BrokerController {
 
 
-    getStocks(token,gameId) {
-       if(token){
-        axios.post('/games'+gameId+'/stocks', {
-            token:this.token,
-            gameId: this.gameId
-          })
-          .then(function (response) {
-           return response;
-          })
-          .catch(function (error) {
-            return new Error="error occured"
-          });
-       }
-       else{
-           return new Error="Cannot connect to the API"
-       }
+    getStocks(token, gameId) {
+        if (token) {
+            axios.post(config.stockmarketUrl + '/games/' + gameId + '/stocks', {
+                token: token,
+                gameId: gameId
+            })
+                .then(function (response) {
+                    return response;
+                })
+                .catch(function (error) {
+                    return new Error("error occured")
+                });
+        }
+        else {
+            return new Error = ("Cannot connect to the API")
+        }
     }
 
-    buyStocks(token,gameId) {
-        if(token){
-         axios.post('/games'+gameId+'/stocks/buy', {
-             token:this.token,
-             gameId: this.gameId
-           })
-           .then(function (response) {
-            return response;
-           })
-           .catch(function (error) {
-             return new Error="error occured"
-           });
+    buyStocks(token, gameId) {
+        if (token) {
+            axios.post(config.stockmarketUrl + '/games/' + gameId + '/stocks/buy', {
+                token: token,
+                gameId: gameId
+            })
+                .then(function (response) {
+                    return response;
+                })
+                .catch(function (error) {
+                    return new Error = ("error occured")
+                });
         }
-        else{
-            return new Error="Cannot connect to the API"
+        else {
+            return new Error = ("Cannot connect to the API")
         }
-     }
-     sellStocks(token,gameId) {
-        if(token){
-         axios.post('/games'+gameId+'/stocks/sell', {
-             token:this.token,
-             gameId: this.gameId
-           })
-           .then(function (response) {
-            return response;
-           })
-           .catch(function (error) {
-             return new Error="error occured"
-           });
+    }
+    sellStocks(token, gameId) {
+        if (token) {
+            axios.post(config.stockmarketUrl + '/games/' + gameId + '/stocks/sell', {
+                token: token,
+                gameId: gameId
+            })
+                .then(function (response) {
+                    return response;
+                })
+                .catch(function (error) {
+                    return new Error = ("error occured")
+                });
         }
-        else{
-            return new Error="Cannot connect to the API"
+        else {
+            return new Error = ("Cannot connect to the API")
         }
-     }
+    }
 }
