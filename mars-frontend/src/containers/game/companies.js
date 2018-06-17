@@ -134,16 +134,22 @@ class CustomPaginationActionsTable extends React.Component {
             ].sort((a, b) => (a.calories < b.calories ? -1 : 1)),
             page: 0,
             rowsPerPage: 10,
+            open:false
         };
     }
-
     handleChangePage = (event, page) => {
         this.setState({ page });
     };
-
     handleChangeRowsPerPage = event => {
         this.setState({ rowsPerPage: event.target.value });
     };
+    openModel = () => {
+        this.setState({
+            open: true
+        })
+    };
+
+
 
     render() {
         const { classes } = this.props;
@@ -152,7 +158,7 @@ class CustomPaginationActionsTable extends React.Component {
 
         return (
             <Paper className={classes.root}>
-                <SimpleModalWrapped/>
+                <SimpleModalWrapped open={this.state.open}/>
                 <div className={classes.tableWrapper}>
                     <Table className={classes.table}>
                         <TableBody>
@@ -163,7 +169,7 @@ class CustomPaginationActionsTable extends React.Component {
                                             {n.name}
                                         </TableCell>
                                         <TableCell numeric>
-                                            <Button variant="contained" size="small" color="primary" className={classes.button} >Buy Stocks</Button>
+                                            <Button variant="contained" size="small" color="primary" className={classes.button} onClick={this.openModel.bind(this)}>Buy Stocks</Button>
                                         </TableCell>
                                         <TableCell numeric>
                                             <Button variant="contained" size="small" color="secondary" className={classes.button}>Sell Stocks</Button>

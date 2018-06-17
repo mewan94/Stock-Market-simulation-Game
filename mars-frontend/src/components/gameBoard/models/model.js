@@ -6,13 +6,9 @@ import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
 
-function rand() {
- return Math.round(Math.random() * 20) - 10;
-}
-
 function getModalStyle() {
- const top = 50 + rand();
- const left = 50 + rand();
+ const top = 50;
+ const left = 50;
 
  return {
    top: `${top}%`,
@@ -33,7 +29,7 @@ const styles = theme => ({
 
 class SimpleModal extends React.Component {
  state = {
-   open: true,
+   open: false,
  };
 
  handleOpen = () => {
@@ -43,6 +39,12 @@ class SimpleModal extends React.Component {
  handleClose = () => {
    this.setState({ open: false });
  };
+
+ componentWillReceiveProps(nextProps){
+     if(nextProps.open){
+         this.handleOpen()
+     }
+ }
 
  render() {
    const { classes } = this.props;
