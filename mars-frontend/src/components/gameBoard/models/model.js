@@ -5,6 +5,10 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Modal from '@material-ui/core/Modal';
 import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import IconButton from '@material-ui/core/IconButton';
+
 
 function getModalStyle() {
  const top = 50;
@@ -58,12 +62,33 @@ class SimpleModal extends React.Component {
          onClose={this.handleClose}
        >
          <div style={getModalStyle()} className={classes.paper}>
-           <Typography variant="title" id="modal-title">
-             Text in a modal
+           <Typography variant="HeadLine" id="modal-title">
+             Company Name
            </Typography>
-           <Typography variant="subheading" id="simple-modal-description">
-             Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+           <hr></hr>
+           <Typography variant="subheading">
+             Unit Price
            </Typography>
+           <Typography variant="subheading">
+             1000
+           </Typography>
+           <Typography variant="subheading">
+             Current stock
+           </Typography>
+           <Typography variant="subheading">
+             20
+           </Typography>
+          <div>
+           <TextField
+         
+          label="Buy"
+          className={classes.textField}
+          margin="normal"
+          />
+          <IconButton color="primary" className={classes.button} aria-label="Add to shopping cart">
+        <AddShoppingCartIcon />
+      </IconButton>
+          </div>
          </div>
        </Modal>
 
