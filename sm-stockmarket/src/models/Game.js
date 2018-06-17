@@ -7,7 +7,4 @@ export class Game {
     getGameID(){
       return this.gameID;
     }
-    startGame(){
-        return this.gameID;
-    }
 }
