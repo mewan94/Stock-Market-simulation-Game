@@ -1,5 +1,29 @@
 {
 	"port": 8080,
 	"bodyLimit": "100kb",
-	"corsHeaders": ["Link"]
+	"corsHeaders": ["Link"],
+	"sectors": [
+		"sector1",
+		"sector2",
+		"sector3"
+	],
+	"stocks": [
+		{
+			"name": "ABC",
+			"sector": "sector1",
+			"price": 200
+		},
+		{
+			"name": "BCD",
+			"sector": "sector1",
+			"price": 200
+		},
+		{
+			"name": "CDE",
+			"sector": "sector2",
+			"price": 200
+		}
+	],
+	"turns": 20,
+	"turnTime": 1000
 }
