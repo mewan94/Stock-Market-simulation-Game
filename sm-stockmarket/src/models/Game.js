@@ -2,11 +2,13 @@ import config from '../config.json'
 
 export class Game {
     playerList = [];
+    stocks = [];
 
     constructor(gameAdmin) {
         this.gameAdmin = gameAdmin;
-        this.gameID = gameAdmin;
+        this.gameID = Math.random().toString(36).substring(4, 10);
         this.playerList.push(gameAdmin);
+        this.stocks = config.stocks;
     }
 
     getGameID() {
@@ -21,8 +23,8 @@ export class Game {
 
     }
     
-    getStock() {
-
+    getStocks() {
+        return this.stocks;
     }
 
     startGame() {
