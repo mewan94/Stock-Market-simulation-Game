@@ -7,7 +7,6 @@ export class Game{
        
         let p = jwt.decode(token);
         let playerName = p.name;
-
         return playerName;
     }
 }
