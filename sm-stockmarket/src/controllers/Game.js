@@ -1,12 +1,30 @@
 import * as jwt from 'jsonwebtoken';
 import config from '../config.json';
 
-export class Game{
+export class Game {
 
-    constructor(token) {
-       
+    decodePlayerName(token) {
+
         let p = jwt.decode(token);
         let playerName = p.name;
-        return playerName;
+
+        Game(playerName);
+    }
+
+    getPlayerId() {
+        let playerId = Game.getPlayerId();
+        return playerId;
+    }
+
+    addPlayer() {
+        
+    }
+
+    getCurrentTurn() {
+
+    }
+
+    getStock() {
+
     }
 }
