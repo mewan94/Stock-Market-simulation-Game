@@ -1,10 +1,18 @@
 import userTypes from '../types/user';
 import jwt from 'jsonwebtoken';
+import {GAME_ROLE} from '../types/common';
 
 export const initialState = {
     fetching: false,
     action: null,
-    user: []
+    user: {
+        name:null,
+        balance:0
+    },
+    game: {
+        id:null,
+        role:null
+    }
 };
 
 export const user = (state = initialState, action) => {
@@ -27,6 +35,28 @@ export const user = (state = initialState, action) => {
                 ...state,
                 fetching: false,
                 action: userTypes.USER_REGISTER_FAIL
+            };
+        case userTypes.CREATE_GAME:
+            return {
+                ...state,
+                fetching: true,
+                action: userTypes.CREATE_GAME
+            };
+        case userTypes.CREATE_GAME_SUCCESS:
+            return {
+                ...state,
+                fetching: false,
+                action: userTypes.CREATE_GAME_SUCCESS,
+                game:{
+                    id: action.payload,
+                    role: GAME_ROLE.ADMIN
+                }
+            };
+        case userTypes.CREATE_GAME_FAIL:
+            return {
+                ...state,
+                fetching: false,
+                action: userTypes.CREATE_GAME_FAIL
             };
         default:
             return state

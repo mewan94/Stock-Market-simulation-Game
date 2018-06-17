@@ -7,7 +7,7 @@ import DialogBox from "../../components/dialogBox/index";
 import Step1 from "./step1";
 import { GAME_JOIN_MODE } from "../../types/common";
 import Step2 from "./step2";
-import { userRegistration } from '../../actions/user';
+import { userRegistration, startGame } from '../../actions/user';
 import * as AuthActions from '../../types/user';
 
 class Welcome extends Component {
@@ -18,7 +18,8 @@ class Welcome extends Component {
             isPopupOpen:false,
             userName: '',
             gameStartMode:null,
-            step:null
+            step:null,
+            gameID:null
         }
     }
 
@@ -42,9 +43,7 @@ class Welcome extends Component {
 
     _getStartMode = (GameMode) => {
         if(this.state.userName !== ''){
-            this.setState({
-                gameStartMode:GameMode
-            })
+            this.props.dispatch(userRegistration(this.state.userName));
         }
     };
 
@@ -55,9 +54,16 @@ class Welcome extends Component {
         })
     };
 
-    componentwillreceiveprops(nextProps){
+    componentWillReceiveProps(nextProps){
         if(nextProps.user.action === AuthActions.USER_REGISTER_SUCCESS){
-            this.props.history.push('/play')
+            this.props.dispatch(startGame())
+        }
+
+        if(nextProps.user.action === AuthActions.CREATE_GAME_SUCCESS){
+            this.setState({
+                gameID:nextProps.user.game.id,
+                gameStartMode:GAME_JOIN_MODE.CREATE
+            })
         }
     }
 
@@ -106,7 +112,7 @@ class Welcome extends Component {
                 <div>
                     {this.state.isPopupOpen && <DialogBox>
                         {this.state.gameStartMode === null && <Step1 close={this._closePopUp.bind(this)} submit={this._getName.bind(this)} getMode={this._getStartMode.bind(this)}/>}
-                        {this.state.gameStartMode === GAME_JOIN_MODE.CREATE && this.state.userName !== null && <Step2 close={this._closePopUp.bind(this)} getStep={this._getStep.bind(this)}/>}
+                        {this.state.gameStartMode === GAME_JOIN_MODE.CREATE && this.state.userName !== null && <Step2 close={this._closePopUp.bind(this)} getStep={this._getStep.bind(this)} gameid={this.state.gameID}/>}
                     </DialogBox>}
                 </div>
             </div>
