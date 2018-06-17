@@ -13,6 +13,8 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
+import Button from '@material-ui/core/Button';
+import SimpleModalWrapped from '../../components/gameBoard/models/model';
 
 const actionsStyles = theme => ({
     root: {
@@ -94,9 +96,9 @@ const TablePaginationActionsWrapped = withStyles(actionsStyles, { withTheme: tru
 );
 
 let counter = 0;
-function createData(name, calories, fat) {
+function createData(name, companyid) {
     counter += 1;
-    return { id: counter, name, calories, fat };
+    return { id: counter, name, companyid };
 }
 
 const styles = theme => ({
@@ -118,22 +120,20 @@ class CustomPaginationActionsTable extends React.Component {
 
         this.state = {
             data: [
-                createData('Cupcake', 305, 3.7),
-                createData('Donut', 452, 25.0),
-                createData('Eclair', 262, 16.0),
-                createData('Frozen yoghurt', 159, 6.0),
-                createData('Gingerbread', 356, 16.0),
-                createData('Honeycomb', 408, 3.2),
-                createData('Ice cream sandwich', 237, 9.0),
-                createData('Jelly Bean', 375, 0.0),
-                createData('KitKat', 518, 26.0),
-                createData('Lollipop', 392, 0.2),
-                createData('Marshmallow', 318, 0),
-                createData('Nougat', 360, 19.0),
-                createData('Oreo', 437, 18.0),
+                createData('wesrdfgh', 1),
+                createData('sdvdsf', 2),
+                createData('dvzdsf', 3),
+                createData('dfsvgsdf', 4),
+                createData('dfvfzdfvb', 5),
+                createData('dfvvdvf', 6),
+                createData('dvfvzdfb', 7),
+                createData('dfbbfgn', 8),
+                createData('hjhghfght', 9),
+                createData('fgdf fgdfg', 10),
+                createData('fggdfgh dghbdtg', 11),
             ].sort((a, b) => (a.calories < b.calories ? -1 : 1)),
             page: 0,
-            rowsPerPage: 5,
+            rowsPerPage: 10,
         };
     }
 
@@ -152,6 +152,7 @@ class CustomPaginationActionsTable extends React.Component {
 
         return (
             <Paper className={classes.root}>
+                <SimpleModalWrapped/>
                 <div className={classes.tableWrapper}>
                     <Table className={classes.table}>
                         <TableBody>
@@ -161,8 +162,15 @@ class CustomPaginationActionsTable extends React.Component {
                                         <TableCell component="th" scope="row">
                                             {n.name}
                                         </TableCell>
-                                        <TableCell numeric>{n.calories}</TableCell>
-                                        <TableCell numeric>{n.fat}</TableCell>
+                                        <TableCell numeric>
+                                            <Button variant="contained" size="small" color="primary" className={classes.button} >Buy Stocks</Button>
+                                        </TableCell>
+                                        <TableCell numeric>
+                                            <Button variant="contained" size="small" color="secondary" className={classes.button}>Sell Stocks</Button>
+                                        </TableCell>
+                                        <TableCell>
+                                            {n.id}
+                                        </TableCell>
                                     </TableRow>
                                 );
                             })}

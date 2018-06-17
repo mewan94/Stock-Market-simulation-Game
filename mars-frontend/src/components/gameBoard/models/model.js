@@ -33,7 +33,7 @@ const styles = theme => ({
 
 class SimpleModal extends React.Component {
  state = {
-   open: flase,
+   open: true,
  };
 
  handleOpen = () => {
@@ -62,7 +62,6 @@ class SimpleModal extends React.Component {
            <Typography variant="subheading" id="simple-modal-description">
              Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
            </Typography>
-           <SimpleModalWrapped />
          </div>
        </Modal>
 
