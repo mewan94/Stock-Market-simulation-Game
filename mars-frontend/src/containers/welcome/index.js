@@ -10,6 +10,7 @@ import Step2 from "./step2";
 import { userRegistration, startGame } from '../../actions/user';
 import * as AuthActions from '../../types/user';
 import { subscribeToTimer } from '../../api';
+import {getSpecialEvents} from '../../libes/auth';
 
 class Welcome extends Component {
 

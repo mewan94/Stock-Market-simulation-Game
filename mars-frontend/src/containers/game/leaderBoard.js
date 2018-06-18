@@ -24,6 +24,8 @@ class LeaderBoard extends Component{
                 <h3>LeaderBoard</h3>
                 <List>
                     <Lister/>
+                    <Lister/>
+                    <Lister/>
                 </List>
             </Paper>
 
