@@ -11,7 +11,7 @@ class SingleSector extends Component{
                 <Avatar>
                     <ImageIcon />
                 </Avatar>
-                <ListItemText primary="Photos" secondary="Jan 9, 2014" />
+                <ListItemText primary={this.props.sector.label} />
             </ListItem>
         )
     }

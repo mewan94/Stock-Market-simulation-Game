@@ -3,6 +3,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
 import SingleSector from "../../components/gameBoard/sector/singleSector";
+import { SECTORS } from '../../types/common';
 
 const styles = theme => ({
     root: {
@@ -22,11 +23,9 @@ class Sectors extends Component{
             <Paper className={classes.paper}>
                 <h3>Sectors</h3>
                 <List>
-                    <SingleSector/>
-                    <SingleSector/>
-                    <SingleSector/>
-                    <SingleSector/>
-                    <SingleSector/>
+                    {SECTORS.map((item,i) => {
+                        return <SingleSector sector={item}/>
+                    })}
                 </List>
             </Paper>
         )

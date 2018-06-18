@@ -7,6 +7,8 @@ import Header from "./header";
 import Sectors from "./sectors";
 import LeaderBoard from "./leaderBoard";
 import TablePaginationActions from "./companies";
+import TimelineCon from './timeLine';
+import Analyst from './analyst';
 
 const styles = theme => ({
     root: {
@@ -38,10 +40,10 @@ function FullWidthGrid(props) {
                     <LeaderBoard/>
                 </Grid>
                 <Grid item xs={6} sm={9}>
-                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
+                    <TimelineCon/>
                 </Grid>
                 <Grid item xs={6} sm={3}>
-                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
+                    <Analyst/>
                 </Grid>
             </Grid>
         </div>
