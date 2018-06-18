@@ -24,7 +24,7 @@ class Sectors extends Component{
                 <h3>Sectors</h3>
                 <List>
                     {SECTORS.map((item,i) => {
-                        return <SingleSector sector={item}/>
+                        return <SingleSector sector={item} key={i}/>
                     })}
                 </List>
             </Paper>

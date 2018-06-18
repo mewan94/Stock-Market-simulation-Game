@@ -35,7 +35,7 @@ export default class TimelineCon extends React.Component {
                 title: 'Sector 2',
                 disabled: false,
                 data: [
-                    {x:0,y:12},
+                    {x:0,y:10},
                     {x:1,y:29},
                     {x:2,y:2},
                     {x:3,y:44},
@@ -45,6 +45,22 @@ export default class TimelineCon extends React.Component {
                     {x:7,y:24},
                     {x:8,y:7},
                     {x:9,y:6},
+                ]
+            },
+            {
+                title: 'Sector 3',
+                disabled: false,
+                data: [
+                    {x:0,y:10},
+                    {x:1,y:5},
+                    {x:2,y:9},
+                    {x:3,y:54},
+                    {x:4,y:10},
+                    {x:5,y:39},
+                    {x:6,y:45},
+                    {x:7,y:22},
+                    {x:8,y:3},
+                    {x:9,y:7},
                 ]
             },
         ]
