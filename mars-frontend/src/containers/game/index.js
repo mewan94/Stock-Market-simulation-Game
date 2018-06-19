@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Header from "./header";
 import Sectors from "./sectors";
+import "./game.css";
 
 
 const styles = theme => ({

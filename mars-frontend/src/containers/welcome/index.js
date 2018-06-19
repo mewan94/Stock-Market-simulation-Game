@@ -52,7 +52,8 @@ class Welcome extends Component {
                         <div className="button-container">
                             {/* <Button text="Start Game" onclick={this._openPopup.bind(this)}/> */}
                             {/* changed by Sanira to make dialog box pop-up */}
-                            <Button text={"Start Game"} type={"b1"} isLink={"true"} onclick={this._openPopup.bind(this)}/>
+                            <Button text={"Start Game"} type={"b1"} isLink={"true"} 
+                            onclick={this._openPopup.bind(this)}/>
                         </div>
 
                     </div>
