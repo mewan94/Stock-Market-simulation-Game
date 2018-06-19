@@ -14,8 +14,8 @@ import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
 import Button from '@material-ui/core/Button';
-import SimpleModalWrapped from '../../components/gameBoard/models/model';
-import {selectOutofArray} from '../../libes/auth';
+import SimpleModalWrapped from '../../../components/gameBoard/models/model';
+import {selectOutofArray} from '../../../libes/auth';
 
 const actionsStyles = theme => ({
     root: {

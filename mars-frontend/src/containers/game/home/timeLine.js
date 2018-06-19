@@ -8,7 +8,6 @@ import {
     DiscreteColorLegend
 } from 'react-vis';
 import 'react-vis/dist/style.css';
-const totalValues = 10;
 
 export default class TimelineCon extends React.Component {
 
@@ -51,7 +50,7 @@ export default class TimelineCon extends React.Component {
                     {x:0,y:10},
                     {x:1,y:5},
                     {x:2,y:9},
-                    {x:3,y:54},
+                    {x:3,y:154},
                     {x:4,y:10},
                     {x:5,y:39},
                     {x:6,y:45},

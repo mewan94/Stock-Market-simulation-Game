@@ -2,7 +2,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';    
 import List from '@material-ui/core/List';
 import React , {Component} from 'react';
-import Lister from '../../components/gameBoard/listItem/listItem';
+import Lister from '../../../components/gameBoard/listItem/listItem';
 
 const styles = theme => ({
     root: {

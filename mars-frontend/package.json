@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^1.2.1",
     "@material-ui/icons": "^1.1.0",
+    "antd": "^3.6.2",
     "axios": "^0.18.0",
     "font-awesome": "^4.7.0",
     "jsonwebtoken": "^8.3.0",

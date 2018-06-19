@@ -2,8 +2,8 @@ import React , {Component} from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import List from '@material-ui/core/List';
-import SingleSector from "../../components/gameBoard/sector/singleSector";
-import { SECTORS } from '../../types/common';
+import SingleSector from "../../../components/gameBoard/sector/singleSector";
+import { SECTORS } from '../../../types/common';
 
 const styles = theme => ({
     root: {

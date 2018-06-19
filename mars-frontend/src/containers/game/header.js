@@ -1,5 +1,6 @@
 import React , {Component} from 'react';
 import { withStyles } from '@material-ui/core/styles';
+import {Link} from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
@@ -29,15 +30,21 @@ class Header extends Component{
                     <Paper className={classes.paper}>
                         <Grid container>
                             <Grid item sm={4}>
-                                <Button variant="fab" color="primary" aria-label="add" className={classes.button}>
-                                    <HomeIcon />
-                                </Button>
-                                <Button variant="fab" color="secondary" aria-label="add" className={classes.button}>
-                                    <BankIcon />
-                                </Button>
-                                <Button variant="fab" color="default" aria-label="add" className={classes.button}>
-                                    <CartIcon />
-                                </Button>
+                                <Link to="/play">
+                                    <Button variant="fab" color="primary" aria-label="Game Board" className={classes.button}>
+                                        <HomeIcon />
+                                    </Button>
+                                </Link>
+                                <Link to="/account">
+                                    <Button variant="fab" color="secondary" aria-label="My Account" className={classes.button}>
+                                        <BankIcon />
+                                    </Button>
+                                </Link>
+                                <Link to="/transactions">
+                                    <Button variant="fab" color="default" aria-label="My Transactions" className={classes.button}>
+                                        <CartIcon />
+                                    </Button>
+                                </Link>
                             </Grid>
                             <Grid item sm={4}>
                                 <Typography variant="headline" component="h2">Round: 1</Typography>

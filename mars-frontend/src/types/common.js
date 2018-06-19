@@ -91,6 +91,12 @@ module.exports = {
                 49:'STAND.CHART.',
             }
         },
-    ]
+    ],
+
+    PAGE:{
+        HOME:1,
+        ACCOUNT:2,
+        HISTORY:3
+    }
 
 };
