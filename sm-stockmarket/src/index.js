@@ -11,6 +11,8 @@ import config from './config.json';
 let app = express();
 app.server = http.createServer(app);
 
+const io = require('socket.io')(app.server);
+
 // logger
 app.use(morgan('dev'));
 
@@ -30,7 +32,7 @@ initializeDb( db => {
 	app.use(middleware({ config, db }));
 
 	// api router
-	app.use('/api', api({ config, db }));
+	app.use('/api', api({ config, db, io }));
 
 	app.server.listen(process.env.PORT || config.port, () => {
 		console.log(`Started on port ${app.server.address().port}`);

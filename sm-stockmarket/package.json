@@ -37,7 +37,8 @@
     "express": "^4.13.3",
     "jsonwebtoken": "^8.3.0",
     "morgan": "^1.8.0",
-    "resource-router-middleware": "^0.6.0"
+    "resource-router-middleware": "^0.6.0",
+    "socket.io": "^2.1.1"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",
