@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  background: #E24A4A;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #E24A4A, #EE8550);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #E24A4A, #EE8550);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #E24A4A, #EE8550);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #E24A4A, #EE8550);
+  /* Standard syntax (must be last) */
+  height: 80px; }
+
+.contentbox-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 20%; }
+
+.contentbox-2 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 60%; }
+
+.contentbox-3 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  width: 20%; }
+
+.main-title {
+  color: #fff;
+  font-weight: 300;
+  margin: 0;
+  font-size: 28pt;
+  padding-left: 30px; }
+
+.turn-time {
+  color: #fff;
+  font-size: 14pt;
+  padding: 20px;
+  font-weight: 300; }
+
+.line {
+  width: 2px;
+  height: 40px;
+  background-color: #fff; }
