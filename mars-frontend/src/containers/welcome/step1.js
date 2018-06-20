@@ -2,6 +2,8 @@ import React , {Component} from 'react';
 import image3 from '../../assets/imgs/startup.png';
 import { Button } from '../../components/common';
 import { Input } from '../../components/common';
+import { GAME_JOIN_MODE } from '../../types/common';
+
 
 class Step1 extends Component{
     render(){
@@ -11,6 +13,7 @@ class Step1 extends Component{
 
         return(
             <React.Fragment>
+            
                 <div className="row adjest-height">
                     <div className="content">
                         <div className="content-container">
@@ -18,7 +21,7 @@ class Step1 extends Component{
                             <h2 className="dialog-secondary-title">{description}</h2>
                         </div>
                         <div className="content-container">
-                            <Input type="text" text="Enter Your Nick Name"/>
+                            <Input type="text" text="Enter Your Nick Name" submit={this.props.submit}/>
                         </div>
                     </div>
                     <div className="content-center">
@@ -27,9 +30,9 @@ class Step1 extends Component{
                 </div>
                 <div className="row">
                     <div className="content-center">
-                        <Button text="Create New Game" type={"b1"} isLink="true" href={"#"}/>
+                        <Button text="Create New Game" type={"b1"} isLink="true" onclick={this.props.getMode.bind(this,GAME_JOIN_MODE.CREATE)}/>
                         <br/>
-                        <Button text="Join To Existing" type={"b2"} isLink="true" href={"#"}/>
+                        <Button text="Join To Existing" type={"b2"} isLink="true"  onclick={this.props.getMode.bind(this,GAME_JOIN_MODE.JOIN)}/>
                     </div>
                     <div className="content-center bottom-align">
                         <Button text="Home" type={"b3"} isLink="true" onclick={close}/>

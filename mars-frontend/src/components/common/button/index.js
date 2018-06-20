@@ -2,6 +2,7 @@ import React , {Component} from 'react';
 import './button.css';
 
 class Button extends Component{
+
     render(){
         let { type, isLink } = this.props;
         let classname = 'primary-button';
@@ -22,7 +23,7 @@ class Button extends Component{
 
         if(isLink){
             return(
-                <a type={type} onClick={this.props.onclick} href={this.props.href}>{this.props.text}</a>
+                <a type={type} onClick={this.props.onclick}>{this.props.text}</a>
             )
         }else{
             return(

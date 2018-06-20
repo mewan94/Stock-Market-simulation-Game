@@ -1,17 +1,32 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
 import { Button } from '../../components/common';
 import image1 from '../../assets/imgs/backgroundimg.png';
 import image2 from '../../assets/imgs/bgart.png';
 import DialogBox from "../../components/dialogBox/index";
 import Step1 from "./step1";
+import { GAME_JOIN_MODE } from "../../types/common";
+import Step2 from "./step2";
+import { userRegistration, startGame } from '../../actions/user';
+import * as AuthActions from '../../types/user';
+import { subscribeToTimer } from '../../api';
+import {getSpecialEvents} from '../../libes/auth';
 
 class Welcome extends Component {
 
     constructor(props){
         super(props);
         this.state={
-            isPopupOpen:false
-        }
+            isPopupOpen:false,
+            userName: '',
+            gameStartMode:null,
+            step:null,
+            gameID:null,
+            timestamp: 'no timestamp yet'
+        };
+        subscribeToTimer((err, timestamp) => this.setState({
+            timestamp
+        }));
     }
 
     _openPopup = () => {
@@ -26,7 +41,40 @@ class Welcome extends Component {
         })
     };
 
+    _getName = (name) => {
+        this.setState({
+            userName:name
+        })
+    };
+
+    _getStartMode = (GameMode) => {
+        if(this.state.userName !== ''){
+            this.props.dispatch(userRegistration(this.state.userName));
+        }
+    };
+
+    _getStep = (step) => {
+        this.props.dispatch(userRegistration(this.state.userName));
+        this.setState({
+            step: step
+        })
+    };
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.user.action === AuthActions.USER_REGISTER_SUCCESS){
+            this.props.dispatch(startGame())
+        }
+
+        if(nextProps.user.action === AuthActions.CREATE_GAME_SUCCESS){
+            this.setState({
+                gameID:nextProps.user.game.id,
+                gameStartMode:GAME_JOIN_MODE.CREATE
+            })
+        }
+    }
+
     render() {
+        console.log(this.state.timestamp);
         return (
             <div className="background">
                 <div className="svg-container">
@@ -70,8 +118,9 @@ class Welcome extends Component {
 
                 {/* make pop up dialog */}
                 <div>
-                    {this.state.isPopupOpen && <DialogBox id={"dialog"}>
-                        <Step1 close={this._closePopUp.bind(this)}/>
+                    {this.state.isPopupOpen && <DialogBox>
+                        {this.state.gameStartMode === null && <Step1 close={this._closePopUp.bind(this)} submit={this._getName.bind(this)} getMode={this._getStartMode.bind(this)}/>}
+                        {this.state.gameStartMode === GAME_JOIN_MODE.CREATE && this.state.userName !== null && <Step2 close={this._closePopUp.bind(this)} getStep={this._getStep.bind(this)} gameid={this.state.gameID}/>}
                     </DialogBox>}
                 </div>
             </div>
@@ -79,4 +128,11 @@ class Welcome extends Component {
     }
 }
 
-export default Welcome;
+export default connect(
+    state => {
+        return {
+            user: state.user
+        }
+    }
+
+)(Welcome);
