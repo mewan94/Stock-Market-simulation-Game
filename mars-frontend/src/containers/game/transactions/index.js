@@ -1,7 +1,8 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Header from "../header";
+// import Header from "../header";
+import Header from '../../../components/gameBoard/header/index';
 import History from "./transactions";
 
 const styles = theme => ({

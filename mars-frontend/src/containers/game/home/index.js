@@ -1,16 +1,32 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Header from "../header";
-import Sectors from "./sectors";
+// import Header from "../header";
+// import Sectors from "./sectors";
+import Header from '../../../components/gameBoard/header/index';
+import Sectors from '../../../components/gameBoard/sectors/index';
+import Companies from '../../../components/gameBoard/companies/index';
 import LeaderBoard from "./leaderBoard";
 import TablePaginationActions from "./companies";
 import TimelineCon from './timeLine';
 import Analyst from './analyst';
+import { Hidden } from '@material-ui/core';
 
 const styles = theme => ({
     root: {
-        flexGrow: 1
+        height:'100vh',
+        maxHeight:'100vh',
+        width:'100%',
+        maxWidth:'100%',
+        minWidth:'100%',
+        margin:0,
+        padding:0,
+        overflow:'hidden',
+    },
+    adjestment: {
+        margin:0,
+        padding:0,
+        
     },
     paper: {
         padding: theme.spacing.unit * 3,
@@ -37,23 +53,18 @@ class FullWidthGrid extends React.Component {
         const { classes } = this.props;
         return (
             <div className={classes.root}>
-                <Grid container spacing={24}>
+                <Grid container>
                     <Grid item xs={12} sm={12}>
                         <Header/>
                     </Grid>
-                    <Grid item xs={12} sm={3}>
+                    <Grid item xs={12} sm={2}>
                         <Sectors/>
                     </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <TablePaginationActions/>
+                    <Grid item xs={12} sm={7}>
+                        <Companies/>
                     </Grid>
                     <Grid item xs={12} sm={3}>
-                        <LeaderBoard/>
-                    </Grid>
-                    <Grid item xs={6} sm={9}>
                         <TimelineCon/>
-                    </Grid>
-                    <Grid item xs={6} sm={3}>
                         <Analyst/>
                     </Grid>
                 </Grid>

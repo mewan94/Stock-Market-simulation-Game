@@ -16,7 +16,9 @@ body, html {
   margin: 0;
   background-color: white;
   width: 100%;
-  height: 100vh; }
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100vh; }
 
 /*********[adding the fill image to the wave path]**********/
 .wave {
@@ -119,3 +121,12 @@ body, html {
     background-color: #fff;
     color: #EE8550;
     font-weight: 400; }
+
+/************************/
+/*[gameBoard]*/
+* {
+  padding: 0;
+  margin: 0; }
+
+.main-container {
+  background-color: red; }

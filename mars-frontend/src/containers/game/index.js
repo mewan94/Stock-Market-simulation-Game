@@ -5,13 +5,14 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 // import Header from "./header";
 import Header from '../../components/gameBoard/header/index';
-import Sectors from "./sectors";
-import "./game.css";
-
+// import Sectors from "./sectors";
+import Sectors from '../../components/gameBoard/sectors/index';
+import "./main.css";
+import { Hidden } from '@material-ui/core';
 
 const styles = theme => ({
     root: {
-        flexGrow: 1
+       flexgrow:1,
     },
     paper: {
         padding: theme.spacing.unit * 3,
@@ -30,10 +31,11 @@ function FullWidthGrid(props) {
                     <Header/>
                 </Grid>
                 <Grid item xs={12} sm={3}>
-                    <Sectors/>
+                    test
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <Paper className={classes.paper}>xs=12 sm=6</Paper>
+                    test
+                    {/* <Paper className={classes.paper}>xs=12 sm=6</Paper> */}
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <Paper className={classes.paper}>xs=12 sm=6</Paper>

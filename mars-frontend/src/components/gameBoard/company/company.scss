@@ -1,0 +1,49 @@
+@import '../../../assets/styles/_variables';
+
+.company{
+    @include flex-box(flex-start,center,row,100%);
+    padding:6px 0;
+    color:#111;
+    border-bottom: solid 2px $second-color;
+}
+.item-holder-1{
+    @include flex-box(flex-start,center,row,30%);
+    h4{    
+        font-weight:600;
+        font-size:10pt;
+    }
+}
+.item-holder-2{  
+    @include flex-box(flex-start,center,row,20%); 
+    h5{    
+        font-weight:600;
+        font-size:10pt;
+        color:#555;
+    }
+}
+.item-holder-3{
+    @include flex-box(flex-start,center,row,10%);
+    h6{    
+        font-weight:600;
+        font-size:10pt;
+        color:#555;
+    }
+}
+.button-holder{ 
+    @include flex-box(center,center,row,20%);
+    a{
+        @include button(100%);
+        background-color: $prime-color;
+        box-sizing:border-box;
+        border: none;
+        border-radius: 5px;
+        padding: 3px;
+        cursor: pointer;
+        color: #fff;
+        font-weight:300;
+        font-size: 10pt;
+        text-align: center;
+        text-decoration: none;
+        margin:0 5px;
+    }
+} 
