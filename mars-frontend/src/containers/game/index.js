@@ -9,6 +9,7 @@ import CompanySection from '../../components/gameBoard/companySection/index';
 import ChartSection from '../../components/gameBoard/chartSection/index';
 import Section from '../../components/common/section/index';
 import TimelineCon from './home/timeLine';
+import Div from './div';
 // import LeaderBoard from "./leaderBoard";
 // import TablePaginationActions from "./companies";
 // import TimelineCon from './timeLine';
@@ -43,41 +44,53 @@ function FullWidthGrid(props) {
     const { classes } = props;
 
     return (
-            <div className={classes.root}>
+        <div className={classes.root}>
+
             <Grid container>
-                <Grid item xs={12} sm={12}>
-                    <Header/>
-                </Grid>
-                <Grid item xs={12} sm={2}>
-                    <Profile/>
-                </Grid>
-                <Grid item xs={12} sm={7}>
-                    <CompanySection/>
-                    {/* <TimelineCon/> */}
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Paper className={classes.paper}>xs=12 sm=6</Paper>
-                </Grid>
-                <Grid item xs={6} sm={9}>
-                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
-                </Grid>
+                {/* header container */}
                 <Grid container>
+                    <Grid item xs={12} sm={12}>
+                        <Header/>
+                    </Grid>
+                </Grid>
+                
+                {/* elements container */}
+                <Grid container>
+                    {/* profile section */}
                     <Grid item xs={12} sm={2}>
                         <Profile/>
                     </Grid>
+
+                    {/* element section */}
                     <Grid item xs={12} sm={10}>
-                        <Grid container className={classes.gridMiddle}>
-                            <Grid item xs={12} sm={6}>
+
+                        <Grid container>
+                            {/* company section */}
+                            <Grid item xs={12} sm={7}>
                                 <CompanySection/>
                             </Grid>
-                            <Grid item xs={12} sm={4}>
+
+                            {/* chart section */}
+                            <Grid item xs={12} sm={5}>
                                 <TimelineCon/>
                             </Grid>
                         </Grid>
+
+                        <Grid container>
+                            {/* under section 1 */}
+                            <Grid item xs={12} sm={7}>
+                                <Div/>
+                            </Grid>
+                            
+                            {/* under section 2 */}
+                            <Grid item xs={12} sm={5}>
+                                <Div/>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                </Grid>
-                </Grid>
-            </div>
+                </Grid>   
+            </Grid>
+        </div>
     );
 }
 

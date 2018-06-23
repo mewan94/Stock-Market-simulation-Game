@@ -22,8 +22,7 @@
   border-radius: 0 7px 7px 0;
   margin: 3px 0;
   transition: 0.3s ease all;
-  cursor: pointer;
-  z-index: 3; }
+  cursor: pointer; }
 
 .sector:hover {
   width: 100%; }
