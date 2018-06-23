@@ -1,11 +1,11 @@
 @import '../../../assets/styles/_variables';
 
-.company-list{
+.section{
     @include flex-box(flex-start,flex-start,column,100%);
-    background:transparent;
-    margin:0;
     padding:0;
+    margin:0;
+    height:100%;
     box-sizing: border-box;
+    background-color: #fff;
+    box-shadow:1px 1px 6px 1px #888;
 }
-
-  

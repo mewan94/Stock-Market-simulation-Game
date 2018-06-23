@@ -1,11 +1,10 @@
-.company-list {
+.chart-section {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  background: transparent;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box; }
+  height: 50%;
+  padding: 10px; }

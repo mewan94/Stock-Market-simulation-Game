@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: row;
-  width: 100%;
+  width: 90%;
   background: #EE8550;
   /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(left top, #EE8550, #E24A4A);
@@ -15,20 +15,18 @@
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, #EE8550, #E24A4A);
   /* Standard syntax (must be last) */
-  padding: 10px;
+  padding: 8px;
   text-decoration: none;
-  font-size: 12pt;
+  font-size: 10pt;
   color: white;
-  border-radius: 5px;
-  letter-spacing: 0.5px;
-  width: 90%;
-  margin: 5px 0 5px 0;
-  transition: 0.3s;
+  border-radius: 0 7px 7px 0;
+  margin: 3px 0;
+  transition: 0.3s ease all;
   cursor: pointer;
   z-index: 3; }
 
 .sector:hover {
-  margin-left: 10px; }
+  width: 100%; }
 
 .sector:active {
   margin-left: 20px; }

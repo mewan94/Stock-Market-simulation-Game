@@ -1,11 +1,13 @@
-.company-list {
+.section {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
   width: 100%;
-  background: transparent;
-  margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 1px 1px 6px 1px #888; }

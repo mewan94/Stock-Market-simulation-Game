@@ -1,52 +1,9 @@
 @import '../../../assets/styles/_variables';
+*{
+    box-sizing: border-box;
+}
 
-.sector-container{
-    @include flex-box(flex-start,center,column,100%);
-    margin:0;
-    padding:0;
-    background-color: #121213;
+.sec-container{
+    @include flex-box(center,flex-start,column,100%);
     height:100%;
-}
-.profile-section{
-    @include flex-box(flex-start,center,row,100%);
-    height:15%;
-    margin:0;
-    background-color: #000;
-    flex-wrap: nowrap;
-}
-.prof-img-sec{
-    @include flex-box(center,flex-start,Column,100%);
-    padding-left:15px;
-}
-.prof-name-sec{
-    @include flex-box(center,flex-start,Column,100%);
-    color:#fff;
-    margin-left: -100px;
-
-    h3{
-        font-weight:400;
-        font-size:12pt; 
-     }
-     h4{
-        font-weight:300;
-        font-size:10pt; 
-        color:#aaa;
-     }
-}
-.sectors-section{
-    @include flex-box(flex-start,flex-start,Column,100%);
-    padding:10px;
-    flex-wrap: nowrap;
-
-    h3{
-      color:#aaa;
-      font-size:12pt;
-      font-weight:400;
-      padding-left:10px;  
-    }
-    .sector-list{
-        @extend .sectors-section;
-        color:#fff;  
-        // overflow-y: scroll;  
-    }
 }

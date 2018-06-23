@@ -4,8 +4,10 @@ import Grid from '@material-ui/core/Grid';
 // import Header from "../header";
 // import Sectors from "./sectors";
 import Header from '../../../components/gameBoard/header/index';
-import Sectors from '../../../components/gameBoard/sectors/index';
-import Companies from '../../../components/gameBoard/companies/index';
+import Profile from '../../../components/gameBoard/profile/index';
+import CompanySection from '../../../components/gameBoard/companySection/index';
+import ChartSection from '../../../components/gameBoard/chartSection/index';
+import Section from '../../../components/common/section/index';
 import LeaderBoard from "./leaderBoard";
 import TablePaginationActions from "./companies";
 import TimelineCon from './timeLine';
@@ -21,12 +23,13 @@ const styles = theme => ({
         minWidth:'100%',
         margin:0,
         padding:0,
-        overflow:'hidden',
+        backgroundColor:'red',
+        // overflow:'hidden',
     },
     adjestment: {
         margin:0,
         padding:0,
-        
+        height:'100vh',
     },
     paper: {
         padding: theme.spacing.unit * 3,
@@ -58,14 +61,17 @@ class FullWidthGrid extends React.Component {
                         <Header/>
                     </Grid>
                     <Grid item xs={12} sm={2}>
-                        <Sectors/>
+                        <Profile/>
                     </Grid>
                     <Grid item xs={12} sm={7}>
-                        <Companies/>
+                        {/* <TimelineCon/> */}
+                        <CompanySection/>
                     </Grid>
                     <Grid item xs={12} sm={3}>
-                        <TimelineCon/>
                         <Analyst/>
+                    </Grid>
+                    <Grid item xs={12} sm={12}>
+                        footer
                     </Grid>
                 </Grid>
             </div>
