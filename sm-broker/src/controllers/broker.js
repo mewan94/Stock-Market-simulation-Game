@@ -14,8 +14,8 @@ export class BrokerController {
                     return response;
                 })
                 .catch(function (error) {
-                
-                    return new Error("error occured");
+
+                    return new Error("error occured while connecting to the server");
                 });
         }
         else {
@@ -33,11 +33,12 @@ export class BrokerController {
                     return response;
                 })
                 .catch(function (error) {
-                    return new Error("error occured");
+                    return new Error("error occured while connecting to the server");
                 });
         }
         else {
             return new Error("Cannot connect to the API");
+
         }
     }
     sellStocks(token, gameId) {
@@ -50,12 +51,12 @@ export class BrokerController {
                     return response;
                 })
                 .catch(function (error) {
-                 return new Error("error occured");
+                    return new Error("error occured while connecting to the server");
                 });
         }
         else {
-            return new Error("Cannot connect to the API");
-            
+            return new Error("Cannot connect to the server");
+
         }
     }
 }

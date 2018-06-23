@@ -2,5 +2,5 @@
 	"port": 7878,
 	"bodyLimit": "100kb",
 	"corsHeaders": ["Link"],
-	"stockmarketUrl": "192.168.8.100:7878/api"
+	"stockmarketUrl": "192.168.137.185:8080/api/game"
 }
