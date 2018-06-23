@@ -11,7 +11,7 @@ import InboxIcon from '@material-ui/icons/Inbox';
 import './profile.css';
 
 const styles = theme => ({
-    
+
 });
 
 class Profile extends Component {

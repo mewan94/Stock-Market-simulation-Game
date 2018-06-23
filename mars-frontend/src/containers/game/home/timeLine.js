@@ -1,91 +1,53 @@
 import React from 'react';
 import {
+    XYPlot,
     XAxis,
     YAxis,
+    VerticalGridLines,
     HorizontalGridLines,
-    FlexibleWidthXYPlot,
-    LineSeries,
-    DiscreteColorLegend
+    VerticalBarSeries,
+    VerticalBarSeriesCanvas,
 } from 'react-vis';
 import 'react-vis/dist/style.css';
 
 export default class TimelineCon extends React.Component {
 
     state = {
-        lastDrawLocation: null,
-        series: [
-            {
-                title: 'Sector 1',
-                data: [
-                    {x:0,y:10},
-                    {x:1,y:9},
-                    {x:2,y:5},
-                    {x:3,y:4},
-                    {x:4,y:1},
-                    {x:5,y:9},
-                    {x:6,y:7},
-                    {x:7,y:3},
-                    {x:8,y:7},
-                    {x:9,y:6},
-                ]
-            },
-            {
-                title: 'Sector 2',
-                data: [
-                    {x:0,y:10},
-                    {x:1,y:29},
-                    {x:2,y:2},
-                    {x:3,y:44},
-                    {x:4,y:1},
-                    {x:5,y:19},
-                    {x:6,y:7},
-                    {x:7,y:24},
-                    {x:8,y:7},
-                    {x:9,y:6},
-                ]
-            },
-            {
-                title: 'Sector 3',
-                data: [
-                    {x:0,y:10},
-                    {x:1,y:5},
-                    {x:2,y:9},
-                    {x:3,y:154},
-                    {x:4,y:10},
-                    {x:5,y:39},
-                    {x:6,y:45},
-                    {x:7,y:22},
-                    {x:8,y:3},
-                    {x:9,y:7},
-                ]
-            },
-        ]
+        useCanvas: true
     };
 
     render() {
-        const {series, lastDrawLocation} = this.state;
+        const {useCanvas} = this.state;
+        const content = useCanvas ? 'TOGGLE TO SVG' : 'TOGGLE TO CANVAS';
+        const BarSeries = useCanvas ? VerticalBarSeriesCanvas : VerticalBarSeries;
+
         return (
             <div>
-                <div className="example-with-click-me">
-                    <div className="chart no-select">
-                        <FlexibleWidthXYPlot
-                            animation
-                            xDomain={lastDrawLocation && [lastDrawLocation.left, lastDrawLocation.right]}
-                            height={300}>
-                            <HorizontalGridLines />
-                            <YAxis />
-                            <XAxis />
-
-                            {series.map(entry => (
-                                <LineSeries
-                                    key={entry.title}
-                                    data={entry.data}
-                                />
-                            ))}
-
-                        </FlexibleWidthXYPlot>
-                    </div>
-                </div>
+                <XYPlot
+                    xType="ordinal"
+                    width={600}
+                    height={300}
+                    xDistance={100}
+                >
+                    <VerticalGridLines />
+                    <HorizontalGridLines />
+                    <XAxis />
+                    <YAxis />
+                    <BarSeries
+                        className="vertical-bar-series-example"
+                        data={[
+                            {x: 'Turn 1', y: 10},
+                            {x: 'Turn 2', y: 5},
+                            {x: 'Turn 3', y: 15},
+                            {x: 'Turn 4', y: 10},
+                            {x: 'Turn 5', y: 5},
+                            {x: 'Turn 6', y: 15},
+                            {x: 'Turn 7', y: 10},
+                            {x: 'Turn 8', y: 5},
+                            {x: 'Turn 9', y: 15},
+                            {x: 'Turn 10', y: 15}
+                        ]}/>
+                </XYPlot>
             </div>
         );
     }
