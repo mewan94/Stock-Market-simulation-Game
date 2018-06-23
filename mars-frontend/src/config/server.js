@@ -7,6 +7,7 @@ module.exports = {
         CREATE_PLAYER: APIBank + 'player/',
         CREATE_GAME: APIGame + 'game/',
         JOIN_GAME: APIGame + 'game/',
+        JOIN_EXISTING_GAME: APIGame + 'game/'
     }
 
 };

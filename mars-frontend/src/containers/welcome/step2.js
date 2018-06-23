@@ -33,7 +33,7 @@ class Step2 extends Component{
                             <h2 className="dialog-secondary-title">{description}</h2>
                         </div>
                         <div className="content-container">
-                            <Input type="text" text="Send the game URL to friends to join" submit={this.props.submit} default={this.props.gameid}/>
+                            {this.props.gameid}
                         </div>
                     </div>
                     <div className="content-center">

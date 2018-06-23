@@ -7,7 +7,7 @@ import DialogBox from "../../components/dialogBox/index";
 import Step1 from "./step1";
 import { GAME_JOIN_MODE } from "../../types/common";
 import Step2 from "./step2";
-import { userRegistration, startGame } from '../../actions/user';
+import {userRegistration, startGame, joinGame, joinexistinggame} from '../../actions/user';
 import * as AuthActions from '../../types/user';
 
 class Welcome extends Component {
@@ -43,6 +43,10 @@ class Welcome extends Component {
     };
 
     _getStartMode = (GameMode) => {
+        this.setState({
+            gameStartMode:GameMode
+        });
+
         if(this.state.userName !== ''){
             this.props.dispatch(userRegistration(this.state.userName));
         }
@@ -66,7 +70,17 @@ class Welcome extends Component {
 
     componentWillReceiveProps(nextProps){
         if(nextProps.user.action === AuthActions.USER_REGISTER_SUCCESS){
-            this.props.dispatch(startGame())
+            console.log('st1 ');
+            if(this.state.gameStartMode === GAME_JOIN_MODE.CREATE){
+                console.log('st2 ');
+                this.props.dispatch(startGame())
+            }else if(this.state.gameStartMode === GAME_JOIN_MODE.JOIN){
+                this.props.dispatch(joinexistinggame(nextProps.user.game.gameID))
+            }
+        }
+
+        if(nextProps.user.action === AuthActions.JOIN_EXISTING_GAME_SUCCESS){
+            alert('ready to start')
         }
 
         if(nextProps.user.action === AuthActions.CREATE_GAME_SUCCESS){
