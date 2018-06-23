@@ -9,6 +9,7 @@ import { GAME_JOIN_MODE } from "../../types/common";
 import Step2 from "./step2";
 import {userRegistration, startGame, joinGame, joinexistinggame} from '../../actions/user';
 import * as AuthActions from '../../types/user';
+import { startGameSoc } from '../../api';
 
 class Welcome extends Component {
 
@@ -70,9 +71,7 @@ class Welcome extends Component {
 
     componentWillReceiveProps(nextProps){
         if(nextProps.user.action === AuthActions.USER_REGISTER_SUCCESS){
-            console.log('st1 ');
             if(this.state.gameStartMode === GAME_JOIN_MODE.CREATE){
-                console.log('st2 ');
                 this.props.dispatch(startGame())
             }else if(this.state.gameStartMode === GAME_JOIN_MODE.JOIN){
                 this.props.dispatch(joinexistinggame(nextProps.user.game.gameID))
@@ -84,6 +83,7 @@ class Welcome extends Component {
         }
 
         if(nextProps.user.action === AuthActions.CREATE_GAME_SUCCESS){
+            startGameSoc(nextProps.user.game.gameID,(d)=>{console.log(d)});
             this.setState({
                 gameID:"http://localhost:3000/join/"+nextProps.user.game.gameID,
                 gameStartMode:GAME_JOIN_MODE.CREATE,
