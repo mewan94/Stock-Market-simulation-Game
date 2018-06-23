@@ -21,13 +21,16 @@ const styles = theme => ({
         width:'100%',
         maxWidth:'100%',
         minWidth:'100%',
-        // height:'100vh',
-        // maxHeight:'100vh',
-        // minHeight:'100vh',
+        height:'100vh',
+        maxHeight:'100vh',
+        minHeight:'100vh',
         margin:0,
         padding:0,
         boxSizing:'border-box',
         flexgrow:1,
+    },
+    gridMiddle:{
+        height:50+'%'
     },
     paper: {
         padding: theme.spacing.unit * 3,
@@ -58,11 +61,23 @@ function FullWidthGrid(props) {
                 <Grid item xs={6} sm={9}>
                     <Paper className={classes.paper}>xs=6 sm=3</Paper>
                 </Grid>
-                <Grid item xs={6} sm={3}>
-                    <Paper className={classes.paper}>xs=6 sm=3</Paper>
+                <Grid container>
+                    <Grid item xs={12} sm={2}>
+                        <Profile/>
+                    </Grid>
+                    <Grid item xs={12} sm={10}>
+                        <Grid container className={classes.gridMiddle}>
+                            <Grid item xs={12} sm={6}>
+                                <CompanySection/>
+                            </Grid>
+                            <Grid item xs={12} sm={4}>
+                                <TimelineCon/>
+                            </Grid>
+                        </Grid>
+                    </Grid>
                 </Grid>
-            </Grid>
-        </div>
+                </Grid>
+            </div>
     );
 }
 
