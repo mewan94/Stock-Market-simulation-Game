@@ -1,26 +1,19 @@
-.container {
+.header-container {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
   width: 100%;
-  background: #E24A4A;
-  /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(left top, #E24A4A, #EE8550);
-  /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(bottom right, #E24A4A, #EE8550);
-  /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(bottom right, #E24A4A, #EE8550);
-  /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to bottom right, #E24A4A, #EE8550);
-  /* Standard syntax (must be last) */
-  height: 50px;
-  z-index: 3; }
+  height: 20vh;
+  z-index: 3;
+  box-shadow: 0 2px 6px #aaa; }
 
 .contentbox-1 {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
@@ -29,6 +22,7 @@
 .contentbox-2 {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: row;
@@ -37,15 +31,16 @@
 .contentbox-3 {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-end;
   align-items: center;
   flex-direction: row;
   width: 20%; }
 
 .main-title {
-  color: #fff;
+  color: #E24A4A;
   font-weight: 400;
-  margin: 0;
+  margin-top: -20%;
   font-size: 16pt;
   padding-left: 30px; }
 

@@ -11,14 +11,12 @@ class Header extends Component {
         let time = 134;
 
         return (
-            <div className="container">
+            <div className="header-container">
                 <div className="contentbox-1">
                     <h1 className="main-title">Stock Mania</h1>
                 </div>
                 <div className="contentbox-2">
-                    <span className="turn-time">Turn : {turn}</span>
-                    <div className="line"></div>
-                    <span className="turn-time">Time Left : {time}s</span>
+                    
                 </div>
                 <div className="contentbox-3">
                 </div>

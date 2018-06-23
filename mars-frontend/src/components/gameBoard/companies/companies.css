@@ -1,6 +1,7 @@
 .company-list {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;

@@ -45,6 +45,7 @@ body, html {
 .container-home-vertical {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -53,6 +54,7 @@ body, html {
 .container-home-horizontal {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: row;
@@ -61,6 +63,7 @@ body, html {
 .content-half-width {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: row;
@@ -94,6 +97,7 @@ body, html {
 .button-container {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -102,6 +106,7 @@ body, html {
   .button-container a[type="b1"] {
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     flex-direction: row;

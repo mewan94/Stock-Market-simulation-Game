@@ -21,7 +21,7 @@ class Profile extends Component {
         let amount=1000.51;
 
         return (
-            <div className="sector-container">
+            <div className="profile-container">
                 <div className="profile-section">
                     <div className="prof-img-sec">
                         <Avatar>

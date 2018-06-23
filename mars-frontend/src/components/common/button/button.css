@@ -67,6 +67,7 @@ button {
 a[type="b1"] {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: row;
@@ -92,6 +93,7 @@ a[type="b1"]:hover {
 a[type="b2"] {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: row;
@@ -119,6 +121,7 @@ a[type="b2"]:hover {
 a[type="b3"] {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: row;

@@ -1,7 +1,8 @@
 @import '../../../assets/styles/_variables';
 
-.sector-container{
+.profile-container{
     @include flex-box(flex-start,center,column,100%);
+    height:92.5vh;
     margin:0;
     padding:0;
     background-color: #121213;
