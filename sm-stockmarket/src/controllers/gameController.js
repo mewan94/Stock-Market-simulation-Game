@@ -14,6 +14,21 @@ export class GameController {
         return g;
     }
 
+    getGameDetails(gameID) {
+        const g = this.games.find(v => v.gameID === gameID);
+        if (g) {
+            return {
+                status: 200,
+                res: g
+            }
+        } else {
+            return {
+                status: 404,
+                res: 'Game not found'
+            }
+        }
+    }
+
     joinGame(gameID, playerID) {
         const g = this.games.find(v => v.gameID === gameID);
         if (g) {

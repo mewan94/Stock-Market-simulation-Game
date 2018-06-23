@@ -22,6 +22,11 @@ export default (io) => {
     const game = gameController.createGame(player.name)
     res.json(game); 
   });
+
+  router.get('/:gameid', (req, res) => {
+    const result = gameController.getGameDetails(req.params.gameid);
+    res.status(result.status).send(result.res);
+  })
   
   router.post('/:gameid', (req, res) => {
     const player = jwt.decode(req.body.token);
