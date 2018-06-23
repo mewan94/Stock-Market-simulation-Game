@@ -54,6 +54,27 @@ export const user = (state = initialState, action) => {
                 fetching: false,
                 action: userTypes.CREATE_GAME_FAIL
             };
+        case userTypes.JOIN_GAME:
+            return {
+                ...state,
+                fetching: true,
+                action: userTypes.JOIN_GAME
+            };
+        case userTypes.JOIN_GAME_SUCCESS:
+            return {
+                ...state,
+                fetching: false,
+                game:{
+                    ...action.payload
+                },
+                action: userTypes.JOIN_GAME_SUCCESS
+            };
+        case userTypes.JOIN_GAME_FAIL:
+            return {
+                ...state,
+                fetching: false,
+                action: userTypes.JOIN_GAME_FAIL
+            };
         default:
             return state
     }

@@ -56,6 +56,14 @@ class Welcome extends Component {
         })
     };
 
+    componentWillMount(){
+        if(this.props.user.game.gameID){
+            this.setState({
+                gameStartMode:GAME_JOIN_MODE.JOIN
+            })
+        }
+    }
+
     componentWillReceiveProps(nextProps){
         if(nextProps.user.action === AuthActions.USER_REGISTER_SUCCESS){
             this.props.dispatch(startGame())
@@ -63,7 +71,7 @@ class Welcome extends Component {
 
         if(nextProps.user.action === AuthActions.CREATE_GAME_SUCCESS){
             this.setState({
-                gameID:"myUrl/"+nextProps.user.game.gameID,
+                gameID:"http://localhost:3000/join/"+nextProps.user.game.gameID,
                 gameStartMode:GAME_JOIN_MODE.CREATE
             })
         }
@@ -116,7 +124,7 @@ class Welcome extends Component {
                 {/* make pop up dialog */}
                 <div>
                     {this.state.isPopupOpen && <DialogBox>
-                        {this.state.gameStartMode === null && <Step1 close={this._closePopUp.bind(this)} submit={this._getName.bind(this)} getMode={this._getStartMode.bind(this)}/>}
+                        {this.state.gameStartMode !== GAME_JOIN_MODE.CREATE && <Step1 close={this._closePopUp.bind(this)} submit={this._getName.bind(this)} getMode={this._getStartMode.bind(this)} joinMode={this.state.gameStartMode}/>}
                         {this.state.gameStartMode === GAME_JOIN_MODE.CREATE && this.state.userName !== null && <Step2 close={this._closePopUp.bind(this)} getStep={this._getStep.bind(this)} gameid={this.state.gameID}/>}
                     </DialogBox>}
                 </div>
