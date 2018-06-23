@@ -3,7 +3,9 @@
 .container{
     @include flex-box(flex-start,center,row,100%);
     @include  bg-gradiant($prime-color,$second-color);
-    height:80px;
+    height:50px;
+    z-index:3;
+    // box-shadow: 0 1px 2px #3a3939;
 }
 .contentbox-1{
     @include flex-box(flex-start,center,row,20%);
@@ -16,11 +18,10 @@
 }
 .main-title{
 	color:#fff;
-	font-weight:300;
+	font-weight:400;
     margin:0;
-    font-size:28pt;
+    font-size:16pt;
     padding-left:30px;
-
 }
 .turn-time{
     color:#fff;

@@ -1,0 +1,9 @@
+@import '../../../assets/styles/_variables';
+*{
+    box-sizing: border-box;
+}
+
+.sec-container{
+    @include flex-box(center,flex-start,column,100%);
+    height:100%;
+}

@@ -1,0 +1,10 @@
+.chart-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  height: 50%;
+  padding: 10px; }

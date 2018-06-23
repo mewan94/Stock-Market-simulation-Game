@@ -3,15 +3,31 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-// import Header from "./header";
 import Header from '../../components/gameBoard/header/index';
-import Sectors from "./sectors";
+import Profile from '../../components/gameBoard/profile/index';
+import CompanySection from '../../components/gameBoard/companySection/index';
+import ChartSection from '../../components/gameBoard/chartSection/index';
+import Section from '../../components/common/section/index';
+import TimelineCon from './home/timeLine';
+// import LeaderBoard from "./leaderBoard";
+// import TablePaginationActions from "./companies";
+// import TimelineCon from './timeLine';
+// import Analyst from './analyst';
+import { Hidden } from '@material-ui/core';
 import "./game.css";
-
 
 const styles = theme => ({
     root: {
-        flexGrow: 1
+        width:'100%',
+        maxWidth:'100%',
+        minWidth:'100%',
+        // height:'100vh',
+        // maxHeight:'100vh',
+        // minHeight:'100vh',
+        margin:0,
+        padding:0,
+        boxSizing:'border-box',
+        flexgrow:1,
     },
     paper: {
         padding: theme.spacing.unit * 3,
@@ -25,15 +41,16 @@ function FullWidthGrid(props) {
 
     return (
             <div className={classes.root}>
-            <Grid container spacing={24}>
+            <Grid container>
                 <Grid item xs={12} sm={12}>
                     <Header/>
                 </Grid>
-                <Grid item xs={12} sm={3}>
-                    <Sectors/>
+                <Grid item xs={12} sm={2}>
+                    <Profile/>
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                    <Paper className={classes.paper}>xs=12 sm=6</Paper>
+                <Grid item xs={12} sm={7}>
+                    <CompanySection/>
+                    <TimelineCon/>
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <Paper className={classes.paper}>xs=12 sm=6</Paper>

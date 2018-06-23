@@ -15,7 +15,8 @@
   /* For Firefox 3.6 to 15 */
   background: linear-gradient(to bottom right, #E24A4A, #EE8550);
   /* Standard syntax (must be last) */
-  height: 80px; }
+  height: 50px;
+  z-index: 3; }
 
 .contentbox-1 {
   display: flex;
@@ -43,9 +44,9 @@
 
 .main-title {
   color: #fff;
-  font-weight: 300;
+  font-weight: 400;
   margin: 0;
-  font-size: 28pt;
+  font-size: 16pt;
   padding-left: 30px; }
 
 .turn-time {

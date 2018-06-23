@@ -1,0 +1,22 @@
+@import '../../../assets/styles/_variables';
+
+.comp-section{
+    @include flex-box(flex-start,flex-start,column,100%);
+    margin:0;
+    height:35%;
+    padding:10px;
+}
+.sec-list{
+    @include flex-box(flex-start,flex-start,column,20%);
+    background:transparent;
+    margin:0;
+    padding:0;
+    padding: 20px 0;
+}
+.com-list{
+    @include flex-box(flex-start,flex-start,column,80%);
+    background:transparent;
+    margin:0;
+    padding:0;
+    padding: 20px 0;
+}

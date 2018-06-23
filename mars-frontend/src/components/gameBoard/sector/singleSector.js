@@ -17,4 +17,4 @@ class SingleSector extends Component{
     }
 }
 
-export default SingleSector;
+export default withStyles(styles)(SingleSector);

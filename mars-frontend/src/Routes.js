@@ -5,7 +5,7 @@ import asyncComponent from "./containers/AsyncComponent";
 import UnauthenticatedRoute from "./containers/routes/UnauthenticatedRoute";
 
 const Welcome = asyncComponent(() => import("./containers/welcome"));
-const Game = asyncComponent(() => import("./containers/game/home"));
+const Game = asyncComponent(() => import("./containers/game"));
 const Account = asyncComponent(() => import("./containers/game/account"));
 const Transactions = asyncComponent(() => import("./containers/game/transactions"));
 

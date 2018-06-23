@@ -1,0 +1,34 @@
+.comp-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  height: 35%;
+  padding: 10px; }
+
+.sec-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 20%;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  padding: 20px 0; }
+
+.com-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 80%;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  padding: 20px 0; }
