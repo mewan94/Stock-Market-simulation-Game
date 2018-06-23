@@ -1,5 +1,6 @@
-import * as jwt from 'jsonwebtoken';
+//import * as jwt from 'jsonwebtoken';
 import config from '../config.json';
+import axios from 'axios'
 export class BrokerController {
 
 
@@ -13,11 +14,12 @@ export class BrokerController {
                     return response;
                 })
                 .catch(function (error) {
-                    return new Error("error occured")
+                
+                    return new Error("error occured");
                 });
         }
         else {
-            return new Error = ("Cannot connect to the API")
+            return new Error("Cannot connect to the API");
         }
     }
 
@@ -31,11 +33,11 @@ export class BrokerController {
                     return response;
                 })
                 .catch(function (error) {
-                    return new Error = ("error occured")
+                    return new Error("error occured");
                 });
         }
         else {
-            return new Error = ("Cannot connect to the API")
+            return new Error("Cannot connect to the API");
         }
     }
     sellStocks(token, gameId) {
@@ -48,11 +50,12 @@ export class BrokerController {
                     return response;
                 })
                 .catch(function (error) {
-                    return new Error = ("error occured")
+                 return new Error("error occured");
                 });
         }
         else {
-            return new Error = ("Cannot connect to the API")
+            return new Error("Cannot connect to the API");
+            
         }
     }
 }
