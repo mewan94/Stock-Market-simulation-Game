@@ -50,7 +50,7 @@ function FullWidthGrid(props) {
                 </Grid>
                 <Grid item xs={12} sm={7}>
                     <CompanySection/>
-                    <TimelineCon/>
+                    {/* <TimelineCon/> */}
                 </Grid>
                 <Grid item xs={12} sm={3}>
                     <Paper className={classes.paper}>xs=12 sm=6</Paper>

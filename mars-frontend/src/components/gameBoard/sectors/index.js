@@ -10,11 +10,13 @@ class Sectors extends Component {
     render() {
         return (
             <div className="sec-container">
-                <Sector text="Education"/>
-                <Sector text="Computing"/>
-                <Sector text="Technical"/>
-                <Sector text="Automation"/>
-                <Sector text="Engineering"/>
+                <Scrollbox>
+                    <Sector text="Education"/>
+                    <Sector text="Computing"/>
+                    <Sector text="Technical"/>
+                    <Sector text="Automation"/>
+                    <Sector text="Engineering"/>
+                </Scrollbox>
             </div>
         );
     }
