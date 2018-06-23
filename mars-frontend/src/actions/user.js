@@ -27,12 +27,13 @@ export function startGame() {
         axios.post(ROUTES.GAME,{"token":localStorage.getItem('userToken')})
             .then(response => {
                 if(response.status === 200){
-                    dispatch({type: userTypes.CREATE_GAME_SUCCESS,gameID:response.data})
+                    dispatch({type: userTypes.CREATE_GAME_SUCCESS,payload:response.data})
                 }else{
                     dispatch({type: userTypes.CREATE_GAME_FAIL})
                 }
             })
             .catch((err) => {
+            console.log(err);
                 dispatch({type: userTypes.CREATE_GAME_FAIL})
             })
     }

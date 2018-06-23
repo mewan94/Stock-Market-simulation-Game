@@ -9,8 +9,6 @@ import { GAME_JOIN_MODE } from "../../types/common";
 import Step2 from "./step2";
 import { userRegistration, startGame } from '../../actions/user';
 import * as AuthActions from '../../types/user';
-import { test } from '../../api';
-import socketIOClient from "socket.io-client";
 
 class Welcome extends Component {
 
@@ -24,19 +22,12 @@ class Welcome extends Component {
             gameID:null,
             endpoint:'http://localhost:4200'
         };
-        test((d) => {
-            console.log(d)
-        })
-        /*subscribeToTimer((err, timestamp) => this.setState({
-            timestamp
-        }));*/
     }
 
     _openPopup = () => {
         this.setState({
             isPopupOpen:true
-        })
-        this._send(1)
+        });
     };
 
     _closePopUp = () => {
@@ -65,11 +56,6 @@ class Welcome extends Component {
         })
     };
 
-    /*_send = (i) => {
-        const socket = socketIOClient(this.state.endpoint);
-        socket.emit('joingame',{game:i},(d) => {console.log(d)})
-    };*/
-
     componentWillReceiveProps(nextProps){
         if(nextProps.user.action === AuthActions.USER_REGISTER_SUCCESS){
             this.props.dispatch(startGame())
@@ -77,7 +63,7 @@ class Welcome extends Component {
 
         if(nextProps.user.action === AuthActions.CREATE_GAME_SUCCESS){
             this.setState({
-                gameID:nextProps.user.game.id,
+                gameID:"myUrl/"+nextProps.user.game.gameID,
                 gameStartMode:GAME_JOIN_MODE.CREATE
             })
         }

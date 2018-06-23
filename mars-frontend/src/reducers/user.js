@@ -9,10 +9,7 @@ export const initialState = {
         name:null,
         balance:0
     },
-    game: {
-        id:null,
-        role:null
-    }
+    game: {}
 };
 
 export const user = (state = initialState, action) => {
@@ -48,8 +45,7 @@ export const user = (state = initialState, action) => {
                 fetching: false,
                 action: userTypes.CREATE_GAME_SUCCESS,
                 game:{
-                    id: action.payload,
-                    role: GAME_ROLE.ADMIN
+                    ...action.payload
                 }
             };
         case userTypes.CREATE_GAME_FAIL:
