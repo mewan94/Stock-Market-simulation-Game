@@ -3,8 +3,9 @@
 .company-list{
     @include flex-box(flex-start,flex-start,column,100%);
     background:transparent;
+    height:auto;
     margin:0;
-    padding:0;
+    padding:0 10px;
     box-sizing: border-box;
 }
 

@@ -3,11 +3,12 @@
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-start;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   margin: 0;
-  height: 35%;
-  padding: 10px; }
+  padding: 10px;
+  height: 49vh;
+  box-sizing: border-box; }
 
 .sec-list {
   display: flex;
@@ -16,10 +17,11 @@
   align-items: flex-start;
   flex-direction: column;
   width: 20%;
-  background: transparent;
+  height: 100%;
   margin: 0;
   padding: 0;
-  padding: 20px 0; }
+  padding: 20px 0;
+  box-sizing: border-box; }
 
 .com-list {
   display: flex;
@@ -28,7 +30,8 @@
   align-items: flex-start;
   flex-direction: column;
   width: 80%;
-  background: transparent;
+  height: 100%;
   margin: 0;
   padding: 0;
-  padding: 20px 0; }
+  padding: 20px 0;
+  box-sizing: border-box; }

@@ -10,19 +10,3 @@
   visibility: visible;
   transition: visibility 0s 0.2s;
   outline: none; }
-
-/* width */
-.crollbox-content::-webkit-scrollbar {
-  width: 10px; }
-
-/* Track */
-.crollbox-content::-webkit-scrollbar-track {
-  background: #f1f1f1; }
-
-/* Handle */
-.crollbox-content::-webkit-scrollbar-thumb {
-  background: #888; }
-
-/* Handle on hover */
-.crollbox-content::-webkit-scrollbar-thumb:hover {
-  background: #555; }
