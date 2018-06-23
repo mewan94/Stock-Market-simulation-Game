@@ -1,17 +1,58 @@
 {
 	"port": 8080,
 	"bodyLimit": "100kb",
-	"corsHeaders": ["Link"],
+	"corsHeaders": [
+		"Link"
+	],
 	"sectors": [
-		"sector1",
-		"sector2",
-		"sector3"
+		"Bank Finance and Insurance",
+		"Beverage Food and Tobacco",
+		"Construction and Engineering",
+		"Diversified Holdings",
+		"Healthcare",
+		"Hotels and Travels",
+		"Information Technology",
+		"Manufacturing",
+		"Motors",
+		"Services",
+		"Telecommunications"
 	],
 	"stocks": [
 		{
-			"name": "ABC",
-			"sector": "sector1",
-			"price": 200
+			"name": "NATIONAL DEVELOPMENT BANK PLC",
+			"symbol": "NDB.N0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 124
+		},
+		{
+			"name": "SMB LEASING PLC",
+			"symbol": "SEMB.N0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 0.5
+		},
+		{
+			"name": "COMMERCIAL BANK OF CEYLON PLC",
+			"symbol": "COMB.N0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 123.2
+		},
+		{
+			"name": "SAMPATH BANK PLC",
+			"symbol": "SAMP.N0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 305.1
+		},
+		{
+			"name": "COMMERCIAL BANK OF CEYLON PLC",
+			"symbol": "COMB.X0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 96
+		},
+		{
+			"name": "PEOPLE'S LEASING & FINANCE PLC",
+			"symbol": "PLC.N0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 15.3
 		},
 		{
 			"name": "BCD",
