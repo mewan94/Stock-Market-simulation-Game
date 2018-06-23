@@ -9,8 +9,8 @@ import { GAME_JOIN_MODE } from "../../types/common";
 import Step2 from "./step2";
 import { userRegistration, startGame } from '../../actions/user';
 import * as AuthActions from '../../types/user';
-import { subscribeToTimer } from '../../api';
-import {getSpecialEvents} from '../../libes/auth';
+import { test } from '../../api';
+import socketIOClient from "socket.io-client";
 
 class Welcome extends Component {
 
@@ -22,23 +22,28 @@ class Welcome extends Component {
             gameStartMode:null,
             step:null,
             gameID:null,
-            timestamp: 'no timestamp yet'
+            endpoint:'http://localhost:4200'
         };
-        subscribeToTimer((err, timestamp) => this.setState({
+        test((d) => {
+            console.log(d)
+        })
+        /*subscribeToTimer((err, timestamp) => this.setState({
             timestamp
-        }));
+        }));*/
     }
 
     _openPopup = () => {
         this.setState({
             isPopupOpen:true
         })
+        this._send(1)
     };
 
     _closePopUp = () => {
         this.setState({
             isPopupOpen:false
         })
+        this._send(2)
     };
 
     _getName = (name) => {
@@ -60,6 +65,11 @@ class Welcome extends Component {
         })
     };
 
+    /*_send = (i) => {
+        const socket = socketIOClient(this.state.endpoint);
+        socket.emit('joingame',{game:i},(d) => {console.log(d)})
+    };*/
+
     componentWillReceiveProps(nextProps){
         if(nextProps.user.action === AuthActions.USER_REGISTER_SUCCESS){
             this.props.dispatch(startGame())
@@ -74,7 +84,8 @@ class Welcome extends Component {
     }
 
     render() {
-        console.log(this.state.timestamp);
+
+
         return (
             <div className="background">
                 <div className="svg-container">
