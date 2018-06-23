@@ -1,6 +1,7 @@
 .sector {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: row;

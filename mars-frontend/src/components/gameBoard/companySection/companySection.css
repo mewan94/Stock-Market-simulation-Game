@@ -1,6 +1,7 @@
 .comp-section {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
@@ -13,6 +14,7 @@
 .sec-list {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
@@ -26,6 +28,7 @@
 .com-list {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;

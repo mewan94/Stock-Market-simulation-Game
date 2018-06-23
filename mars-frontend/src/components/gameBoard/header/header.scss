@@ -1,11 +1,11 @@
 @import "../../../assets/styles/_variables";
 
-.container{
+.header-container{
     @include flex-box(flex-start,center,row,100%);
-    @include  bg-gradiant($prime-color,$second-color);
-    height:50px;
+    // @include  bg-gradiant($prime-color,$second-color);
+    height:20vh;
     z-index:3;
-    // box-shadow: 0 1px 2px #3a3939;
+    box-shadow: 0 2px 6px #aaa;
 }
 .contentbox-1{
     @include flex-box(flex-start,center,row,20%);
@@ -17,9 +17,9 @@
     @include flex-box(flex-end,center,row,20%);
 }
 .main-title{
-	color:#fff;
-	font-weight:400;
-    margin:0;
+	color:$prime-color;
+    font-weight:400;
+    margin-top:-20%;
     font-size:16pt;
     padding-left:30px;
 }

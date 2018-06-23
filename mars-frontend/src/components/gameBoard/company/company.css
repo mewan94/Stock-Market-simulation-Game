@@ -1,6 +1,7 @@
 .company {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
@@ -13,6 +14,7 @@
 .item-holder-1 {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
@@ -25,6 +27,7 @@
 .item-holder-2 {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
@@ -38,6 +41,7 @@
 .item-holder-3 {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
@@ -51,6 +55,7 @@
 .button-holder {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: row;
@@ -58,6 +63,7 @@
   .button-holder a {
     display: flex;
     flex-wrap: wrap;
+    box-sizing: border-box;
     justify-content: center;
     align-items: center;
     flex-direction: row;

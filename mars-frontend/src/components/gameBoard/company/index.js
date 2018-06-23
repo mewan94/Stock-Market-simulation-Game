@@ -21,10 +21,10 @@ class Company extends Component {
                     <h6>UP</h6>
                 </div>
                 <div className="button-holder">
-                    <a href="#">Buy</a>
+                    <a href="#popup">Buy</a>
                 </div>
                 <div className="button-holder">
-                    <a href="#">Sell</a>
+                    <a href="#popup">Sell</a>
                 </div>
             </div>
         );
