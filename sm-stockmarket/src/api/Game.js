@@ -26,11 +26,17 @@ export default (io) => {
   router.post('/:gameid', (req, res) => {
     const player = jwt.decode(req.body.token);
     const result = gameController.joinGame(req.params.gameid, player.name)
-    if(result) {
-      res.send(200);
+    if(result !== false) {
+      res.json(result);
     } else {
       res.send(400);
     }
+  });
+
+  router.post('/:gameid/start', (req, res) => {
+    const player = jwt.decode(req.body.token);
+    const result = gameController.startGame(req.params.gameid, player.name)
+    res.status(result.status).send(result.res);
   });
 
   router.post('/:gameid/stocks', (req, res) => {

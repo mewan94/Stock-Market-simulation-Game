@@ -3,6 +3,9 @@ import config from '../config.json'
 export class Game {
     playerList = [];
     stocks = [];
+    gameStarted = false;
+    gameEnded = false;
+    turn = -1;
 
     constructor(gameAdmin) {
         this.gameAdmin = gameAdmin;
@@ -20,14 +23,29 @@ export class Game {
     }
 
     getCurrentTurn() {
-
+        return this.turn;
     }
     
     getStocks() {
-        return this.stocks;
+        return {
+            gameID: this.gameID,
+            currentTurn: this.turn,
+            stocks: this.stocks
+        };
     }
 
     startGame() {
+        if (this.gameStarted && !this.gameEnded) {
+            return 'Game already running'
+        }
+        
+        if (this.gameEnded) {
+            console.log('endedddd');
+            return 'This game has ended'
+        }
+
+        this.gameStarted = true;
+
         this.startTime = Date.now();
         this.turn = 0;
         let timer = setInterval(() => {
@@ -36,8 +54,11 @@ export class Game {
             // calculate stocks
             if (this.turn >= config.turns) {
                 clearInterval(timer);
-                console.log('Game ended');
+                this.gameEnded = true;
+                console.log('Game ended', this.gameEnded);
             }
         }, config.turnTime);
+
+        return 'Game started';
     }
 }

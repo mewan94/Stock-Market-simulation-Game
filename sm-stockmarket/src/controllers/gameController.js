@@ -18,7 +18,7 @@ export class GameController {
         const g = this.games.find(v => v.gameID === gameID);
         if (g) {
             g.addPlayer(playerID);
-            return true
+            return g;
         } else {
             return false;
         }
@@ -30,6 +30,30 @@ export class GameController {
             return g.getStocks();
         } else {
             return false;
+        }
+    }
+    
+    startGame(gameID, playerID) {
+        const g = this.games.find(v => v.gameID === gameID);
+        if (!g) {
+            return {
+                status: 404,
+                res: { error: 'No such game' }
+            }
+        }
+        
+        if (g.gameAdmin !== playerID) {
+            return {
+                status: 403,
+                res: { error: 'You need to be admin to start game' }
+            }
+        }
+
+        const res = g.startGame();
+
+        return {
+            status: 200,
+            res: res
         }
     }
 
