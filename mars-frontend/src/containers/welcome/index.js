@@ -33,8 +33,7 @@ class Welcome extends Component {
     _closePopUp = () => {
         this.setState({
             isPopupOpen:false
-        })
-        this._send(2)
+        });
     };
 
     _getName = (name) => {
@@ -59,7 +58,8 @@ class Welcome extends Component {
     componentWillMount(){
         if(this.props.user.game.gameID){
             this.setState({
-                gameStartMode:GAME_JOIN_MODE.JOIN
+                gameStartMode:GAME_JOIN_MODE.JOIN,
+                isPopupOpen:true
             })
         }
     }
@@ -72,7 +72,7 @@ class Welcome extends Component {
         if(nextProps.user.action === AuthActions.CREATE_GAME_SUCCESS){
             this.setState({
                 gameID:"http://localhost:3000/join/"+nextProps.user.game.gameID,
-                gameStartMode:GAME_JOIN_MODE.CREATE
+                gameStartMode:GAME_JOIN_MODE.CREATE,
             })
         }
     }

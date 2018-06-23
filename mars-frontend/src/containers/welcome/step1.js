@@ -30,9 +30,9 @@ class Step1 extends Component{
                 </div>
                 <div className="row">
                     <div className="content-center">
-                        <Button text="Create New Game" type={"b1"} isLink="true" onclick={this.props.getMode.bind(this,GAME_JOIN_MODE.CREATE)}/>
+                        {this.props.joinMode !== GAME_JOIN_MODE.JOIN && <Button text="Create New Game" type={"b1"} isLink="true" onclick={this.props.getMode.bind(this,GAME_JOIN_MODE.CREATE)}/>}
                         <br/>
-                        <Button text="Join To Existing" type={"b2"} isLink="true"  onclick={this.props.getMode.bind(this,GAME_JOIN_MODE.JOIN)}/>
+                        {this.props.joinMode === GAME_JOIN_MODE.JOIN && <Button text="Join To Existing" type={"b2"} isLink="true"  onclick={this.props.getMode.bind(this,GAME_JOIN_MODE.JOIN)}/>}
                     </div>
                     <div className="content-center bottom-align">
                         <Button text="Home" type={"b3"} isLink="true" onclick={close}/>
