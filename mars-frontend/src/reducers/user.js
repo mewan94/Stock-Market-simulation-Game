@@ -101,6 +101,16 @@ export const user = (state = initialState, action) => {
                 fetching: false,
                 action: userTypes.JOIN_EXISTING_GAME_FAIL
             };
+        case userTypes.USER_SUCCESSFULLY_JOINED:
+            let list = action.payload
+            return {
+                ...state,
+                game:{
+                    ...state.game,
+                    playerList:state.game.playerList.concat(list.name)
+                },
+                action: userTypes.USER_SUCCESSFULLY_JOINED
+            };
         default:
             return state
     }

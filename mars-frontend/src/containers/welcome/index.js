@@ -7,7 +7,7 @@ import DialogBox from "../../components/dialogBox/index";
 import Step1 from "./step1";
 import { GAME_JOIN_MODE } from "../../types/common";
 import Step2 from "./step2";
-import {userRegistration, startGame, joinGame, joinexistinggame} from '../../actions/user';
+import {userRegistration, startGame, joinGame, joinexistinggame, userSuccessfullyJoined} from '../../actions/user';
 import * as AuthActions from '../../types/user';
 import { startGameSoc } from '../../api';
 
@@ -83,10 +83,18 @@ class Welcome extends Component {
         }
 
         if(nextProps.user.action === AuthActions.CREATE_GAME_SUCCESS){
-            startGameSoc(nextProps.user.game.gameID,(d)=>{console.log(d)});
+            startGameSoc(nextProps.user.game.gameID,(d)=>{
+                this.props.dispatch(userSuccessfullyJoined(d))
+            });
             this.setState({
                 gameID:"http://localhost:3000/join/"+nextProps.user.game.gameID,
                 gameStartMode:GAME_JOIN_MODE.CREATE,
+                playerList:nextProps.user.game.playerList
+            })
+        }
+
+        if(nextProps.user.action === AuthActions.USER_SUCCESSFULLY_JOINED){
+            this.setState({
                 playerList:nextProps.user.game.playerList
             })
         }
