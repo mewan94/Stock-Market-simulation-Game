@@ -42,6 +42,6 @@
     background-color: #222;
 }
 .leaderboard-container{
-    @include flex-box(flex-start,center,column,100%);
+    @include flex-box(flex-start,flex-start,column,100%);
     padding: 0 0 20px 0;
 }

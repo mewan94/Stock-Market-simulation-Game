@@ -30,5 +30,7 @@
   border-radius: 100px;
   padding: 6px 0; }
   .prof-name-sec h3 {
+    margin: 0;
+    color: #fff;
     font-weight: 300;
     font-size: 12pt; }

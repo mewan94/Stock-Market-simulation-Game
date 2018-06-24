@@ -8,6 +8,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import InboxIcon from '@material-ui/icons/Inbox';
+import History from './transactions';
 import './navigation.css';
 
 const styles = theme => ({
@@ -29,8 +30,9 @@ class Profile extends Component {
                     <a href="#">Transaction</a>
                 </div>
                 <div className="nav-devider"></div>
+                <span class="nav-text">Leaderboard</span>
                 <div className="leaderboard-container">
-                    
+                    <History/>
                 </div>
                 
             </div>
