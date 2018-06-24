@@ -16,7 +16,7 @@ import 'react-vis/dist/style.css';
 export default class TimelineCon extends React.Component {
 
     state = {
-        useCanvas: true
+        useCanvas: false
     };
 
     render() {

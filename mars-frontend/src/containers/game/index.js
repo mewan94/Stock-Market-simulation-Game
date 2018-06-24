@@ -9,6 +9,8 @@ import CompanySection from '../../components/gameBoard/companySection';
 import ChartSection from '../../components/gameBoard/chartSection';
 import Section from '../../components/common/section';
 import TimelineCon from './home/timeLine';
+import FlexibleCharts from './home/newTimeLine';
+
 import Div from './div';
 // import LeaderBoard from "./leaderBoard";
 // import TablePaginationActions from "./companies";
@@ -67,14 +69,6 @@ function FullWidthGrid(props) {
 
                     {/* element section */}
                     <Grid item xs={12} sm={10}>
-                        
-                        {/* navigation container
-                        <Grid container>
-                            <Grid item xs={12} sm={12}>
-                                <Div/>
-                            </Grid>
-                        </Grid> */}
-
                         <Grid container>
                             {/* company section */}
                             <Grid item xs={12} sm={7}>
@@ -83,7 +77,7 @@ function FullWidthGrid(props) {
 
                             {/* chart section */}
                             <Grid item xs={12} sm={5}>
-                                <TimelineCon/>
+                                <FlexibleCharts/>
                             </Grid>
                         </Grid>
 

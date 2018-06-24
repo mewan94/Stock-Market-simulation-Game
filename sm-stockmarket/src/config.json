@@ -1,0 +1,158 @@
+{
+	"port": 8080,
+	"bodyLimit": "100kb",
+	"corsHeaders": [
+		"Link"
+	],
+	"sectors": [
+		"Bank Finance and Insurance",
+		"Diversified Holdings",
+		"Hotels and Travels",
+		"Information Technology",
+		"Manufacturing",
+		"Motors",
+		"Telecommunications"
+	],
+	"stocks": [
+		{
+			"name": "NATIONAL DEVELOPMENT BANK PLC",
+			"symbol": "NDB.N0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 107
+		},
+		{
+			"name": "SMB LEASING PLC",
+			"symbol": "SEMB.N0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 110
+		},
+		{
+			"name": "COMMERCIAL BANK OF CEYLON PLC",
+			"symbol": "COMB.N0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 104
+		},
+		{
+			"name": "SAMPATH BANK PLC",
+			"symbol": "SAMP.N0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 105
+		},
+		{
+			"name": "COMMERCIAL BANK OF CEYLON PLC",
+			"symbol": "COMB.X0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 86
+		},
+		{
+			"name": "PEOPLE'S LEASING & FINANCE PLC",
+			"symbol": "PLC.N0000",
+			"sector": "Bank Finance and Insurance",
+			"price": 108
+		},
+		{
+			"name": "VALLIBEL ONE PLC",
+			"symbol": "VONE.N0000",
+			"sector": "Diversified Holdings",
+			"price": 113
+		},
+		{
+			"name": "DUNAMIS CAPITAL PLC",
+			"symbol": "CSEC.N0000",
+			"sector": "Diversified Holdings",
+			"price": 108
+		},
+		{
+			"name": "JOHN KEELLS HOLDINGS PLC",
+			"symbol": "JKH.N0000",
+			"sector": "Diversified Holdings",
+			"price": 74
+		},
+		{
+			"name": "BROWNS CAPITAL PLC",
+			"symbol": "FLCH.N0000",
+			"sector": "Diversified Holdings",
+			"price": 100
+		},
+		{
+			"name": "CITRUS LEISURE  PLC",
+			"symbol": "REEF.N0000",
+			"sector": "Hotels and Travels",
+			"price": 88
+		},
+		{
+			"name": "AITKEN SPENCE HOTEL HOLDINGS PLC",
+			"symbol": "AHUN.N0000",
+			"sector": "Hotels and Travels",
+			"price": 76
+		},
+		{
+			"name": "THE FORTRESS RESORTS PLC",
+			"symbol": "RHTL.N0000",
+			"sector": "Hotels and Travels",
+			"price": 118
+		},
+		{
+			"name": "WASKADUWA BEACH RESORT PLC",
+			"symbol": "CITW.N0000",
+			"sector": "Hotels and Travels",
+			"price": 83
+		},
+		{
+			"name": "TOKYO CEMENT COMPANY (LANKA) PLC",
+			"symbol": "TKYO.N0000",
+			"sector": "Manufacturing",
+			"price": 75
+		},
+		{
+			"name": "SWISSTEK (CEYLON) PLC",
+			"symbol": "PARQ.N0000",
+			"sector": "Manufacturing",
+			"price": 99
+		},
+		{
+			"name": "PIRAMAL GLASS CEYLON  PLC",
+			"symbol": "GLAS.N0000",
+			"sector": "Manufacturing",
+			"price": 111
+		},
+		{
+			"name": "DIESEL & MOTOR ENGINEERING PLC",
+			"symbol": "DIMO.N0000",
+			"sector": "Motors",
+			"price": 85
+		},
+		{
+			"name": "UNITED MOTORS LANKA PLC",
+			"symbol": "UML.N0000",
+			"sector": "Motors",
+			"price": 77
+		},
+		{
+			"name": "LANKA ASHOK LEYLAND PLC",
+			"symbol": "ASHO.N0000",
+			"sector": "Motors",
+			"price": 96
+		},
+		{
+			"name": "DIALOG AXIATA PLC",
+			"symbol": "DIAL.N0000",
+			"sector": "Telecommunications",
+			"price": 75
+		},
+		{
+			"name": "SRI LANKA TELECOM PLC",
+			"symbol": "SLTL.N0000",
+			"sector": "Telecommunications",
+			"price": 97
+		},
+		{
+			"name": "SRI LANKA TELECOM MOBITEL PLC",
+			"symbol": "SLTM",
+			"sector": "Telecommunications",
+			"price": 118
+		}
+	],
+	"turns": 20,
+	"turnTime": 1000
+}
