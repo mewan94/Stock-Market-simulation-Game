@@ -14,10 +14,10 @@ function startGameSoc (gameId,getUser){
     /*socket.on("joinGame",function (data) {
 
     })*/
-    socket.emit("joinGame",{gameid:gameId, token: localStorage.getItem('userToken')})
+    socket.emit("joinGame",{gameid:gameId, token: localStorage.getItem('userToken')});
     socket.on('startGame', function (data) {
         console.log(data)
-    })
+    });
     socket.on('playerJoin',function (data) {
         getUser(data);
         console.log('playerjsin',data)

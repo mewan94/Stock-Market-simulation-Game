@@ -21,7 +21,7 @@ class Welcome extends Component {
             gameStartMode:null,
             step:null,
             gameID:null,
-            endpoint:'http://localhost:4200'
+            playerList:[]
         };
     }
 
@@ -87,6 +87,7 @@ class Welcome extends Component {
             this.setState({
                 gameID:"http://localhost:3000/join/"+nextProps.user.game.gameID,
                 gameStartMode:GAME_JOIN_MODE.CREATE,
+                playerList:nextProps.user.game.playerList
             })
         }
     }
@@ -139,7 +140,7 @@ class Welcome extends Component {
                 <div>
                     {this.state.isPopupOpen && <DialogBox>
                         {this.state.gameStartMode !== GAME_JOIN_MODE.CREATE && <Step1 close={this._closePopUp.bind(this)} submit={this._getName.bind(this)} getMode={this._getStartMode.bind(this)} joinMode={this.state.gameStartMode}/>}
-                        {this.state.gameStartMode === GAME_JOIN_MODE.CREATE && this.state.userName !== null && <Step2 close={this._closePopUp.bind(this)} getStep={this._getStep.bind(this)} gameid={this.state.gameID}/>}
+                        {this.state.gameStartMode === GAME_JOIN_MODE.CREATE && this.state.userName !== null && <Step2 close={this._closePopUp.bind(this)} getStep={this._getStep.bind(this)} gameid={this.state.gameID} gameList={this.state.playerList}/>}
                     </DialogBox>}
                 </div>
             </div>

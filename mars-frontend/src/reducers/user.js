@@ -9,7 +9,15 @@ export const initialState = {
         name:null,
         balance:0
     },
-    game: {}
+    game: {
+        playerList:[],
+        stocks:[],
+        gameStarted: false,
+        gameEnded: false,
+        turn: null,
+        gameAdmin: "",
+        gameID: ""
+    }
 };
 
 export const user = (state = initialState, action) => {
