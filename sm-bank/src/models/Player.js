@@ -13,10 +13,14 @@ export class Player {
     }
 
     withdraw(requestedAmount) {
+        console.log('withdraw');
+        
         if (requestedAmount < this.balance) {
-            this.balance - requestedAmount;
+            this.balance = this.balance - requestedAmount;
+            console.log(this.balance);
+            
         } else {
-            return error = "This requested amount is cannot proceed";
+            return new Error("This requested amount is cannot proceed");
         }
     }
 

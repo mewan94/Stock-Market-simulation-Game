@@ -1,0 +1,21 @@
+@import '../../../assets/styles/_variables';
+
+.sector{
+    @include flex-box(center,center,row,90%);
+    @include  bg-gradiant($second-color,$prime-color);    
+    padding: 8px;
+    text-decoration: none;
+    font-size: 10pt;
+    color: white;
+    border-radius: 0 7px 7px 0;
+    margin:3px 0;
+    transition:0.3s ease all;
+    cursor: pointer;
+    // z-index: 3;
+}
+.sector:hover{
+    width:100%;
+}
+.sector:active{
+    // margin-left:20px;    
+}

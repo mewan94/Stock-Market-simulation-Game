@@ -1,0 +1,91 @@
+@import "variables";
+
+ /*********[additional background margin padding]**********/
+.background{
+	padding:0;
+	margin:0;
+	background-color: white;
+	width:100%;
+	height:100vh;
+	max-width: 100%;
+	max-height: 100vh;
+	// overflow:hidden;
+}
+
+/*********[adding the fill image to the wave path]**********/
+.wave{
+   	fill: url("#img1");
+   	z-index:2;
+   	position:fixed;
+   	top:0;
+   	left:0;
+}
+.svg-container{
+	position:relative;
+}
+
+/****[make a div absolute in center to put the elements in front of svg]*****/
+.center{
+    position: absolute;
+    left: 0;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    z-index:3;
+}
+
+/*********[create flex containers]**********/
+.container-home-vertical{
+	@include flex-box(center,center,column,100%);
+}
+.container-home-horizontal{
+	@include flex-box(center,center,row,100%);
+}
+.content-half-width{
+	@include flex-box(center,center,row,50%);
+}
+.justify-left{
+	justify-content:flex-end;
+}
+.margin-reduced{
+	margin-top:-10%;
+}
+
+/*********[game title & slogan styles]**********/
+.game-name{
+	color:$sec-text-color;
+	font-size:50pt;
+	font-weight:100;
+	letter-spacing:2px;
+}
+.slogan{
+	@extend .game-name;
+	font-size:14pt;
+	margin-top:-1%;
+	letter-spacing:1px;
+}
+/********[background image]********/
+.art{
+	width:300px;
+	height:auto;
+	margin: -20% 15% 0;
+}
+
+/********[background image]********/
+.button-container{
+	@include flex-box(center,center,column,18%);
+	padding-top:30px;
+
+	a[type="b1"]{
+		@include button(100%);
+		// background-color: #fff;
+		// color:$second-color;
+		// font-weight:400;
+	}
+	a[type="b1"]:hover{
+		background-color: #fff;
+		color:$second-color;
+		font-weight:400;
+	}
+}

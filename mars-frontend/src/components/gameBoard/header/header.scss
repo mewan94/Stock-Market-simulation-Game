@@ -1,0 +1,36 @@
+@import "../../../assets/styles/_variables";
+
+.header-container{
+    @include flex-box(flex-start,center,row,100%);
+    // @include  bg-gradiant($prime-color,$second-color);
+    height:20vh;
+    z-index:3;
+    box-shadow: 0 2px 6px #aaa;
+}
+.contentbox-1{
+    @include flex-box(flex-start,center,row,20%);
+}
+.contentbox-2{
+    @include flex-box(center,center,row,60%);
+}
+.contentbox-3{
+    @include flex-box(flex-end,center,row,20%);
+}
+.main-title{
+	color:$prime-color;
+    font-weight:400;
+    margin-top:-20%;
+    font-size:16pt;
+    padding-left:30px;
+}
+.turn-time{
+    color:#fff;
+    font-size: 14pt;
+    padding:20px;
+    font-weight: 300;
+}
+.line{
+    width:2px;
+    height:40px;
+    background-color: #fff;
+}
