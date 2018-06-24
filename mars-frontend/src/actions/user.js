@@ -75,3 +75,9 @@ export function joinexistinggame(gameid) {
             })
     }
 }
+
+export function userSuccessfullyJoined(username) {
+    return function (dispatch) {
+        dispatch({type: userTypes.USER_SUCCESSFULLY_JOINED, payload: username})
+    }
+}

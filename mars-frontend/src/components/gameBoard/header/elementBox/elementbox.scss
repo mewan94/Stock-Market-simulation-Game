@@ -1,0 +1,32 @@
+@import "../../../../assets/styles/_variables";
+
+.header-elementbox{
+    @include flex-box(center,center,row,100%);
+}
+.header-element-icon{
+    @include flex-box(center,center,Column,40%);
+}
+.header-icon{
+    @include flex-box(center,center,row,55px);
+    height:55px;
+    border-radius:10%;
+    background-color: $prime-color;
+}
+.header-element-text{
+    @include flex-box(center,flex-start,Column,60%);
+}
+.element-text-main{
+    color: $prime-color;
+    font-size: 30px;
+    font-weight:400;
+}
+.element-text-secondary{
+    // color: rgb(121, 102, 102);
+    color:#bbb;
+    font-size: 14px;
+    font-weight:300;
+}
+.icon-img{
+    color:#fff;
+    font-size:30px;
+}

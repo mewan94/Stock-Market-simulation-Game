@@ -4,8 +4,11 @@ import './section.css';
 
 class Section extends Component {
     render() {
+
+        let color = this.props.color;
+
         return (
-            <div className="section">
+            <div className="section" style={{backgroundColor:color}}>
                 {this.props.children}
             </div>
         );
