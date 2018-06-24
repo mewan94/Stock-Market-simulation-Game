@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import Header from '../../components/gameBoard/header/index';
-import Profile from '../../components/gameBoard/profile/index';
-import CompanySection from '../../components/gameBoard/companySection/index';
-import ChartSection from '../../components/gameBoard/chartSection/index';
-import Section from '../../components/common/section/index';
+import Header from '../../components/gameBoard/header';
+import Navigation from '../../components/gameBoard/navigation';
+import CompanySection from '../../components/gameBoard/companySection';
+import ChartSection from '../../components/gameBoard/chartSection';
+import Section from '../../components/common/section';
 import TimelineCon from './home/timeLine';
 import Div from './div';
 // import LeaderBoard from "./leaderBoard";
@@ -28,7 +28,11 @@ const styles = theme => ({
         margin:0,
         padding:0,
         boxSizing:'border-box',
+        backgroundColor:'#111',
         flexgrow:1,
+    },
+    changeTheme:{
+        backgroundColor:'#444',
     },
     gridMiddle:{
         height:50+'%'
@@ -55,10 +59,10 @@ function FullWidthGrid(props) {
                 </Grid>
                 
                 {/* elements container */}
-                <Grid container>
+                <Grid container className={classes.changeTheme}>
                     {/* profile section */}
                     <Grid item xs={12} sm={2}>
-                        <Profile/>
+                        <Navigation/>
                     </Grid>
 
                     {/* element section */}

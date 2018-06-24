@@ -7,6 +7,9 @@ import {
     HorizontalGridLines,
     VerticalBarSeries,
     VerticalBarSeriesCanvas,
+    FlexibleXYPlot,
+    FlexibleWidthXYPlot,
+    FlexibleHeightXYPlot
 } from 'react-vis';
 import 'react-vis/dist/style.css';
 
@@ -25,12 +28,13 @@ export default class TimelineCon extends React.Component {
             <div>
                 <XYPlot
                     xType="ordinal"
-                    width={600}
+                    width={500}
                     height={300}
                     xDistance={100}
                 >
-                    <VerticalGridLines />
-                    <HorizontalGridLines />
+
+                    {/* <VerticalGridLines /> */}
+                    {/* <HorizontalGridLines /> */}
                     <XAxis />
                     <YAxis />
                     <BarSeries
@@ -48,6 +52,7 @@ export default class TimelineCon extends React.Component {
                             {x: 'Turn 10', y: 15}
                         ]}/>
                 </XYPlot>
+                
             </div>
         );
     }

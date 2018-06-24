@@ -12,10 +12,11 @@ import Div from '../../../containers/game/div';
 
 class CompanySection extends Component {
     render() {
+
         return (
             <div>
                 <div className="comp-section">
-                    <Section>
+                    <Section color="#222">
                         <div className="sec-list">
                             <Sectors/>
                         </div>

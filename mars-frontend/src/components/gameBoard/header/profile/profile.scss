@@ -1,0 +1,21 @@
+@import "../../../../assets/styles/_variables";
+
+.profile-section{
+    @include flex-box(center,flex-start,row,100%);
+    margin:0;
+}
+.prof-img-sec{
+    @include flex-box(center,flex-start,Column,30%);
+}
+.prof-name-sec{
+    @include flex-box(center,center,Column,70%);
+    color:#fff;
+    border: 2px solid #fff;
+    border-radius: 100px;
+    padding:6px 0;
+
+    h3{
+        font-weight:300;
+        font-size:12pt; 
+     }
+}
