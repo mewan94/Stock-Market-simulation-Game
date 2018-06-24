@@ -52,7 +52,13 @@ export default (io) => {
   
   io.on('connection', (socket) => {
     console.log('A user connected');
-    socket.emit('test', { hello: 'world' });
+    socket.on('joinGame', (data) => {
+      console.log('A user connected', data.gameid, data.token);
+      socket.emit('startGame', { gameid: data.gameid});
+      setInterval(() => {
+        socket.emit('playerJoin', { name: 'Random user '+ Date.now() })
+      }, 2000)
+    });
   });
 
   return router;

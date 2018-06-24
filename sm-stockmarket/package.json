@@ -8,7 +8,8 @@
     "build": "babel src -s -D -d dist --presets es2015,stage-0",
     "start": "node dist",
     "prestart": "npm run -s build",
-    "test": "eslint src"
+    "test": "eslint src",
+    "deploy": "git subtree push --prefix sm-stockmarket sm-stockmarket master"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
