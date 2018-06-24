@@ -1,0 +1,66 @@
+@mixin details($font-family, $font-style, $font-weight){
+  font-family: $font-family;
+  font-style: $font-style;
+  font-weight: $font-weight;
+}
+
+// font-face-normal mode
+@mixin font-face($font-family, $font-style, $font-weight, $version, $type, $main-folder,$Font-type-name){
+  
+  @font-face {
+    @include details($font-family, $font-style, $font-weight);
+    src: url('../' +$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+'.eot'); /* IE9 Compat Modes */
+    src: local($font-family+''+$Font-type-name), local($font-family+'-'+$Font-type-name),
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+'.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+'.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+'.woff') format('woff'), /* Modern Browsers */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+'.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+'.svg#lato') format('svg'); /* Legacy iOS */
+  }
+}
+
+// font-face-italic mode
+@mixin font-face-ita($font-family, $font-style, $font-weight, $version, $type, $main-folder,$Font-type-name){
+  
+  @font-face{
+    @include details($font-family, $font-style, $font-weight);
+    src: url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+$font-style+'.eot'); /* IE9 Compat Modes */
+    src: local($font-family+' '+$Font-type-name+' Italic'), local($font-family+'-'+$Font-type-name+'Italic'),
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+$font-style+'.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+$font-style+'.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+$font-style+'.woff') format('woff'), /* Modern Browsers */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+$font-style+'.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-'+$font-weight+$font-style+'.svg#lato') format('svg'); /* Legacy iOS */
+  }
+}
+
+// font-face-regular mode
+@mixin font-face-reg($font-family, $font-style, $font-weight, $version, $type, $main-folder){
+
+  @font-face{
+    @include details($font-family, $font-style, $font-weight);
+    src: url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-regular.eot'); /* IE9 Compat Modes */
+    src: local($font-family), local($font-family+'-Regular'),
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-regular.woff') format('woff'), /* Modern Browsers */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-regular.svg#lato') format('svg'); /* Legacy iOS */
+  }  
+}
+
+// font-face-regular-italic mode
+@mixin font-face-reg-ita($font-family, $font-style, $font-weight, $version, $type, $main-folder){
+  
+  @font-face{
+    @include details($font-family, $font-style, $font-weight);
+    src: url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-italic.eot'); /* IE9 Compat Modes */
+    src: local($font-family+' Italic'), local($font-family+'-Italic'),
+          url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+          url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-italic.woff2') format('woff2'), /* Super Modern Browsers */
+          url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-italic.woff') format('woff'), /* Modern Browsers */
+          url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-italic.ttf') format('truetype'), /* Safari, Android, iOS */
+          url('../'+$main-folder+'/'+$font-family+'/'+$font-family+'-'+$version+'-'+$type+'-italic.svg#lato') format('svg'); /* Legacy iOS */
+  }
+}
+

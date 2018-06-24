@@ -3,7 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import store from './Store';
 import { BrowserRouter as Router } from "react-router-dom";
-import './styles/index.css';
+import './assets/styles/fonts.css';
+import './assets/styles/main.css';
+
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 

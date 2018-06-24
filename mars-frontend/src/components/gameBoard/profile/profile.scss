@@ -1,0 +1,54 @@
+@import '../../../assets/styles/_variables';
+
+.profile-container{
+    @include flex-box(flex-start,center,column,100%);
+    height:92.5vh;
+    margin:0;
+    padding:0;
+    background-color: #121213;
+}
+.profile-section{
+    @include flex-box(flex-start,center,row,100%);
+    margin:0;
+    padding: 20px 0;
+    background-color: #000;
+}
+.prof-img-sec{
+    @include flex-box(center,flex-start,Column,30%);
+    padding-left:10%;
+    box-sizing: border-box;
+}
+.prof-name-sec{
+    @include flex-box(center,flex-start,Column,70%);
+    color:#fff;
+    box-sizing: border-box;
+    padding-left:7%;
+    // margin-left: -100px;
+
+    h3{
+        font-weight:400;
+        font-size:12pt; 
+     }
+     h4{
+        font-weight:300;
+        font-size:10pt; 
+        color:#aaa;
+     }
+}
+.sectors-section{
+    @include flex-box(flex-start,flex-start,Column,100%);
+    padding:10px;
+    flex-wrap: nowrap;
+
+    h3{
+      color:#aaa;
+      font-size:12pt;
+      font-weight:400;
+      padding-left:10px;  
+    }
+    .sector-list{
+        @extend .sectors-section;
+        color:#fff;  
+        // overflow-y: scroll;  
+    }
+}

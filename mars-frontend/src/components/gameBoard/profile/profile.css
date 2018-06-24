@@ -1,0 +1,72 @@
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 92.5vh;
+  margin: 0;
+  padding: 0;
+  background-color: #121213; }
+
+.profile-section {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  margin: 0;
+  padding: 20px 0;
+  background-color: #000; }
+
+.prof-img-sec {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: Column;
+  width: 30%;
+  padding-left: 10%;
+  box-sizing: border-box; }
+
+.prof-name-sec {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: Column;
+  width: 70%;
+  color: #fff;
+  box-sizing: border-box;
+  padding-left: 7%; }
+  .prof-name-sec h3 {
+    font-weight: 400;
+    font-size: 12pt; }
+  .prof-name-sec h4 {
+    font-weight: 300;
+    font-size: 10pt;
+    color: #aaa; }
+
+.sectors-section, .sectors-section .sector-list {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: Column;
+  width: 100%;
+  padding: 10px;
+  flex-wrap: nowrap; }
+  .sectors-section h3, .sectors-section .sector-list h3 {
+    color: #aaa;
+    font-size: 12pt;
+    font-weight: 400;
+    padding-left: 10px; }
+  .sectors-section .sector-list {
+    color: #fff; }
