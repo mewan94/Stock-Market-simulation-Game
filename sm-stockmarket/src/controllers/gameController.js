@@ -1,99 +1,107 @@
 import * as jwt from 'jsonwebtoken';
 import config from '../config.json';
 import { Game } from '../models/Game'
+import { StockManager } from '../models/StockManager';
 
 export class GameController {
 
-    constructor() {
-        this.games = [];
+  constructor() {
+    this.games = [];
+  }
+
+  createGame(gameAdmin) {
+    const stockManager = new StockManager(config.stocks);
+    const g = new Game(gameAdmin, stockManager);
+    this.games.push(g);
+    return {
+      playerList: g.playerList,
+      turn: g.turn,
+      gameAdmin: g.gameAdmin,
+      gameID: g.gameID,
+      stocks: g.stocks
+    }
+  }
+
+  getGameDetails(gameID) {
+    const g = this.games.find(v => v.gameID === gameID);
+    if (g) {
+      return {
+        status: 200,
+        res: g
+      }
+    } else {
+      return {
+        status: 404,
+        res: 'Game not found'
+      }
+    }
+  }
+
+  joinGame(gameID, playerID) {
+    const g = this.games.find(v => v.gameID === gameID);
+    if (g) {
+      g.addPlayer(playerID);
+      return g;
+    } else {
+      return false;
+    }
+  }
+
+  getStocks(gameID) {
+    const g = this.games.find(v => v.gameID === gameID);
+    if (g) {
+      return g.getStocks();
+    } else {
+      return false;
+    }
+  }
+
+  startGame(gameID, playerID, turnCallback, endCallback) {
+    const g = this.games.find(v => v.gameID === gameID);
+    if (!g) {
+      return {
+        status: 404,
+        res: { error: 'No such game' }
+      }
     }
 
-    createGame(gameAdmin) {
-        const g = new Game(gameAdmin);
-        this.games.push(g);
-        return g;
+    if (g.gameAdmin !== playerID) {
+      return {
+        status: 403,
+        res: { error: 'You need to be admin to start game' }
+      }
     }
 
-    getGameDetails(gameID) {
-        const g = this.games.find(v => v.gameID === gameID);
-        if (g) {
-            return {
-                status: 200,
-                res: g
-            }
-        } else {
-            return {
-                status: 404,
-                res: 'Game not found'
-            }
-        }
+    const res = g.startGame(turnCallback, endCallback);
+
+    return {
+      status: 200,
+      res: res
     }
+  }
 
-    joinGame(gameID, playerID) {
-        const g = this.games.find(v => v.gameID === gameID);
-        if (g) {
-            g.addPlayer(playerID);
-            return g;
-        } else {
-            return false;
-        }
-    }
-    
-    getStocks(gameID) {
-        const g = this.games.find(v => v.gameID === gameID);
-        if (g) {
-            return g.getStocks();
-        } else {
-            return false;
-        }
-    }
-    
-    startGame(gameID, playerID) {
-        const g = this.games.find(v => v.gameID === gameID);
-        if (!g) {
-            return {
-                status: 404,
-                res: { error: 'No such game' }
-            }
-        }
-        
-        if (g.gameAdmin !== playerID) {
-            return {
-                status: 403,
-                res: { error: 'You need to be admin to start game' }
-            }
-        }
+  // decodePlayerName(token) {
 
-        const res = g.startGame();
+  //     let p = jwt.decode(token);
+  //     let playerName = p.name;
 
-        return {
-            status: 200,
-            res: res
-        }
-    }
+  //     Game(playerName);
+  // }
 
-    // decodePlayerName(token) {
+  // getPlayerId() {
+  //     let playerId = Game.getPlayerId();
+  //     return playerId;
+  // }
 
-    //     let p = jwt.decode(token);
-    //     let playerName = p.name;
+  // addPlayer() {
 
-    //     Game(playerName);
-    // }
+  // }
 
-    // getPlayerId() {
-    //     let playerId = Game.getPlayerId();
-    //     return playerId;
-    // }
+  // getCurrentTurn() {
 
-    // addPlayer() {
-        
-    // }
+  // }
 
-    // getCurrentTurn() {
+  // getStock() {
 
-    // }
-
-    // getStock() {
-
-    // }
+  // }
 }
