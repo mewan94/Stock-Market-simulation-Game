@@ -14,6 +14,7 @@ function startGameSoc (gameId,getUser){
     /*socket.on("joinGame",function (data) {
 
     })*/
+
     socket.emit("joinGame",{gameid:gameId, token: localStorage.getItem('userToken')});
     socket.on('startGame', function (data) {
         console.log(data)

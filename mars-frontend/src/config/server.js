@@ -1,3 +1,4 @@
+
 const APIGame= 'https://sm-stockmarket.herokuapp.com/api/';
 const APIBank= 'https://sm-bank.herokuapp.com/api/';
 module.exports = {
