@@ -4,33 +4,38 @@
     @include flex-box(flex-start,center,row,100%);
     box-sizing:border-box;
     padding:6px 0;
-    color:#111;
+    color:#fff;
     border-bottom: solid 2px $second-color;
 }
 .item-holder-1{
     @include flex-box(flex-start,center,row,30%);
     box-sizing:border-box;
-    h4{    
-        font-weight:600;
+    h4{ 
+        margin:0;
+        color:#fff;   
+        font-weight:400;
         font-size:10pt;
+        letter-spacing:0.3px;
     }
 }
 .item-holder-2{  
     @include flex-box(flex-start,center,row,20%); 
     box-sizing:border-box;
-    h5{    
-        font-weight:600;
+    h5{   
+        margin:0; 
+        font-weight:400;
         font-size:10pt;
-        color:#555;
+        color:#aaa;
     }
 }
 .item-holder-3{
     @include flex-box(flex-start,center,row,10%);
     box-sizing:border-box;
-    h6{    
+    h6{  
+        margin:0;  
         font-weight:600;
         font-size:10pt;
-        color:#555;
+        color:#aaa;
     }
 }
 .button-holder{ 

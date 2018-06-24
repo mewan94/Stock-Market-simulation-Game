@@ -1,13 +1,40 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-// import Header from "../header";
-import Header from '../../../components/gameBoard/header/index';
+import Header from '../../../components/gameBoard/header';
+import Navigation from '../../../components/gameBoard/navigation';
+import CompanySection from '../../../components/gameBoard/companySection';
+import ChartSection from '../../../components/gameBoard/chartSection';
+import Section from '../../../components/common/section';
+import TimelineCon from '../home/timeLine';
+import FlexibleCharts from '../home/newTimeLine';
+import { Hidden } from '@material-ui/core';
 import MyAccount from "./myAccount";
 
 const styles = theme => ({
     root: {
-        flexGrow: 1
+        width:'100%',
+        maxWidth:'100%',
+        minWidth:'100%',
+        height:'100vh',
+        maxHeight:'100vh',
+        minHeight:'100vh',
+        margin:0,
+        padding:0,
+        boxSizing:'border-box',
+        backgroundColor:'#111',
+        flexgrow:1,
+    },
+    changeTheme:{
+        backgroundColor:'#444',
+    },
+    gridMiddle:{
+        height:50+'%'
+    },
+    adjestHeight:{
+        height:'35vh',
     },
     paper: {
         padding: theme.spacing.unit * 3,
@@ -37,16 +64,35 @@ class FullWidthGrid extends React.Component {
 
     render(){
         const { classes } = this.props;
+        
         return (
             <div className={classes.root}>
-                <Grid container spacing={24}>
-                    <Grid item xs={12} sm={12}>
-                        <Header/>
+    
+                <Grid container>
+                    {/* header container */}
+                    <Grid container>
+                        <Grid item xs={12} sm={12}>
+                            <Header/>
+                        </Grid>
                     </Grid>
-                    <Grid item xs={12} sm={12}>
-                        <MyAccount/>
+                    
+                    {/* elements container */}
+                    <Grid container className={classes.changeTheme}>
+                        {/* profile section */}
+                        <Grid item xs={12} sm={2} className={classes.adjestHeight}>
+                            <Navigation/>
+                        </Grid>
+    
+                        {/* element section */}
+                        <Grid item xs={12} sm={10}>
+                            <Grid container>
+                                <Grid item xs={12} sm={12}>
+                                    <MyAccount/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
                     </Grid>
-                </Grid>
+                </Grid>   
             </div>
         );
     }

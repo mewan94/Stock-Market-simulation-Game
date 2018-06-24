@@ -18,7 +18,7 @@ class Company extends Component {
                     <h5>LKR. {unitPrice}</h5>       
                 </div>
                 <div className="item-holder-3">
-                    <h6>UP</h6>
+                    <h6>Up</h6>
                 </div>
                 <div className="button-holder">
                     <a href="#popup">Buy</a>
