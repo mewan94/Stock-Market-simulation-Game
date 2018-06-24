@@ -39,6 +39,9 @@ const styles = theme => ({
     gridMiddle:{
         height:50+'%'
     },
+    adjestHeight:{
+        height:'35vh',
+    },
     paper: {
         padding: theme.spacing.unit * 3,
         textAlign: 'center',
@@ -63,7 +66,7 @@ function FullWidthGrid(props) {
                 {/* elements container */}
                 <Grid container className={classes.changeTheme}>
                     {/* profile section */}
-                    <Grid item xs={12} sm={2}>
+                    <Grid item xs={12} sm={2} className={classes.adjestHeight}>
                         <Navigation/>
                     </Grid>
 
