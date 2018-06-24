@@ -63,14 +63,6 @@ function FullWidthGrid(props) {
 
                     {/* element section */}
                     <Grid item xs={12} sm={10}>
-                        
-                        {/* navigation container
-                        <Grid container>
-                            <Grid item xs={12} sm={12}>
-                                <Div/>
-                            </Grid>
-                        </Grid> */}
-
                         <Grid container>
                             {/* company section */}
                             <Grid item xs={12} sm={7}>
