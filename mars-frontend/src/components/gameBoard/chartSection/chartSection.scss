@@ -1,8 +1,0 @@
-@import '../../../assets/styles/_variables';
-
-.chart-section{
-    @include flex-box(flex-start,flex-start,column,100%);
-    margin:0;
-    height:50%;
-    padding:10px;
-}
