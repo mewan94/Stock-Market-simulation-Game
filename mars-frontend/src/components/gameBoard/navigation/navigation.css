@@ -49,10 +49,10 @@
     font-weight: 400;
     padding-left: 40px;
     transition: 0.5s; }
-  .nav-button-container a:hover {
-    background-color: #E24A4A; }
   .nav-button-container a:active {
     border-right: 4px solid #E24A4A; }
+  .nav-button-container a:hover {
+    background-color: #E24A4A; }
   .nav-button-container .active {
     border-right: 4px solid #E24A4A; }
 
