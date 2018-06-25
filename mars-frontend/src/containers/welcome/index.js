@@ -89,7 +89,8 @@ class Welcome extends Component {
             })
             startGameSoc(nextProps.user.game.gameID,(d)=>{
                 if(d.action === 'start'){
-                    this.props.dispatch(initRoundOne(d.data))
+                    console.log(d)
+                    this.props.dispatch(initRoundOne(d.data,nextProps.user.user.balance))
                 }else if(d.action === 'join'){
                     this.props.dispatch(userSuccessfullyJoined(d.data))
                 }
@@ -99,7 +100,7 @@ class Welcome extends Component {
         if(nextProps.user.action === AuthActions.CREATE_GAME_SUCCESS){
             startGameSoc(nextProps.user.game.gameID,(d)=>{
                 if(d.action === 'start'){
-                    this.props.dispatch(initRoundOne(d.data))
+                    this.props.dispatch(initRoundOne(d.data,nextProps.user.user.balance))
                 }else if(d.action === 'join'){
                     this.props.dispatch(userSuccessfullyJoined(d.data))
                 }

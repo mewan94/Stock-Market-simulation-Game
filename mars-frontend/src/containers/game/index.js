@@ -9,6 +9,7 @@ import FlexibleCharts from './home/newTimeLine';
 import Div from './div';
 import "./game.css";
 import {connect} from 'react-redux';
+import DialogBox from "../../components/dialogBox/index";
 
 const styles = theme => ({
     root: {

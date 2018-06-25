@@ -13,6 +13,7 @@ import TablePaginationActions from "./companies";
 import TimelineCon from './timeLine';
 import Analyst from './analyst';
 import { Hidden } from '@material-ui/core';
+import DialogBox from "../../../components/dialogBox/index";
 
 const styles = theme => ({
     root: {

@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { ROUTES } from '../config/server';
 import userTypes from '../types/user';
+import actionTypes from '../types/gameAction';
 
 export function userRegistration(name){
     return function (dispatch){
@@ -100,8 +101,9 @@ export function startGameByAdmin(gameId) {
     }
 }
 
-export function initRoundOne(data) {
+export function initRoundOne(data,balance) {
     return function (dispatch) {
-        dispatch({type: userTypes.INIT_ROUND_ONE,payload:data.stocks})
+        dispatch({type: userTypes.INIT_ROUND_ONE,payload:data.stocks});
+        dispatch({type: actionTypes.INIT_BALANCE, payload: balance});
     }
 }

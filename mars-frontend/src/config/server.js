@@ -1,7 +1,7 @@
 
 const APIGame= 'https://sm-stockmarket.herokuapp.com/api/';
-//const APIGame= 'https://c1c68470.ngrok.io/api/';
 const APIBank= 'https://sm-bank.herokuapp.com/api/';
+const APIBroker = '';
 module.exports = {
 
     ROUTES: {
@@ -10,7 +10,10 @@ module.exports = {
         CREATE_GAME: APIGame + 'game/',
         JOIN_GAME: APIGame + 'game/',
         JOIN_EXISTING_GAME: APIGame + 'game/',
-        START_GAME: APIGame + 'game/'
+        START_GAME: APIGame + 'game/',
+
+        BUY_STOCKS: APIBroker + 'buy/',
+        SELL_STOCKS: APIBroker + 'sell',
     }
 
 };

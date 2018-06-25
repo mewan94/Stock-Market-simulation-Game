@@ -21,10 +21,10 @@ class Company extends Component {
                     <h6>Up</h6>
                 </div>
                 <div className="button-holder">
-                    <a href="#popup">Buy</a>
+                    <a onClick={this.props.open.bind(this,this.props.company)}>Buy</a>
                 </div>
                 <div className="button-holder">
-                    <a href="#popup">Sell</a>
+                    <a>Sell</a>
                 </div>
             </div>
         );
