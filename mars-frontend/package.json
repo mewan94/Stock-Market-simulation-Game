@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^1.2.1",
     "@material-ui/icons": "^1.1.0",
+    "antd": "^3.6.2",
     "axios": "^0.18.0",
     "font-awesome": "^4.7.0",
     "jsonwebtoken": "^8.3.0",
@@ -15,9 +16,11 @@
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
+    "react-vis": "^1.9.4",
     "redux": "^4.0.0",
     "redux-promise-middleware": "^5.1.1",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "socket.io-client": "^2.1.1"
   },
   "scripts": {
     "start-js": "react-scripts start",

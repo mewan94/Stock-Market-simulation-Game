@@ -33,32 +33,20 @@ class Step2 extends Component{
                             <h2 className="dialog-secondary-title">{description}</h2>
                         </div>
                         <div className="content-container">
-                            <Input type="text" text="Send the game URL to friends to join" submit={this.props.submit} default="www.link.com/12546"/>
+                            {this.props.gameid}
                         </div>
                     </div>
                     <div className="content-center">
                         <ul className="playerList">
-                            <SinglePlayer text="player 1" type="ai"/>
-                            <SinglePlayer text="player 1" type="user"/>
-                            <SinglePlayer text="player 1" type="ai"/>
-                            <SinglePlayer text="player 1" type="ai"/>
-                            <SinglePlayer text="player 1" type="user"/>
-                            <SinglePlayer text="player 1" type="ai"/>
-                            <SinglePlayer text="player 1" type="user"/>
-                            <SinglePlayer text="player 1" type="ai"/>
-                            <SinglePlayer text="player 1" type="ai"/>
-                            <SinglePlayer text="player 1" type="user"/>
-                            <SinglePlayer text="player 1" type="ai"/>
-                            <SinglePlayer text="player 1" type="user"/>
-                            <SinglePlayer text="player 1" type="ai"/>
-                            <SinglePlayer text="player 1" type="ai"/>
-                            <SinglePlayer text="player 1" type="user"/>
+                            {this.props.gameList && this.props.gameList.map((item,i) => {
+                                return <SinglePlayer text={item} key={i} type="ai"/>
+                            })}
                         </ul>
                     </div>
                 </div>
                 <div className="row">
                     <div className="content-center">
-                        <Button text="Start" type={"b1"} isLink="true" onclick={this._getStep.bind(this)}/>
+                        {this.props.gameList && this.props.gameList.length > 2 && <Button text="Start" type={"b1"} isLink="true" onclick={this.props.start}/>}
                         <br/>
                         <Button text="Add AI Player" type={"b2"} isLink="true" />
                     </div>

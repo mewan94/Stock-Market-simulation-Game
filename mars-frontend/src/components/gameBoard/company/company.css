@@ -1,0 +1,98 @@
+.company {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 6px 0;
+  color: #fff;
+  border-bottom: solid 2px #EE8550; }
+
+.item-holder-1 {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 30%;
+  box-sizing: border-box; }
+  .item-holder-1 h4 {
+    margin: 0;
+    color: #fff;
+    font-weight: 400;
+    font-size: 10pt;
+    letter-spacing: 0.3px; }
+
+.item-holder-2 {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 20%;
+  box-sizing: border-box; }
+  .item-holder-2 h5 {
+    margin: 0;
+    font-weight: 400;
+    font-size: 10pt;
+    color: #aaa; }
+
+.item-holder-3 {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  width: 10%;
+  box-sizing: border-box; }
+  .item-holder-3 h6 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 10pt;
+    color: #aaa; }
+
+.button-holder {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 20%; }
+  .button-holder a {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    box-sizing: border-box;
+    border: solid 2px white;
+    border-radius: 100px;
+    padding: 8px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 300;
+    font-size: 14pt;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
+    background-color: #E24A4A;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 300;
+    font-size: 10pt;
+    text-align: center;
+    text-decoration: none;
+    margin: 0 5px; }

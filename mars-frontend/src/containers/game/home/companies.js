@@ -13,6 +13,9 @@ import FirstPageIcon from '@material-ui/icons/FirstPage';
 import KeyboardArrowLeft from '@material-ui/icons/KeyboardArrowLeft';
 import KeyboardArrowRight from '@material-ui/icons/KeyboardArrowRight';
 import LastPageIcon from '@material-ui/icons/LastPage';
+import Button from '@material-ui/core/Button';
+import SimpleModalWrapped from '../../../components/gameBoard/models/model';
+import {selectOutofArray} from '../../../libes/auth';
 
 const actionsStyles = theme => ({
     root: {
@@ -94,15 +97,14 @@ const TablePaginationActionsWrapped = withStyles(actionsStyles, { withTheme: tru
 );
 
 let counter = 0;
-function createData(name, calories, fat) {
+function createData(name, companyid) {
     counter += 1;
-    return { id: counter, name, calories, fat };
+    return { id: counter, name, companyid };
 }
 
 const styles = theme => ({
     root: {
         width: '100%',
-        marginTop: theme.spacing.unit * 3,
     },
     table: {
         minWidth: 500,
@@ -118,31 +120,32 @@ class CustomPaginationActionsTable extends React.Component {
 
         this.state = {
             data: [
-                createData('Cupcake', 305, 3.7),
-                createData('Donut', 452, 25.0),
-                createData('Eclair', 262, 16.0),
-                createData('Frozen yoghurt', 159, 6.0),
-                createData('Gingerbread', 356, 16.0),
-                createData('Honeycomb', 408, 3.2),
-                createData('Ice cream sandwich', 237, 9.0),
-                createData('Jelly Bean', 375, 0.0),
-                createData('KitKat', 518, 26.0),
-                createData('Lollipop', 392, 0.2),
-                createData('Marshmallow', 318, 0),
-                createData('Nougat', 360, 19.0),
-                createData('Oreo', 437, 18.0),
-            ].sort((a, b) => (a.calories < b.calories ? -1 : 1)),
+                createData('wesrdfgh', 1),
+                createData('sdvdsf', 2),
+                createData('dvzdsf', 3),
+                createData('dfsvgsdf', 4),
+                createData('dfvfzdfvb', 5),
+                createData('dfvvdvf', 6),
+                createData('dvfvzdfb', 7),
+                createData('dfbbfgn', 8),
+                createData('hjhghfght', 9),
+                createData('fgdf fgdfg', 10),
+            ],
             page: 0,
-            rowsPerPage: 5,
+            rowsPerPage: 10,
+            open:false,
+            company:{
+                name:''
+            },
+            popupType:null
         };
     }
-
-    handleChangePage = (event, page) => {
-        this.setState({ page });
-    };
-
-    handleChangeRowsPerPage = event => {
-        this.setState({ rowsPerPage: event.target.value });
+    openModel = (n, type) => {
+        this.setState({
+            open: true,
+            company:n,
+            popupType: type
+        })
     };
 
     render() {
@@ -152,39 +155,30 @@ class CustomPaginationActionsTable extends React.Component {
 
         return (
             <Paper className={classes.root}>
+                <SimpleModalWrapped open={this.state.open} company={this.state.company} type={this.state.popupType}/>
                 <div className={classes.tableWrapper}>
                     <Table className={classes.table}>
                         <TableBody>
-                            {data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(n => {
+                            {data.map(n => {
                                 return (
                                     <TableRow key={n.id}>
                                         <TableCell component="th" scope="row">
                                             {n.name}
                                         </TableCell>
-                                        <TableCell numeric>{n.calories}</TableCell>
-                                        <TableCell numeric>{n.fat}</TableCell>
+                                        <TableCell numeric>
+                                            <Button variant="contained" size="small" color="primary" className={classes.button} onClick={this.openModel.bind(this,n,'buy')}>Buy Stocks</Button>
+                                        </TableCell>
+                                        <TableCell numeric>
+                                            <Button variant="contained" size="small" color="secondary" className={classes.button} onClick={this.openModel.bind(this,n,'sell')}>Sell Stocks</Button>
+                                        </TableCell>
+                                        <TableCell>
+                                            {n.id}
+                                        </TableCell>
                                     </TableRow>
                                 );
                             })}
-                            {emptyRows > 0 && (
-                                <TableRow style={{ height: 48 * emptyRows }}>
-                                    <TableCell colSpan={6} />
-                                </TableRow>
-                            )}
                         </TableBody>
-                        <TableFooter>
-                            <TableRow>
-                                <TablePagination
-                                    colSpan={3}
-                                    count={data.length}
-                                    rowsPerPage={rowsPerPage}
-                                    page={page}
-                                    onChangePage={this.handleChangePage}
-                                    onChangeRowsPerPage={this.handleChangeRowsPerPage}
-                                    ActionsComponent={TablePaginationActionsWrapped}
-                                />
-                            </TableRow>
-                        </TableFooter>
+                        <TableFooter/>
                     </Table>
                 </div>
             </Paper>

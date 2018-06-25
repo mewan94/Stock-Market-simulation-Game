@@ -16,6 +16,7 @@ $font:'roboto';
 @mixin flex-box($justify-content,$align-items,$flex-derection,$width){
 	display:flex;
 	flex-wrap:wrap;
+	box-sizing:border-box;
 	justify-content:$justify-content;
 	align-items:$align-items;
 	flex-direction:$flex-derection;

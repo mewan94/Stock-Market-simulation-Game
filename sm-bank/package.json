@@ -1,7 +1,7 @@
 {
   "name": "sm-bank",
   "version": "0.0.1",
-  "description": "Stock market simulator backend",
+  "description": "Stock market simulator bank",
   "main": "dist",
   "scripts": {
     "dev": "nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",

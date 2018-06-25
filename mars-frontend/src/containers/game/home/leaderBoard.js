@@ -2,7 +2,7 @@ import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';    
 import List from '@material-ui/core/List';
 import React , {Component} from 'react';
-import Lister from '../../components/gameBoard/listItem/listItem';
+import Lister from '../../../components/gameBoard/listItem/listItem';
 
 const styles = theme => ({
     root: {
@@ -23,6 +23,8 @@ class LeaderBoard extends Component{
           <Paper className={classes.paper}>
                 <h3>LeaderBoard</h3>
                 <List>
+                    <Lister/>
+                    <Lister/>
                     <Lister/>
                 </List>
             </Paper>

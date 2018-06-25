@@ -1,6 +1,7 @@
 .container-center-align {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: row;
@@ -13,6 +14,7 @@
 .dialog-box {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
@@ -41,6 +43,7 @@
 .row {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
@@ -65,6 +68,7 @@
 .content {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
@@ -74,6 +78,7 @@
 .content-container {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: column;
@@ -82,6 +87,7 @@
 .content-center {
   display: flex;
   flex-wrap: wrap;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   flex-direction: column;
