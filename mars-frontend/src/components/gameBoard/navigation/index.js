@@ -9,25 +9,26 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import InboxIcon from '@material-ui/icons/Inbox';
 import History from './transactions';
+import {Link} from 'react-router-dom';
 import './navigation.css';
 
 const styles = theme => ({
 
 });
 
-class Profile extends Component {
+class Navigation extends Component {
 
     render() {
         const { classes } = this.props;
-        let amount=1000.51;
 
         return (
             <div className="nav-container">
                 <span className="nav-text">Go to</span>
                 <div className="nav-button-container">
-                    <a href="#" className="active">Dashboard</a>
-                    <a href="#">Bank</a>
-                    <a href="#">Transaction</a>
+                    {/* <a href="#" className="active">Dashboard</a> */}
+                    <Link to="./play" className="active">Dashboard</Link>
+                    <Link to="./account">Bank</Link>
+                    <Link to="./transactions">Transactions</Link>
                 </div>
                 <div className="nav-devider"/>
                 <span className="nav-text">Leaderboard</span>
@@ -40,4 +41,4 @@ class Profile extends Component {
     }
 }
 
-export default withStyles(styles)(Profile);
+export default withStyles(styles)(Navigation);

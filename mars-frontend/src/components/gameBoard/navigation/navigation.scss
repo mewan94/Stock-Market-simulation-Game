@@ -26,11 +26,11 @@
         padding-left:40px;
         transition: 0.5s;
     }
-    a:hover{
-        background-color:$prime-color;
-    }
     a:active{
         border-right:4px solid $prime-color;
+    }
+    a:hover{
+        background-color:$prime-color;
     }
     .active{
         border-right:4px solid $prime-color;

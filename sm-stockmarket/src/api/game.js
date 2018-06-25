@@ -32,6 +32,10 @@ export default (io) => {
     const player = jwt.decode(req.body.token);
     const result = gameController.joinGame(req.params.gameid, player.name)
     if(result !== false) {
+      io.to(result.gameID).emit('playerJoin', {
+        action: 'join',
+        data: player
+      });
       res.json(result);
     } else {
       res.send(400);
@@ -40,7 +44,30 @@ export default (io) => {
 
   router.post('/:gameid/start', (req, res) => {
     const player = jwt.decode(req.body.token);
-    const result = gameController.startGame(req.params.gameid, player.name)
+
+    function turnCallback(data) {
+      console.log(data.turn);
+      io.to(req.params.gameid).emit('startTurn', {
+        action: 'nRound',
+        data: data
+      });
+    }
+
+    function endCallback(data) {
+      console.log(data.turn, 'game ends');
+      io.to(req.params.gameid).emit('end', {
+        action: 'nRound',
+        data: data
+      });
+    }
+
+    const result = gameController
+      .startGame(req.params.gameid, player.name, turnCallback, endCallback);
+    io.to(req.params.gameid)
+      .emit('gameStart', {
+        action: 'start',
+        data: gameController.getStocks(req.params.gameid)
+      });
     res.status(result.status).send(result.res);
   });
 
@@ -54,12 +81,14 @@ export default (io) => {
     console.log('A user connected');
     socket.on('joinGame', (data) => {
       console.log('A user connected', data.gameid, data.token);
-      socket.emit('startGame', { gameid: data.gameid});
-      setInterval(() => {
-        socket.emit('playerJoin', { name: 'Random user '+ Date.now() })
-      }, 2000)
+      socket.join(data.gameid);
+      // setTimeout(() => {
+      //   io.to(data.gameid).emit('message', {hello: 'world'})
+      // }, 5000);
     });
   });
+
+  
 
   return router;
 } 
