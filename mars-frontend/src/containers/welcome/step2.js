@@ -46,7 +46,7 @@ class Step2 extends Component{
                 </div>
                 <div className="row">
                     <div className="content-center">
-                        {this.props.gameList && this.props.gameList.length > 2 && <Button text="Start" type={"b1"} isLink="true" onclick={this._getStep.bind(this)}/>}
+                        {this.props.gameList && this.props.gameList.length > 2 && <Button text="Start" type={"b1"} isLink="true" onclick={this.props.start}/>}
                         <br/>
                         <Button text="Add AI Player" type={"b2"} isLink="true" />
                     </div>

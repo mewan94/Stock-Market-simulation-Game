@@ -81,3 +81,27 @@ export function userSuccessfullyJoined(username) {
         dispatch({type: userTypes.USER_SUCCESSFULLY_JOINED, payload: username})
     }
 }
+
+export function startGameByAdmin(gameId) {
+    return function (dispatch) {
+        dispatch({type: userTypes.START_GAME});
+        axios.post(`${ROUTES.START_GAME+gameId}/start`,{"token":localStorage.getItem('userToken')})
+            .then(response => {
+                if(response.status === 200){
+                    dispatch({type: userTypes.START_GAME_SUCCESS})
+                }else{
+                    dispatch({type: userTypes.START_GAME_FAIL})
+                }
+            })
+            .catch((err) => {
+                dispatch({type: userTypes.START_GAME_FAIL})
+            })
+
+    }
+}
+
+export function initRoundOne(data) {
+    return function (dispatch) {
+        dispatch({type: userTypes.INIT_ROUND_ONE,payload:data.stocks})
+    }
+}

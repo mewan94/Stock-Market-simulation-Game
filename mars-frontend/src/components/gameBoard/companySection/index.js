@@ -21,7 +21,7 @@ class CompanySection extends Component {
                             <Sectors/>
                         </div>
                         <div className="com-list">
-                            <Companies/>
+                            <Companies stocks={this.props.stocks}/>
                         </div>
                     </Section>
                 </div>

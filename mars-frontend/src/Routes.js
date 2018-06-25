@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch } from "react-router-dom";
 import asyncComponent from "./containers/AsyncComponent";
-//import AuthenticatedRoute from "./containers/routes/AuthenticatedRoute";
+import AuthenticatedRoute from "./containers/routes/AuthenticatedRoute";
 import UnauthenticatedRoute from "./containers/routes/UnauthenticatedRoute";
 
 const Welcome = asyncComponent(() => import("./containers/welcome"));
@@ -14,7 +14,7 @@ export default ({childProps}) =>
     <Switch>
         <UnauthenticatedRoute path="/" exact component={Welcome} props={childProps} />
         <UnauthenticatedRoute path="/join/:gameid" component={Join} props={childProps}/>
-        <UnauthenticatedRoute path="/play" component={Game} props={childProps} />
+        <UnauthenticatedRoute path="/play/:gameID" component={Game} props={childProps} />
         <UnauthenticatedRoute path="/account" component={Account} props={childProps}/>
         <UnauthenticatedRoute path="/transactions" component={Transactions} props={childProps}/>
     </Switch>

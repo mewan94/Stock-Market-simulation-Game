@@ -102,7 +102,7 @@ export const user = (state = initialState, action) => {
                 action: userTypes.JOIN_EXISTING_GAME_FAIL
             };
         case userTypes.USER_SUCCESSFULLY_JOINED:
-            let list = action.payload
+            let list = action.payload;
             return {
                 ...state,
                 game:{
@@ -111,6 +111,40 @@ export const user = (state = initialState, action) => {
                 },
                 action: userTypes.USER_SUCCESSFULLY_JOINED
             };
+        case userTypes.START_GAME:
+            return{
+                ...state,
+                fetching: true,
+                action: userTypes.START_GAME
+            };
+        case userTypes.START_GAME_SUCCESS:
+            return{
+                ...state,
+                fetching: false,
+                game:{
+                    ...state.game,
+                    gameStarted:true
+                },
+                action: userTypes.START_GAME_SUCCESS
+            };
+        case userTypes.START_GAME_FAIL:
+            return{
+                ...state,
+                fetching: false,
+                action: userTypes.START_GAME_FAIL
+            };
+        case userTypes.INIT_ROUND_ONE:
+            return{
+                ...state,
+                game:{
+                    ...state.game,
+                    stocks:action.payload,
+                    gameStarted:true,
+                    turn:0
+                },
+                action: userTypes.INIT_ROUND_ONE
+            }
+
         default:
             return state
     }

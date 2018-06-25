@@ -21,13 +21,13 @@ class Header extends Component {
                 </div>
                 <div className="contentbox-2">
                     <div className="header-element">
-                        <Elementbox icon="$" maintext="2000" desc="Current Balance"/>
+                        <Elementbox icon="$" maintext={this.props.balance} desc="Current Balance"/>
                     </div>
                     <div className="header-element">
-                        <Elementbox icon="+" maintext="2 / 10" desc="Current Turn" color="orange"/>
+                        <Elementbox icon="+" maintext={this.props.turn +'/ 10'} desc="Current Turn" color="orange"/>
                     </div>
                     <div className="header-element">
-                        <Elementbox icon="@" maintext="38s" desc="Time Left" color="tomato"/>
+                        <Elementbox icon="@" maintext={this.props.timeLeft+'s'} desc="Time Left" color="tomato"/>
                     </div>
                 </div>
                 <div className="contentbox-3">

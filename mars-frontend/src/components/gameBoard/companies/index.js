@@ -6,24 +6,14 @@ import './companies.css';
 
 class Companies extends Component {
     render() {
+        console.log(this.props.stocks);
         return (
             <div className="company-list">
                 <Scrollbox>
-                    <Company companyName="Tesla" unitPrice="13.00"/>
-                    <Company companyName="Ferarri" unitPrice="15.00"/>
-                    <Company companyName="Toyota" unitPrice="08.00"/>
-                    <Company companyName="Suzuki" unitPrice="05.00"/>
-                    <Company companyName="Honda" unitPrice="08.00"/>
-                    <Company companyName="Ducati" unitPrice="11.00"/>
-                    <Company companyName="Lamborgini" unitPrice="15.00"/>
-                    <Company companyName="Tesla" unitPrice="13.00"/>
-                    {/* copied */}
-                    <Company companyName="Ferarri" unitPrice="15.00"/>
-                    <Company companyName="Toyota" unitPrice="08.00"/>
-                    <Company companyName="Suzuki" unitPrice="05.00"/>
-                    <Company companyName="Honda" unitPrice="08.00"/>
-                    <Company companyName="Ducati" unitPrice="11.00"/>
-                    <Company companyName="Lamborgini" unitPrice="15.00"/>
+                    {this.props.stocks.map((item,i) => {
+                        return <Company companyName={item.name} unitPrice={item.price} key={i}/>
+
+                    })}
                 </Scrollbox>
             </div>
         );

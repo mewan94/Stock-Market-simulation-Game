@@ -23,14 +23,14 @@ class Profile extends Component {
 
         return (
             <div className="nav-container">
-                <span class="nav-text">Go to</span>
+                <span className="nav-text">Go to</span>
                 <div className="nav-button-container">
                     <a href="#" className="active">Dashboard</a>
                     <a href="#">Bank</a>
                     <a href="#">Transaction</a>
                 </div>
-                <div className="nav-devider"></div>
-                <span class="nav-text">Leaderboard</span>
+                <div className="nav-devider"/>
+                <span className="nav-text">Leaderboard</span>
                 <div className="leaderboard-container">
                     <History/>
                 </div>
