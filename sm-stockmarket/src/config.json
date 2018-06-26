@@ -153,6 +153,6 @@
 			"price": 118
 		}
 	],
-	"turns": 20,
-	"turnTime": 2000
+	"turns": 10,
+	"turnTime": 60000
 }
