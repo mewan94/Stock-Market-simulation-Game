@@ -6,39 +6,46 @@ export class BrokerController {
 
     getStocks(token, gameId) {
         if (token) {
-            axios.post(config.stockmarketUrl + '/games/' + gameId + '/stocks', {
+            console.log(config.stockmarketUrl + '/game/' + gameId + '/stocks');
+            
+            return axios.post(config.stockmarketUrl + '/game/' + gameId + '/stocks', {
                 token: token,
                 gameId: gameId
             })
-                .then(function (response) {
-                    return response;
-                })
-                .catch(function (error) {
+            .then(function (response) {
+                return response.data.stocks;
+            })
+            .catch(function (error) {
 
-                    return new Error("error occured while connecting to the server");
-                });
+                return new Error(error);
+            });
         }
         else {
             return new Error("Cannot connect to the API");
         }
     }
 
-    buyStocks(token, gameId) {
+    getPlayerDetails(player) {        
+        return axios.get(config.bankUrl+'/player/'+player)
+            .then(res => res.data )
+    }
+
+    buyStocks(token, amount) {
         if (token) {
-            axios.post(config.stockmarketUrl + '/games/' + gameId + '/stocks/buy', {
+            return axios.post(config.bankUrl + '/player/transaction', {
                 token: token,
-                gameId: gameId
+                type: "withdraw",
+                amount: amount
             })
-                .then(function (response) {
-                    return response;
-                })
-                .catch(function (error) {
-                    return new Error("error occured while connecting to the server");
-                });
+            .then(function (response) {
+                return response.body;
+            })
+            .catch(function (error) {
+                return new Error("error occured while connecting to the server");
+            });
         }
         else {
             return new Error("Cannot connect to the API");
-
         }
     }
     sellStocks(token, gameId) {
