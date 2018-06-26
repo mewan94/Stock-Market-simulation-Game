@@ -11,6 +11,7 @@ import "./game.css";
 import {connect} from 'react-redux';
 import {getGame} from '../../actions/user';
 import userTypes from '../../types/user';
+import actionTypes from '../../types/gameAction';
 import MyAccount from "./account/index";
 import History from './transactions/transactions';
 
@@ -73,6 +74,12 @@ class FullWidthGrid extends React.Component {
         if(nextProps.user.action === userTypes.GET_GAME_DETAILS_SUCCESS){
             this.setState({
                 playerList:nextProps.user.game.playerList
+            })
+        }
+        if(nextProps.user.action === actionTypes.START_TURN){
+            this.setState({
+                turn:nextProps.user.game.turn,
+                stocks:nextProps.user.game.stocks
             })
         }
         if(nextProps.account !== this.state.account){

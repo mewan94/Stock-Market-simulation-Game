@@ -8,7 +8,7 @@ import Step1 from "./step1";
 import { GAME_JOIN_MODE } from "../../types/common";
 import {ROUTES} from '../../config/server';
 import Step2 from "./step2";
-import {userRegistration, startGame, joinGame, joinexistinggame, userSuccessfullyJoined, startGameByAdmin, initRoundOne} from '../../actions/user';
+import {userRegistration, startGame, joinGame, joinexistinggame, userSuccessfullyJoined, startGameByAdmin, initRoundOne, nextRound} from '../../actions/user';
 import * as AuthActions from '../../types/user';
 import { startGameSoc } from '../../api';
 
@@ -94,6 +94,8 @@ class Welcome extends Component {
                     this.props.dispatch(initRoundOne(d.data,nextProps.user.user.balance))
                 }else if(d.action === 'join'){
                     this.props.dispatch(userSuccessfullyJoined(d.data))
+                }else if(d.action === 'nRound'){
+                    this.props.dispatch(nextRound(d.data))
                 }
             });
         }
@@ -104,6 +106,8 @@ class Welcome extends Component {
                     this.props.dispatch(initRoundOne(d.data,nextProps.user.user.balance))
                 }else if(d.action === 'join'){
                     this.props.dispatch(userSuccessfullyJoined(d.data))
+                }else if(d.action === 'nRound'){
+                    this.props.dispatch(nextRound(d.data))
                 }
             });
             this.setState({

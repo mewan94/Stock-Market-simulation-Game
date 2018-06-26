@@ -1,4 +1,5 @@
 import userTypes from '../types/user';
+import actionTypes from '../types/gameAction';
 import jwt from 'jsonwebtoken';
 import {GAME_ROLE} from '../types/common';
 
@@ -164,7 +165,18 @@ export const user = (state = initialState, action) => {
                     turn:0
                 },
                 action: userTypes.INIT_ROUND_ONE
-            }
+            };
+        case actionTypes.START_TURN:
+            return{
+                ...state,
+                game:{
+                    ...state.game,
+                    turn:state.game.turn+1,
+                    stocks:action.payload.stocks
+                },
+                action: actionTypes.START_TURN
+            };
+
 
         default:
             return state
