@@ -16,7 +16,11 @@ class Header extends Component {
                         <h1 className="main-title">Stock Mania</h1>
                     </div>
                     <div className="profile-element">
-                        <Profile/>
+                        <div className="profile-section">
+                            <div className="prof-name-sec">
+                                <h3>{this.props.playerName}</h3>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="contentbox-2">

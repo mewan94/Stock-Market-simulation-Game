@@ -9,7 +9,10 @@ import FlexibleCharts from './home/newTimeLine';
 import Div from './div';
 import "./game.css";
 import {connect} from 'react-redux';
-import DialogBox from "../../components/dialogBox/index";
+import {getGame} from '../../actions/user';
+import userTypes from '../../types/user';
+import MyAccount from "./account/index";
+import History from './transactions/transactions'
 
 const styles = theme => ({
     root: {
@@ -49,10 +52,13 @@ class FullWidthGrid extends React.Component {
             bankBalance:this.props.user.user.balance,
             stocks:this.props.user.game.stocks,
             turn:this.props.user.game.turn+1,
-            timeLeft:60
+            timeLeft:60,
+            playerName:this.props.user.user.name,
+            playerList:this.props.user.game.playerList
         }
     }
     componentDidMount(){
+        this.props.dispatch(getGame(this.props.user.game.gameID));
         setInterval(()=> {
             this.setState({
                 timeLeft:this.state.timeLeft === 0 ? this.state.timeLeft : this.state.timeLeft-1
@@ -61,7 +67,11 @@ class FullWidthGrid extends React.Component {
     }
 
     componentWillReceiveProps(nextProps){
-
+        if(nextProps.user.action === userTypes.GET_GAME_DETAILS_SUCCESS){
+            this.setState({
+                playerList:nextProps.user.game.playerList
+            })
+        }
     }
 
     render(){
@@ -73,7 +83,7 @@ class FullWidthGrid extends React.Component {
                     {/* header container */}
                     <Grid container>
                         <Grid item xs={12} sm={12}>
-                            <Header balance={this.state.bankBalance} turn={this.state.turn} timeLeft={this.state.timeLeft}/>
+                            <Header balance={this.state.bankBalance} turn={this.state.turn} timeLeft={this.state.timeLeft} playerName={this.state.playerName}/>
                         </Grid>
                     </Grid>
 
@@ -81,7 +91,7 @@ class FullWidthGrid extends React.Component {
                     <Grid container className={classes.changeTheme}>
                         {/* profile section */}
                         <Grid item xs={12} sm={2} className={classes.adjestHeight}>
-                            <Navigation/>
+                            <Navigation playerList={this.state.playerList}/>
                         </Grid>
 
                         {/* element section */}
@@ -101,12 +111,12 @@ class FullWidthGrid extends React.Component {
                             <Grid container>
                                 {/* under section 1 */}
                                 <Grid item xs={12} sm={7}>
-                                    <Div/>
+                                    <History/>
                                 </Grid>
 
                                 {/* under section 2 */}
                                 <Grid item xs={12} sm={5}>
-                                    <Div/>
+                                    <MyAccount/>
                                 </Grid>
                             </Grid>
                         </Grid>

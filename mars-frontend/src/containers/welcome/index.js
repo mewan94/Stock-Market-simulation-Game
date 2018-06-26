@@ -6,6 +6,7 @@ import image2 from '../../assets/imgs/bgart.png';
 import DialogBox from "../../components/dialogBox/index";
 import Step1 from "./step1";
 import { GAME_JOIN_MODE } from "../../types/common";
+import {ROUTES} from '../../config/server';
 import Step2 from "./step2";
 import {userRegistration, startGame, joinGame, joinexistinggame, userSuccessfullyJoined, startGameByAdmin, initRoundOne} from '../../actions/user';
 import * as AuthActions from '../../types/user';
@@ -106,7 +107,7 @@ class Welcome extends Component {
                 }
             });
             this.setState({
-                gameID:"http://localhost:3000/join/"+nextProps.user.game.gameID,
+                gameID:window.location.host+'/join/'+nextProps.user.game.gameID,
                 gameCode:nextProps.user.game.gameID,
                 gameStartMode:GAME_JOIN_MODE.CREATE,
                 playerList:nextProps.user.game.playerList

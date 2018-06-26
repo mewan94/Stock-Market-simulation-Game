@@ -21,11 +21,6 @@ class Profile extends Component {
 
         return (
             <div className="profile-section">
-                {/* <div className="prof-img-sec">
-                    <Avatar>
-                        <ImageIcon />
-                    </Avatar>
-                </div> */}
                 <div className="prof-name-sec">
                     <h3>PlayerName</h3>
                 </div>

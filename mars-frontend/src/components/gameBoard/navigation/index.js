@@ -11,29 +11,33 @@ import InboxIcon from '@material-ui/icons/Inbox';
 import History from './transactions';
 import {Link} from 'react-router-dom';
 import './navigation.css';
+import { Timeline } from 'antd';
+
 
 const styles = theme => ({
-
+    Timeline :{
+        padding : theme.spacing.unit * 4,
+        color: '#fff',
+    },
+    Item :{
+        fontSize:'10pt',
+    }
 });
 
 class Navigation extends Component {
 
     render() {
-        const { classes } = this.props;
+        const { classes, playerList } = this.props;
 
         return (
             <div className="nav-container">
-                <span className="nav-text">Go to</span>
-                <div className="nav-button-container">
-                    {/* <a href="#" className="active">Dashboard</a> */}
-                    <Link to="./play" className="active">Dashboard</Link>
-                    <Link to="./account">Bank</Link>
-                    <Link to="./transactions">Transactions</Link>
-                </div>
-                <div className="nav-devider"/>
-                <span className="nav-text">Leaderboard</span>
+                <span className="nav-text">Players</span>
                 <div className="leaderboard-container">
-                    <History/>
+                    <Timeline className={classes.Timeline}>
+                        {playerList && playerList.map((item,i) => {
+                            return <Timeline.Item className={classes.Item} key={i}>{item}</Timeline.Item>
+                        })}
+                    </Timeline>
                 </div>
                 
             </div>

@@ -5,6 +5,7 @@ class Div extends Component {
     render() {
         return (
             <div className="tester">
+                <h1>My transactions</h1>
             </div>
         );
     }
