@@ -172,7 +172,7 @@ export const user = (state = initialState, action) => {
                     ...state.game,
                     stocks:action.payload,
                     gameStarted:true,
-                    turn:0
+                    turn:1
                 },
                 stac:stac,
                 action: userTypes.INIT_ROUND_ONE
