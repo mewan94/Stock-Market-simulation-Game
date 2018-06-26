@@ -154,5 +154,5 @@
 		}
 	],
 	"turns": 10,
-	"turnTime": 5000
+	"turnTime": 60000
 }

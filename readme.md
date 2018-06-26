@@ -1,4 +1,4 @@
-# MARS - A Stock-Market-Simulation-Game
+# Stock Mania - A Stock-Market-Simulation-Game
 
 This a a final year project to simulate a stock market. The REST API is developed using expressJS and the frontend is developed as a React app.
 
