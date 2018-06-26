@@ -166,7 +166,7 @@ class FullWidthGrid extends React.Component {
                             <div className="content-container">
                                 <ul>
                                     {this.state.results.map((item,i) => {
-                                        return <li>`Name: ${item.dname} - Balance: ${item.balance}`</li>
+                                        return <li key={i}>Name: {item.dname} - Balance: {item.balance}</li>
                                     })}
                                 </ul>
                             </div>
