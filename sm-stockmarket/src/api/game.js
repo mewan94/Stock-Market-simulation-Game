@@ -58,7 +58,7 @@ export default (io) => {
       gameController.getEndDetails(req.params.gameid)
       .then(result => {       
         io.to(req.params.gameid).emit('end', {
-          action: 'nRound',
+          action: 'end',
           data: result
         });
       });
