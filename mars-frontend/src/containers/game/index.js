@@ -49,12 +49,14 @@ class FullWidthGrid extends React.Component {
     constructor(props){
         super(props);
         this.state={
-            bankBalance:this.props.user.user.balance,
+            bankBalance:this.props.balance,
             stocks:this.props.user.game.stocks,
             turn:this.props.user.game.turn+1,
             timeLeft:60,
             playerName:this.props.user.user.name,
-            playerList:this.props.user.game.playerList
+            playerList:this.props.user.game.playerList,
+            account:this.props.account,
+            history:this.props.history
         }
     }
     componentDidMount(){
@@ -71,6 +73,22 @@ class FullWidthGrid extends React.Component {
             this.setState({
                 playerList:nextProps.user.game.playerList
             })
+        }
+        if(nextProps.account !== this.state.account){
+            this.setState({
+                account:nextProps.account,
+            })
+        }
+        if(nextProps.balance !== this.state.bankBalance){
+            this.setState({
+                bankBalance:nextProps.balance
+            })
+        }
+        if(nextProps.history !== this.state.history){
+            this.setState({
+                history:nextProps.history
+            })
+            console.log(nextProps.history)
         }
     }
 
@@ -111,7 +129,7 @@ class FullWidthGrid extends React.Component {
                             <Grid container>
                                 {/* under section 1 */}
                                 <Grid item xs={12} sm={7}>
-                                    <History/>
+                                    <History data={this.state.history}/>
                                 </Grid>
 
                                 {/* under section 2 */}
@@ -134,7 +152,10 @@ FullWidthGrid.propTypes = {
 export default connect(
     state => {
         return {
-            user: state.user
+            user: state.user,
+            account: state.actions.myAccount,
+            balance: state.actions.myBalance,
+            history: state.actions.history
         }
     }
 

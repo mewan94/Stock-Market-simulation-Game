@@ -11,169 +11,44 @@ const styles = theme => ({
 });
 
 class History extends Component{
+    constructor(props){
+        super(props);
+        this.state={
+            history:this.props.history
+        }
+    }
+
+    componentWillReceiveProps(nextProps){
+        if(nextProps.history !== this.state.history){
+            this.setState({
+                history:nextProps.history
+            })
+        }
+    }
+
     render(){
-        const { classes } = this.props;
+        const { classes, data} = this.props;
         return(
             <div className="tester">
                 <Scrollbox>
                     <div><h1>My Transactions</h1></div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
-                    <div className="company">
-                        <div className="item-holder-1">
-                            <h4>{'companyName'}</h4>
-                        </div>
-                        <div className="item-holder-2">
-                            <h5>LKR. {'unitPrice'}</h5>
-                        </div>
-                        <div className="item-holder-3">
-                            <h6>Buy</h6>
-                        </div>
-                    </div>
+                    {data && data.map((item,i)=>{
+                        return(
+                        <div className="company" key={i}>
+                            <div className="item-holder-1">
+                                <h4>{item.stock}</h4>
+                            </div>
+                            <div className="item-holder-2">
+                                <h5>{item.amount} stocks</h5>
+                            </div>
+                            <div className="item-holder-3">
+                                <h6>{item.type}</h6>
+                            </div>
+                            <div className="item-holder-3">
+                                <h6>Buy</h6>
+                            </div>
+                        </div>)
+                    })}
                 </Scrollbox>
             </div>
         )

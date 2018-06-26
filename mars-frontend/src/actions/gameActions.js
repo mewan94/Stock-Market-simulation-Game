@@ -37,7 +37,7 @@ export function sellStocks(gameid,companyID,amount) {
         axios.post(ROUTES.SELL_STOCKS,data)
             .then(response => {
                 if(response.status === 200){
-                    dispatch({type:ActionTypes.SELL_STOCK_SUCCESS, payload: data})
+                    dispatch({type:ActionTypes.SELL_STOCK_SUCCESS, payload: data, Mybalance: response.data.balance})
                 }else{
                     dispatch({type:ActionTypes.SELL_STOCK_FAIL})
                 }

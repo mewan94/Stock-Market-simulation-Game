@@ -25,13 +25,6 @@ class CompanySection extends Component {
                         </div>
                     </Section>
                 </div>
-
-                {/* popup model */}
-                {/* <div>
-                    <Dialogbox id="popup">
-
-                    </Dialogbox>
-                </div> */}
             </div>
         );
     }

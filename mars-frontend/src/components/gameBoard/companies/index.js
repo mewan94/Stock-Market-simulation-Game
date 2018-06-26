@@ -7,24 +7,53 @@ import DialogBox from "../../dialogBox/index";
 import {Input, Button} from "../../common/";
 import {connect} from "react-redux";
 import {buyStocks, sellStocks} from '../../../actions/gameActions';
+import actionTypes from '../../../types/gameAction';
 
 class Companies extends Component {
+
+    initState = {
+        isOpen:false,
+        company:null,
+        num:0,
+        type:null,
+        maxAmount:null,
+    };
 
     constructor(props){
         super(props);
         this.state=({
-            isOpen:false,
-            company:null,
-            num:0,
-            type:null
+            ...this.initState,
+            account:this.props.action.myAccount,
+            balance:this.props.action.myBalance
         })
     }
 
+    componentWillReceiveProps(nextProps){
+        if(nextProps.action.action === actionTypes.BUY_STOCK_SUCCESS || actionTypes.SELL_STOCK_SUCCESS){
+            this.setState({
+                account:nextProps.action.myAccount,
+                balance:nextProps.action.myBalance
+            })
+        }
+    }
+
     _openPopup = (company,type) => {
+        let maxAmount = null;
+        if(type === 'sell'){
+            this.state.account.forEach((item,i) =>{
+                if(company.name === item.stock){
+                    maxAmount = item.amount
+                }
+            });
+        }else{
+            maxAmount = this.state.balance / company.price
+        }
+
         this.setState({
             isOpen:true,
             company:company,
-            type:type
+            type:type,
+            maxAmount:Math.floor(maxAmount)
         })
     };
 
@@ -43,11 +72,12 @@ class Companies extends Component {
 
     _buyStocks = () => {
         this.props.dispatch(buyStocks(this.props.user.game.gameID,this.state.company.name,this.state.num));
-        console.log(this.state.company,this.state.num)
+        this.setState({...this.initState})
     };
 
     _sellStocks = () => {
-        console.log(this.state.company,this.state.num)
+        this.props.dispatch(sellStocks(this.props.user.game.gameID,this.state.company.name,this.state.num));
+        this.setState({...this.initState})
     };
 
     render() {
@@ -65,6 +95,9 @@ class Companies extends Component {
                             <div className="content-container">
                                 <Input type="number" text="Enter # of stocks" submit={this._getStocks.bind(this)}/>
                             </div>
+                            <div className="content-container">
+                                {this.state.type === 'sell' ? `you have ${this.state.maxAmount} to sell`:`you can buy maximum ${this.state.maxAmount} stocks`}
+                            </div>
                         </div>
                         <div className="content-center">
 
@@ -72,9 +105,9 @@ class Companies extends Component {
                     </div>
                     <div className="row">
                         <div className="content-center">
-                            {this.state.type === 'buy' && <Button text="Buy stocks" type={"b1"} isLink="true" onclick={this._buyStocks.bind(this)}/>}
+                            {this.state.type === 'buy' && this.state.maxAmount >= this.state.num && <Button text="Buy stocks" type={"b1"} isLink="true" onclick={this._buyStocks.bind(this)}/>}
                             <br/>
-                            {this.state.type === 'sell' && <Button text="Sell Stocks" type={"b2"} isLink="true" onclick={this._sellStocks.bind(this)}/>}
+                            {this.state.type === 'sell' && this.state.maxAmount >= this.state.num && <Button text="Sell Stocks" type={"b2"} isLink="true" onclick={this._sellStocks.bind(this)}/>}
                         </div>
                         <div className="content-center bottom-align">
                             <Button text="Cancel" type={"b3"} isLink="true" onclick={this._closePopup.bind(this)}/>
@@ -95,7 +128,8 @@ class Companies extends Component {
 export default connect(
     state => {
         return {
-            user: state.user
+            user: state.user,
+            action: state.actions
         }
     }
 ) (Companies);

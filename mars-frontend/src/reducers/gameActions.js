@@ -25,11 +25,11 @@ export const gameAction = (state = initialState, action) => {
         case ActionTypes.BUY_STOCK_SUCCESS:
             let history = {
                 type:'buy',
-                ...action.payload
+                amount: action.payload.amount,
+                stock: action.payload.stock
             };
             let account = state.myAccount;
             let found = false;
-            console.log(action);
             account.forEach((item,i) =>{
                 if(item.stock === action.payload.stock){
                     account[i].amount = parseInt(account[i].amount) + parseInt(action.payload.amount);
@@ -37,7 +37,7 @@ export const gameAction = (state = initialState, action) => {
                 }
             });
             if(!found){
-                account.push(action.payload)
+                account.push({amount:action.payload.amount,stock:action.payload.stock})
             }
             return {
                 ...state,
@@ -62,11 +62,25 @@ export const gameAction = (state = initialState, action) => {
         case ActionTypes.SELL_STOCK_SUCCESS:
             let sellhistory = {
                 type:'sell',
-                ...action.payload
+                amount: action.payload.amount,
+                stock: action.payload.stock
             };
+            let account2 = state.myAccount;
+            let found2 = false;
+            account2.forEach((item,i) =>{
+                if(item.stock === action.payload.stock){
+                    account2[i].amount = parseInt(account2[i].amount) - parseInt(action.payload.amount);
+                    found2 = true
+                }
+            });
+            if(!found2){
+                account2.push({amount:action.payload.amount,stock:action.payload.stock})
+            }
             return {
                 ...state,
                 fetching: false,
+                myAccount:account2,
+                myBalance:action.Mybalance,
                 history:state.history.concat(sellhistory),
                 action: ActionTypes.SELL_STOCK_SUCCESS
             };
