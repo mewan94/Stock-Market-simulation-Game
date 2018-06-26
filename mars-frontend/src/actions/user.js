@@ -130,3 +130,9 @@ export function nextRound(data) {
         dispatch({type: actionTypes.START_TURN, payload: data})
     }
 }
+
+export function endGame(data) {
+    return function (dispatch) {
+        dispatch({type: userTypes.END_GAME, payload: data})
+    }
+}

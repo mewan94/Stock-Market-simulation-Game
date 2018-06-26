@@ -28,6 +28,7 @@ module.exports = {
 
     INIT_ROUND_ONE:"INIT_ROUND_ONE",
 
+    END_GAME:"END_GAME"
 
 
 };

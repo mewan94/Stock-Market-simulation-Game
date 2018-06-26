@@ -8,10 +8,11 @@ import Step1 from "./step1";
 import { GAME_JOIN_MODE } from "../../types/common";
 import {ROUTES} from '../../config/server';
 import Step2 from "./step2";
-import {userRegistration, startGame, joinGame, joinexistinggame, userSuccessfullyJoined, startGameByAdmin, initRoundOne, nextRound} from '../../actions/user';
+import {userRegistration, startGame, joinGame, joinexistinggame, userSuccessfullyJoined, startGameByAdmin, initRoundOne, nextRound, endGame} from '../../actions/user';
 import * as AuthActions from '../../types/user';
 import { startGameSoc } from '../../api';
 import About from "./about";
+import { withRouter } from "react-router-dom";
 
 class Welcome extends Component {
 
@@ -113,6 +114,8 @@ class Welcome extends Component {
                     this.props.dispatch(userSuccessfullyJoined(d.data))
                 }else if(d.action === 'nRound'){
                     this.props.dispatch(nextRound(d.data))
+                }else if(d.action === 'end'){
+                    this.props.dispatch(endGame(d.data))
                 }
             });
         }
@@ -125,6 +128,8 @@ class Welcome extends Component {
                     this.props.dispatch(userSuccessfullyJoined(d.data))
                 }else if(d.action === 'nRound'){
                     this.props.dispatch(nextRound(d.data))
+                }else if(d.action === 'end'){
+                    this.props.dispatch(endGame(d.data))
                 }
             });
             this.setState({
@@ -208,11 +213,11 @@ class Welcome extends Component {
     }
 }
 
-export default connect(
+export default withRouter(connect(
     state => {
         return {
             user: state.user
         }
     }
 
-)(Welcome);
+)(Welcome));
