@@ -3,7 +3,7 @@ import ActionTypes from '../types/gameAction';
 export const initialState = {
     fetching: false,
     action: null,
-    myAcount:[],
+    myAccount:[],
     myBalance:0,
     history:[],
     results:[]
@@ -23,9 +23,28 @@ export const gameAction = (state = initialState, action) => {
                 action: ActionTypes.BUY_STOCK
             };
         case ActionTypes.BUY_STOCK_SUCCESS:
+            let history = {
+                type:'buy',
+                ...action.payload
+            };
+            let account = state.myAccount;
+            let found = false;
+            console.log(action);
+            account.forEach((item,i) =>{
+                if(item.stock === action.payload.stock){
+                    account[i].amount = parseInt(account[i].amount) + parseInt(action.payload.amount);
+                    found = true
+                }
+            });
+            if(!found){
+                account.push(action.payload)
+            }
             return {
                 ...state,
                 fetching: false,
+                history:state.history.concat(history),
+                myAccount:account,
+                myBalance:action.Mybalance,
                 action: ActionTypes.BUY_STOCK_SUCCESS
             };
         case ActionTypes.BUY_STOCK_FAIL:
@@ -41,9 +60,14 @@ export const gameAction = (state = initialState, action) => {
                 action: ActionTypes.SELL_STOCK
             };
         case ActionTypes.SELL_STOCK_SUCCESS:
+            let sellhistory = {
+                type:'sell',
+                ...action.payload
+            };
             return {
                 ...state,
                 fetching: false,
+                history:state.history.concat(sellhistory),
                 action: ActionTypes.SELL_STOCK_SUCCESS
             };
         case ActionTypes.SELL_STOCK_FAIL:

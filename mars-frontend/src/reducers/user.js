@@ -83,6 +83,27 @@ export const user = (state = initialState, action) => {
                 fetching: false,
                 action: userTypes.JOIN_GAME_FAIL
             };
+        case userTypes.GET_GAME_DETAILS:
+            return {
+                ...state,
+                fetching: true,
+                action: userTypes.GET_GAME_DETAILS
+            };
+        case userTypes.GET_GAME_DETAILS_SUCCESS:
+            return {
+                ...state,
+                fetching: false,
+                game:{
+                    ...action.payload
+                },
+                action: userTypes.GET_GAME_DETAILS_SUCCESS
+            };
+        case userTypes.GET_GAME_DETAILS_FAIL:
+            return {
+                ...state,
+                fetching: false,
+                action: userTypes.GET_GAME_DETAILS_FAIL
+            };
         case userTypes.JOIN_EXISTING_GAME:
             return {
                 ...state,

@@ -58,6 +58,24 @@ export function joinGame(gameid) {
     }
 }
 
+export function getGame(gameid) {
+    return function (dispatch) {
+        dispatch({type: userTypes.GET_GAME_DETAILS});
+        axios.get(`${ROUTES.JOIN_GAME+gameid}`)
+            .then(response => {
+                if(response.status === 200){
+                    dispatch({type: userTypes.GET_GAME_DETAILS_SUCCESS, payload: response.data})
+                }else{
+                    dispatch({type: userTypes.GET_GAME_DETAILS_FAIL})
+                }
+            })
+            .catch((err) => {
+                console.log(err)
+                dispatch({type: userTypes.GET_GAME_DETAILS_FAIL})
+            })
+    }
+}
+
 export function joinexistinggame(gameid) {
     return function (dispatch) {
         dispatch({type: userTypes.JOIN_EXISTING_GAME});
