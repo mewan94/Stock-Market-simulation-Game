@@ -55,9 +55,12 @@ export default (io) => {
 
     function endCallback(data) {
       console.log(data.turn, 'game ends');
-      io.to(req.params.gameid).emit('end', {
-        action: 'nRound',
-        data: data
+      gameController.getEndDetails(req.params.gameid)
+      .then(result => {       
+        io.to(req.params.gameid).emit('end', {
+          action: 'nRound',
+          data: result
+        });
       });
     }
 
