@@ -55,4 +55,10 @@
         text-decoration: none;
         margin:0 5px;
     }
-} 
+}
+.newcompany {
+    transition: all 0.5s ease;
+}
+.newcompany:hover {
+    background-color: #FFC107;
+}
