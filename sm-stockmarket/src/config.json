@@ -154,7 +154,7 @@
 		}
 	],
 	"turns": 10,
-	"turnTime": 2500000,
+	"turnTime": 5000,
 	"bankUrl": "https://sm-bank.herokuapp.com/api",
 	"brokerUrl": "https://sm-broker.herokuapp.com/api"
 }
