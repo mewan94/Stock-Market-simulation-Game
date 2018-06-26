@@ -54,7 +54,7 @@ class FullWidthGrid extends React.Component {
             stocks:this.props.user.game.stocks,
             turn:this.props.user.game.turn,
             timeLeft:60,
-            playerName:this.props.user.user.name,
+            playerName:this.props.user.user.dname,
             playerList:this.props.user.game.playerList,
             account:this.props.account,
             history:this.props.history,
@@ -75,6 +75,7 @@ class FullWidthGrid extends React.Component {
     componentWillReceiveProps(nextProps){
         if(nextProps.user.action === userTypes.GET_GAME_DETAILS_SUCCESS){
             this.setState({
+                turn:nextProps.user.game.turn,
                 playerList:nextProps.user.game.playerList
             })
         }

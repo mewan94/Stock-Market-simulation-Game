@@ -96,7 +96,8 @@ export const user = (state = initialState, action) => {
                 ...state,
                 fetching: false,
                 game:{
-                    ...action.payload
+                    ...action.payload,
+                    turn:state.game.turn
                 },
                 action: userTypes.GET_GAME_DETAILS_SUCCESS
             };
