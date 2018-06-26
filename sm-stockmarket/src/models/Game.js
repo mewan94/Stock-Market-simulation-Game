@@ -59,6 +59,7 @@ export class Game {
       this.turn++;
       console.log('Starting turn ' + this.turn);
       // calculate stocks
+      this.stockManager.updateStocks(this.turn);
       if (this.turn >= config.turns) {
         clearInterval(timer);
         this.gameEnded = true;

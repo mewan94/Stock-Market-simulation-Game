@@ -76,7 +76,7 @@ export default (io) => {
     const result = gameController.getStocks(req.params.gameid);
     res.json(result);
   });
-  
+
   io.on('connection', (socket) => {
     console.log('A user connected');
     socket.on('joinGame', (data) => {
