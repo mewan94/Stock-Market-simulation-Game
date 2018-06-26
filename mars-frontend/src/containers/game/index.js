@@ -137,7 +137,9 @@ class FullWidthGrid extends React.Component {
         ];
 
         data.forEach((item,i) => {
-            preset[i].y = item
+            if(preset[i]){
+                preset[i].y = item
+            }
         });
 
         return preset;
