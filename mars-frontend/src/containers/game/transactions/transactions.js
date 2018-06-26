@@ -44,9 +44,6 @@ class History extends Component{
                             <div className="item-holder-3">
                                 <h6>{item.type}</h6>
                             </div>
-                            <div className="item-holder-3">
-                                <h6>Buy</h6>
-                            </div>
                         </div>)
                     })}
                 </Scrollbox>

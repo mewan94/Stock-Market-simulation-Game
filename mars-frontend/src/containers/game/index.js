@@ -12,7 +12,7 @@ import {connect} from 'react-redux';
 import {getGame} from '../../actions/user';
 import userTypes from '../../types/user';
 import MyAccount from "./account/index";
-import History from './transactions/transactions'
+import History from './transactions/transactions';
 
 const styles = theme => ({
     root: {
@@ -56,7 +56,8 @@ class FullWidthGrid extends React.Component {
             playerName:this.props.user.user.name,
             playerList:this.props.user.game.playerList,
             account:this.props.account,
-            history:this.props.history
+            history:this.props.history,
+            myAccount:this.props.myAccount
         }
     }
     componentDidMount(){
@@ -87,8 +88,13 @@ class FullWidthGrid extends React.Component {
         if(nextProps.history !== this.state.history){
             this.setState({
                 history:nextProps.history
-            })
+            });
             console.log(nextProps.history)
+        }
+        if(nextProps.myAccount !== this.state.myAccount){
+            this.setState({
+                myAccount:nextProps.myAccount
+            })
         }
     }
 
@@ -134,7 +140,7 @@ class FullWidthGrid extends React.Component {
 
                                 {/* under section 2 */}
                                 <Grid item xs={12} sm={5}>
-                                    <MyAccount/>
+                                    <MyAccount data={this.state.myAccount}/>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -155,7 +161,8 @@ export default connect(
             user: state.user,
             account: state.actions.myAccount,
             balance: state.actions.myBalance,
-            history: state.actions.history
+            history: state.actions.history,
+            myAccount: state.actions.myAccount
         }
     }
 
