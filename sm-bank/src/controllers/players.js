@@ -12,7 +12,7 @@ export class PlayerController {
   }
 
   getPlayer(name) {
-    const player = this.playerList.find(p => p.dname==name)
+    const player = this.playerList.find(p => p.name==name)
     if(player){
       return player;
     }
@@ -28,7 +28,7 @@ export class PlayerController {
   executeTransaction(token,type,amount){
    let p=jwt.decode(token);
    
-   let player = this.getPlayer(p.dname);
+   let player = this.getPlayer(p.name);
    
    if(type=="withdraw"){
       player.withdraw(amount);
