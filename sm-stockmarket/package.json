@@ -9,7 +9,7 @@
     "start": "node dist",
     "prestart": "npm run -s build",
     "test": "eslint src",
-    "deploy": "git subtree push --prefix sm-stockmarket sm-stockmarket master"
+    "deploy": "cd .. && git subtree push --prefix sm-stockmarket sm-stockmarket master"
   },
   "eslintConfig": {
     "extends": "eslint:recommended",
