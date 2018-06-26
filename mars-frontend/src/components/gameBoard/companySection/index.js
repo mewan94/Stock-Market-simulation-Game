@@ -21,7 +21,7 @@ class CompanySection extends Component {
                             <Sectors/>
                         </div>
                         <div className="com-list">
-                            <Companies stocks={this.props.stocks}/>
+                            <Companies stocks={this.props.stocks} onHover={this.props.onHover}/>
                         </div>
                     </Section>
                 </div>

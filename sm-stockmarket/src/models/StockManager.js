@@ -34,7 +34,8 @@ export class StockManager {
       let totalTrend = randomTrend + marketTrend + sectorTrend + eventTrend;
       
       if (totalTrend < 0) totalTrend = 0;
-      const newPrice = stock.price + stock.price * totalTrend / 100;
+      let newPrice = stock.price + stock.price * totalTrend / 100;
+      if (!newPrice) newPrice = stock.price + stock.price * getRandomInt(1, 4)/100;
       stock.price = Math.round(newPrice * 100) / 100;      
     }
   }

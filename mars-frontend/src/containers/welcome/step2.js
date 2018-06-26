@@ -39,7 +39,7 @@ class Step2 extends Component{
                     <div className="content-center">
                         <ul className="playerList">
                             {this.props.gameList && this.props.gameList.map((item,i) => {
-                                return <SinglePlayer text={item} key={i} type="ai"/>
+                                return <SinglePlayer text={item.dname} key={i} type="ai"/>
                             })}
                         </ul>
                     </div>

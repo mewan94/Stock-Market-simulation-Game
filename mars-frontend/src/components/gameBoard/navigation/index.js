@@ -35,7 +35,7 @@ class Navigation extends Component {
                 <div className="leaderboard-container">
                     <Timeline className={classes.Timeline}>
                         {playerList && playerList.map((item,i) => {
-                            return <Timeline.Item className={classes.Item} key={i}>{item}</Timeline.Item>
+                            return <Timeline.Item className={classes.Item} key={i}>{item.dname}</Timeline.Item>
                         })}
                     </Timeline>
                 </div>

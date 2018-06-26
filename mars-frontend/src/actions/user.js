@@ -115,7 +115,6 @@ export function startGameByAdmin(gameId) {
             .catch((err) => {
                 dispatch({type: userTypes.START_GAME_FAIL})
             })
-
     }
 }
 
@@ -123,5 +122,17 @@ export function initRoundOne(data,balance) {
     return function (dispatch) {
         dispatch({type: userTypes.INIT_ROUND_ONE,payload:data.stocks});
         dispatch({type: actionTypes.INIT_BALANCE, payload: balance});
+    }
+}
+
+export function nextRound(data) {
+    return function (dispatch) {
+        dispatch({type: actionTypes.START_TURN, payload: data})
+    }
+}
+
+export function endGame(data) {
+    return function (dispatch) {
+        dispatch({type: userTypes.END_GAME, payload: data})
     }
 }

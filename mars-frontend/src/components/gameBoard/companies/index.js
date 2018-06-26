@@ -117,7 +117,7 @@ class Companies extends Component {
                 </DialogBox>}
                 <Scrollbox>
                     {this.props.stocks.map((item,i) => {
-                        return <Company companyName={item.name} unitPrice={item.price} company={item} open={this._openPopup.bind(this)} close={this._closePopup.bind(this)} key={i}/>
+                        return <Company companyName={item.name} unitPrice={item.price} company={item} onHover={this.props.onHover} open={this._openPopup.bind(this)} close={this._closePopup.bind(this)} key={i}/>
                     })}
                 </Scrollbox>
             </div>

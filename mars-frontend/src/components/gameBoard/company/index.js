@@ -10,7 +10,7 @@ class Company extends Component {
         let unitPrice = this.props.unitPrice;
 
         return (
-            <div className="company">
+            <div className="company newcompany" onMouseOver={this.props.onHover.bind(this,this.props.company.symbol)}>
                 <div className="item-holder-1">
                     <h4>{companyName}</h4>
                 </div>

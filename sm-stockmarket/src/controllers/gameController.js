@@ -2,7 +2,7 @@ import * as jwt from 'jsonwebtoken';
 import config from '../config.json';
 import { Game } from '../models/Game'
 import { StockManager } from '../models/StockManager';
-
+import axios from 'axios'
 export class GameController {
 
   constructor() {
@@ -65,7 +65,7 @@ export class GameController {
       }
     }
 
-    if (g.gameAdmin !== playerID) {
+    if (g.gameAdmin.name !== playerID.name) {
       return {
         status: 403,
         res: { error: 'You need to be admin to start game' }
@@ -77,6 +77,22 @@ export class GameController {
     return {
       status: 200,
       res: res
+    }
+  }
+
+  getEndDetails(gameId) {
+    const g = this.games.find(v => v.gameID === gameId);
+    if(g) {
+      let promises = [];
+      g.playerList.forEach(p => {
+        console.log(p);
+        console.log(config.bankUrl+'/player/'+p.name);
+        
+        promises.push(axios.get(config.bankUrl+'/player/'+p.name).then(r => r.data))
+      });
+      return Promise.all(promises);
+    } else {
+      throw new Error();
     }
   }
 

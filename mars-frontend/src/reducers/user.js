@@ -1,4 +1,5 @@
 import userTypes from '../types/user';
+import actionTypes from '../types/gameAction';
 import jwt from 'jsonwebtoken';
 import {GAME_ROLE} from '../types/common';
 
@@ -16,8 +17,10 @@ export const initialState = {
         gameEnded: false,
         turn: null,
         gameAdmin: "",
-        gameID: ""
-    }
+        gameID: "",
+    },
+    stac:[],
+    results:[]
 };
 
 export const user = (state = initialState, action) => {
@@ -94,7 +97,8 @@ export const user = (state = initialState, action) => {
                 ...state,
                 fetching: false,
                 game:{
-                    ...action.payload
+                    ...action.payload,
+                    turn:state.game.turn
                 },
                 action: userTypes.GET_GAME_DETAILS_SUCCESS
             };
@@ -155,16 +159,50 @@ export const user = (state = initialState, action) => {
                 action: userTypes.START_GAME_FAIL
             };
         case userTypes.INIT_ROUND_ONE:
+            let stac = [];
+            action.payload.forEach((item,i)=>{
+                stac.push({
+                    name:item.name,
+                    symol:item.symbol,
+                    sector:item.sector,
+                    price:[item.price]
+                })
+            });
             return{
                 ...state,
                 game:{
                     ...state.game,
                     stocks:action.payload,
                     gameStarted:true,
-                    turn:0
+                    turn:1
                 },
+                stac:stac,
                 action: userTypes.INIT_ROUND_ONE
-            }
+            };
+        case actionTypes.START_TURN:
+            let newstac = [];
+            state.stac.forEach((item,i)=>{
+                newstac.push({
+                    ...stac,
+                    price:item.price.push(action.payload.stocks[i].price)
+                })
+            });
+            return{
+                ...state,
+                game:{
+                    ...state.game,
+                    turn:state.game.turn+1,
+                    stocks:action.payload.stocks
+                },
+                /*stac:newstac,
+                */action: actionTypes.START_TURN
+            };
+        case userTypes.END_GAME:
+            return{
+                ...state,
+                results:action.payload,
+                action:userTypes.END_GAME
+            };
 
         default:
             return state

@@ -11,8 +11,11 @@ import "./game.css";
 import {connect} from 'react-redux';
 import {getGame} from '../../actions/user';
 import userTypes from '../../types/user';
+import actionTypes from '../../types/gameAction';
 import MyAccount from "./account/index";
 import History from './transactions/transactions';
+import {withRouter} from'react-router-dom';
+import DialogBox from "../../components/dialogBox/index";
 
 const styles = theme => ({
     root: {
@@ -51,13 +54,17 @@ class FullWidthGrid extends React.Component {
         this.state={
             bankBalance:this.props.balance,
             stocks:this.props.user.game.stocks,
-            turn:this.props.user.game.turn+1,
+            turn:this.props.user.game.turn,
             timeLeft:60,
-            playerName:this.props.user.user.name,
+            playerName:this.props.user.user.dname,
             playerList:this.props.user.game.playerList,
             account:this.props.account,
             history:this.props.history,
-            myAccount:this.props.myAccount
+            myAccount:this.props.myAccount,
+            stac:this.props.stac,
+            currentmap:this._setData([]),
+            gameOver:false,
+            results:[]
         }
     }
     componentDidMount(){
@@ -72,7 +79,21 @@ class FullWidthGrid extends React.Component {
     componentWillReceiveProps(nextProps){
         if(nextProps.user.action === userTypes.GET_GAME_DETAILS_SUCCESS){
             this.setState({
+                turn:nextProps.user.game.turn,
                 playerList:nextProps.user.game.playerList
+            })
+        }
+        if(nextProps.user.action === userTypes.END_GAME){
+            this.setState({
+                gameOver:true,
+                results:nextProps.results
+            })
+        }
+        if(nextProps.user.action === actionTypes.START_TURN){
+            this.setState({
+                turn:nextProps.user.game.turn,
+                stocks:nextProps.user.game.stocks,
+                timeLeft:60
             })
         }
         if(nextProps.account !== this.state.account){
@@ -96,18 +117,68 @@ class FullWidthGrid extends React.Component {
                 myAccount:nextProps.myAccount
             })
         }
+        if(nextProps.stac !== this.state.stac){
+            this.setState({
+                stac:nextProps.stac
+            })
+        }
     }
+
+    _onHover = (symol) => {
+        this.state.stac.forEach((item,i) =>{
+            if(item.symol === symol){
+                this.setState({
+                    currentmap:this._setData(item.price)
+                })
+            }
+        })
+    };
+
+    _setData = (data) => {
+        let preset =[
+            {x: 0, y: 0},
+            {x: 1, y: 0},
+            {x: 2, y: 0},
+            {x: 3, y: 0},
+            {x: 4, y: 0},
+            {x: 5, y: 0},
+            {x: 6, y: 0},
+            {x: 7, y: 0},
+            {x: 8, y: 0}
+        ];
+
+        data.forEach((item,i) => {
+            if(preset[i]){
+                preset[i].y = item
+            }
+        });
+
+        return preset;
+    };
 
     render(){
         const { classes } = this.props;
         return (
             <div className={classes.root}>
+                {this.state.gameOver  && <DialogBox>
+                    <div className="row adjest-height">
+                        <div className="content" style={{paddingTop: 10+'px'}}>
+                            <div className="content-container">
+                                <ul>
+                                    {this.state.results.map((item,i) => {
+                                        return <li key={i}>Name: {item.dname} - Balance: {item.balance}</li>
+                                    })}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </DialogBox>}
 
                 <Grid container>
                     {/* header container */}
                     <Grid container>
                         <Grid item xs={12} sm={12}>
-                            <Header balance={this.state.bankBalance} turn={this.state.turn} timeLeft={this.state.timeLeft} playerName={this.state.playerName}/>
+                            <Header balance={Math.round(this.state.bankBalance * 100) / 100} turn={this.state.turn} timeLeft={this.state.timeLeft} playerName={this.state.playerName}/>
                         </Grid>
                     </Grid>
 
@@ -123,12 +194,12 @@ class FullWidthGrid extends React.Component {
                             <Grid container>
                                 {/* company section */}
                                 <Grid item xs={12} sm={7}>
-                                    <CompanySection stocks={this.state.stocks}/>
+                                    <CompanySection stocks={this.state.stocks} onHover={this._onHover.bind(this)}/>
                                 </Grid>
 
                                 {/* chart section */}
                                 <Grid item xs={12} sm={5}>
-                                    <FlexibleCharts/>
+                                    <FlexibleCharts data={this.state.currentmap}/>
                                 </Grid>
                             </Grid>
 
@@ -162,7 +233,9 @@ export default connect(
             account: state.actions.myAccount,
             balance: state.actions.myBalance,
             history: state.actions.history,
-            myAccount: state.actions.myAccount
+            myAccount: state.actions.myAccount,
+            stac: state.user.stac,
+            results: state.user.results
         }
     }
 
