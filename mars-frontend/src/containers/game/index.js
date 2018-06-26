@@ -81,7 +81,8 @@ class FullWidthGrid extends React.Component {
         if(nextProps.user.action === actionTypes.START_TURN){
             this.setState({
                 turn:nextProps.user.game.turn,
-                stocks:nextProps.user.game.stocks
+                stocks:nextProps.user.game.stocks,
+                timeLeft:60
             })
         }
         if(nextProps.account !== this.state.account){
