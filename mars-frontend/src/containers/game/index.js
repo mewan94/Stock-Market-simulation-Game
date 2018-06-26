@@ -155,7 +155,7 @@ class FullWidthGrid extends React.Component {
                     {/* header container */}
                     <Grid container>
                         <Grid item xs={12} sm={12}>
-                            <Header balance={this.state.bankBalance} turn={this.state.turn} timeLeft={this.state.timeLeft} playerName={this.state.playerName}/>
+                            <Header balance={Math.round(this.state.bankBalance * 100) / 100} turn={this.state.turn} timeLeft={this.state.timeLeft} playerName={this.state.playerName}/>
                         </Grid>
                     </Grid>
 
