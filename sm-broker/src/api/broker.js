@@ -165,6 +165,10 @@ router.post('/sell', (req, res) => {
     });
 });
 
+router.get('/transactions/:gameid', (req, res) => {
+    const txns = brokerController.getTransactions(req.params.gameid);
+    res.status(200).send(txns);
+})
 // router.post('/sell', (req, res) => {
 //     const sellStocks = brokerController.sellStocks(req.body.token, req.body.gameID);
 //     res.json(sellStocks);

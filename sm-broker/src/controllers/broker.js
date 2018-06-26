@@ -31,7 +31,11 @@ export class BrokerController {
     }
 
     saveTransaction(val) {
-        this.txns.push(val);
+        this.txns.push(val);        
+    }
+
+    getTransactions(gameid) {        
+        return this.txns.filter(v => v.gameid === gameid);
     }
 
     checkUserStock(player, stock, amount) {
