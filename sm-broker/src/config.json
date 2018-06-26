@@ -1,0 +1,7 @@
+{
+	"port": 7878,
+	"bodyLimit": "100kb",
+	"corsHeaders": ["Link"],
+	"stockmarketUrl": "htttps://sm-stockmarket.herokuapp.com/api",
+	"bankUrl": "htttps://sm-bank.herokuapp.com/api"
+}

@@ -1,0 +1,144 @@
+/*********[primary button style]**********/
+.primary-button, .about-button, .help-button {
+  border: solid 2px white;
+  border-radius: 100px;
+  color: #fff;
+  padding: 8px 80px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14pt;
+  margin-top: 20%;
+  cursor: pointer;
+  font-weight: 300;
+  background: transparent; }
+
+.about-button {
+  background: #EE8550;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #EE8550, #E24A4A);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #EE8550, #E24A4A);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #EE8550, #E24A4A);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #EE8550, #E24A4A);
+  /* Standard syntax (must be last) */
+  padding: 8px 40px;
+  border: none;
+  box-shadow: none;
+  margin-right: 20px; }
+
+.help-button {
+  padding: 6px 38px;
+  border: solid 2px #8D8D8D;
+  color: #8D8D8D;
+  box-shadow: none;
+  margin-right: 30px; }
+
+/********[buttons :hover]********/
+.primary-button:hover, .about-button:hover, .help-button:hover {
+  background: #EE8550;
+  /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(left top, #EE8550, #E24A4A);
+  /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom right, #EE8550, #E24A4A);
+  /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom right, #EE8550, #E24A4A);
+  /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom right, #EE8550, #E24A4A);
+  /* Standard syntax (must be last) */ }
+
+.about-button:hover {
+  border: solid 2px #8D8D8D;
+  color: #8D8D8D;
+  padding: 6px 38px;
+  background: transparent; }
+
+.help-button:hover {
+  border: solid 2px transparent;
+  color: white; }
+
+button {
+  outline: none; }
+
+/********[anchor tag button]********/
+/****[button-1]****/
+a[type="b1"] {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 70%;
+  box-sizing: border-box;
+  border: solid 2px white;
+  border-radius: 100px;
+  padding: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14pt;
+  text-align: center;
+  text-decoration: none;
+  background: transparent; }
+
+a[type="b1"]:hover {
+  background-color: #fff;
+  color: #E24A4A;
+  font-weight: 300; }
+
+/****[button-2]****/
+a[type="b2"] {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 70%;
+  box-sizing: border-box;
+  border: solid 2px white;
+  border-radius: 100px;
+  padding: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14pt;
+  text-align: center;
+  text-decoration: none;
+  background: transparent;
+  background-color: #fff;
+  color: #E24A4A; }
+
+a[type="b2"]:hover {
+  background: transparent;
+  color: #fff;
+  font-weight: 300; }
+
+/****[Home button]****/
+a[type="b3"] {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 60%;
+  box-sizing: border-box;
+  border: solid 2px white;
+  border-radius: 100px;
+  padding: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 300;
+  font-size: 14pt;
+  text-align: center;
+  text-decoration: none;
+  background: transparent; }
+
+a[type="b3"]:hover {
+  background-color: #fff;
+  color: #E24A4A;
+  font-weight: 300; }
