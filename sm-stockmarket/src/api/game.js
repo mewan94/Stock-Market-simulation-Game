@@ -19,7 +19,7 @@ export default (io) => {
       res.send(403, { error: 'Unauthorized: Token not found'} );
     }
     const player = jwt.decode(req.body.token);
-    const game = gameController.createGame(player.name)
+    const game = gameController.createGame(player)
     res.json(game); 
   });
 
@@ -30,7 +30,7 @@ export default (io) => {
   
   router.post('/:gameid', (req, res) => {
     const player = jwt.decode(req.body.token);
-    const result = gameController.joinGame(req.params.gameid, player.name)
+    const result = gameController.joinGame(req.params.gameid, player)
     if(result !== false) {
       io.to(result.gameID).emit('playerJoin', {
         action: 'join',
@@ -62,7 +62,7 @@ export default (io) => {
     }
 
     const result = gameController
-      .startGame(req.params.gameid, player.name, turnCallback, endCallback);
+      .startGame(req.params.gameid, player, turnCallback, endCallback);
     io.to(req.params.gameid)
       .emit('gameStart', {
         action: 'start',
