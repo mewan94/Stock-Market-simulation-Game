@@ -52,7 +52,7 @@ class FullWidthGrid extends React.Component {
         this.state={
             bankBalance:this.props.balance,
             stocks:this.props.user.game.stocks,
-            turn:this.props.user.game.turn+1,
+            turn:this.props.user.game.turn,
             timeLeft:60,
             playerName:this.props.user.user.name,
             playerList:this.props.user.game.playerList,
