@@ -11,6 +11,7 @@ import Step2 from "./step2";
 import {userRegistration, startGame, joinGame, joinexistinggame, userSuccessfullyJoined, startGameByAdmin, initRoundOne, nextRound} from '../../actions/user';
 import * as AuthActions from '../../types/user';
 import { startGameSoc } from '../../api';
+import About from "./about";
 
 class Welcome extends Component {
 
@@ -23,12 +24,15 @@ class Welcome extends Component {
             step:null,
             gameID:null,
             playerList:[],
-            gameCode:null
+            gameCode:null,
+            isAboutOpen:false,
+            aboutType:'about'
         };
     }
 
     _openPopup = () => {
         this.setState({
+            isAboutOpen:false,
             isPopupOpen:true
         });
     };
@@ -64,6 +68,19 @@ class Welcome extends Component {
 
     _startGame = () => {
         this.props.dispatch(startGameByAdmin(this.state.gameCode))
+    };
+
+    _openAbout = (type) =>{
+        this.setState({
+            aboutType:type,
+            isAboutOpen:true
+        })
+    };
+
+    _closeAbout = () => {
+        this.setState({
+            isAboutOpen:false
+        })
     };
 
     componentWillMount(){
@@ -169,9 +186,14 @@ class Welcome extends Component {
                         <img src={image2} className="art" alt=""/>
                     </div>
                     <div className="content-half-width justify-left">
-                        <Button text="About Game" type={1}/>
-                        <Button text="How to play" type={2}/>
+                        <Button text="About Game" type={1} onclick={this._openAbout.bind(this,'about')}/>
+                        <Button text="How to play" type={2}  onclick={this._openAbout.bind(this,'play')}/>
                     </div>
+                </div>
+                <div>
+                    {this.state.isAboutOpen && <DialogBox>
+                        <About type={this.state.aboutType} close={this._closeAbout.bind(this)}/>
+                    </DialogBox>}
                 </div>
 
                 {/* make pop up dialog */}
