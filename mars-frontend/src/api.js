@@ -16,6 +16,7 @@ function startGameSoc (gameId,getUser){
 
     socket.on('startTurn',function (data) {
         getUser(data);
+        console.log(data)
     })
 }
 

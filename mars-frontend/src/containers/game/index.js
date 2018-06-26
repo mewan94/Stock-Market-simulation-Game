@@ -58,7 +58,9 @@ class FullWidthGrid extends React.Component {
             playerList:this.props.user.game.playerList,
             account:this.props.account,
             history:this.props.history,
-            myAccount:this.props.myAccount
+            myAccount:this.props.myAccount,
+            stac:this.props.stac,
+            currentmap:this._setData([])
         }
     }
     componentDidMount(){
@@ -103,7 +105,42 @@ class FullWidthGrid extends React.Component {
                 myAccount:nextProps.myAccount
             })
         }
+        if(nextProps.stac !== this.state.stac){
+            this.setState({
+                stac:nextProps.stac
+            })
+        }
     }
+
+    _onHover = (symol) => {
+        this.state.stac.forEach((item,i) =>{
+            if(item.symol === symol){
+                this.setState({
+                    currentmap:this._setData(item.price)
+                })
+            }
+        })
+    };
+
+    _setData = (data) => {
+        let preset =[
+            {x: 0, y: 0},
+            {x: 1, y: 0},
+            {x: 2, y: 0},
+            {x: 3, y: 0},
+            {x: 4, y: 0},
+            {x: 5, y: 0},
+            {x: 6, y: 0},
+            {x: 7, y: 0},
+            {x: 8, y: 0}
+        ];
+
+        data.forEach((item,i) => {
+            preset[i].y = item
+        });
+
+        return preset;
+    };
 
     render(){
         const { classes } = this.props;
@@ -130,12 +167,12 @@ class FullWidthGrid extends React.Component {
                             <Grid container>
                                 {/* company section */}
                                 <Grid item xs={12} sm={7}>
-                                    <CompanySection stocks={this.state.stocks}/>
+                                    <CompanySection stocks={this.state.stocks} onHover={this._onHover.bind(this)}/>
                                 </Grid>
 
                                 {/* chart section */}
                                 <Grid item xs={12} sm={5}>
-                                    <FlexibleCharts/>
+                                    <FlexibleCharts data={this.state.currentmap}/>
                                 </Grid>
                             </Grid>
 
@@ -169,7 +206,8 @@ export default connect(
             account: state.actions.myAccount,
             balance: state.actions.myBalance,
             history: state.actions.history,
-            myAccount: state.actions.myAccount
+            myAccount: state.actions.myAccount,
+            stac: state.user.stac
         }
     }
 

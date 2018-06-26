@@ -18,7 +18,8 @@ export const initialState = {
         turn: null,
         gameAdmin: "",
         gameID: ""
-    }
+    },
+    stac:[]
 };
 
 export const user = (state = initialState, action) => {
@@ -156,6 +157,15 @@ export const user = (state = initialState, action) => {
                 action: userTypes.START_GAME_FAIL
             };
         case userTypes.INIT_ROUND_ONE:
+            let stac = [];
+            action.payload.forEach((item,i)=>{
+                stac.push({
+                    name:item.name,
+                    symol:item.symbol,
+                    sector:item.sector,
+                    price:[item.price]
+                })
+            });
             return{
                 ...state,
                 game:{
@@ -164,9 +174,17 @@ export const user = (state = initialState, action) => {
                     gameStarted:true,
                     turn:0
                 },
+                stac:stac,
                 action: userTypes.INIT_ROUND_ONE
             };
         case actionTypes.START_TURN:
+            let newstac = [];
+            state.stac.forEach((item,i)=>{
+                newstac.push({
+                    ...stac,
+                    price:item.price.push(action.payload.stocks[i].price)
+                })
+            });
             return{
                 ...state,
                 game:{
@@ -174,7 +192,8 @@ export const user = (state = initialState, action) => {
                     turn:state.game.turn+1,
                     stocks:action.payload.stocks
                 },
-                action: actionTypes.START_TURN
+                /*stac:newstac,
+                */action: actionTypes.START_TURN
             };
 
 
