@@ -32,7 +32,7 @@ class History extends Component{
             <div className="tester">
                 <Scrollbox>
                     <div><h1>My Transactions</h1></div>
-                    {data && data.map((item,i)=>{
+                    {data.length > 0 && data.map((item,i)=>{
                         return(
                         <div className="company" key={i}>
                             <div className="item-holder-1">
