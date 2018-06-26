@@ -17,9 +17,10 @@ export const initialState = {
         gameEnded: false,
         turn: null,
         gameAdmin: "",
-        gameID: ""
+        gameID: "",
     },
-    stac:[]
+    stac:[],
+    results:[]
 };
 
 export const user = (state = initialState, action) => {
@@ -196,7 +197,12 @@ export const user = (state = initialState, action) => {
                 /*stac:newstac,
                 */action: actionTypes.START_TURN
             };
-
+        case userTypes.END_GAME:
+            return{
+                ...state,
+                results:action.payload,
+                action:userTypes.END_GAME
+            };
 
         default:
             return state

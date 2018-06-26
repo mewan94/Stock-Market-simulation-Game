@@ -12,9 +12,14 @@ function startGameSoc (gameId,getUser){
     socket.on('playerJoin',function (data) {
         getUser(data);
         console.log('playerjsin',data)
-    })
+    });
 
     socket.on('startTurn',function (data) {
+        getUser(data);
+        console.log(data)
+    });
+
+    socket.on('end',function (data) {
         getUser(data);
         console.log(data)
     })
