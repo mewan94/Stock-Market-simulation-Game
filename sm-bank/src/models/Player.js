@@ -1,7 +1,8 @@
 export class Player {
     constructor(name) {
-        this.name = name;
+        this.name = Math.random().toString(36).substring(4, 10);
         this.balance = 1000;
+        this.dname = name;
     }
 
     getBalance() {
