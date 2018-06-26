@@ -3,7 +3,7 @@
 This a a final year project to simulate a stock market. The REST API is developed using expressJS and the frontend is developed as a React app.
 
 # Demo
-## Check the live Demo [Try Demo](https://stockex.netlify.com/)
+## Check the live Demo [Try Demo](https://sm-app.herokuapp.com/)
 
 # Project Setup
 Make sure you have a latest version of NodeJS installed. Recommended editor is [VSCode](https://code.visualstudio.com/)
