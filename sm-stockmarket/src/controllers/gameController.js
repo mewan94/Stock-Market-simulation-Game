@@ -65,7 +65,7 @@ export class GameController {
       }
     }
 
-    if (g.gameAdmin !== playerID) {
+    if (g.gameAdmin.name !== playerID.name) {
       return {
         status: 403,
         res: { error: 'You need to be admin to start game' }
