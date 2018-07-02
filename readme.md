@@ -5,6 +5,8 @@ This a a final year project to simulate a stock market. The REST API is develope
 # Demo
 ## Check the live Demo [Try Demo](https://sm-app.herokuapp.com/)
 
+*Please note that it'll take some time to load for the first time as the free heroku servers need time to wake up after long periods of inactivity.*
+
 # Project Setup
 Make sure you have a latest version of NodeJS installed. Recommended editor is [VSCode](https://code.visualstudio.com/)
 
